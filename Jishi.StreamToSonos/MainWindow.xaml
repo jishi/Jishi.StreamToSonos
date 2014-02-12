@@ -1,0 +1,13 @@
+﻿<Window x:Class="Jishi.StreamToSonos.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="81.803" Width="355">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="214*"/>
+            <ColumnDefinition Width="135*"/>
+        </Grid.ColumnDefinitions>
+        <ComboBox Name="ZoneList" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="170" Height="21"/>
+        <Button Name="StreamAction" Content="Start Streaming" HorizontalAlignment="Left" Margin="207,9,0,0" VerticalAlignment="Top" Width="114" Grid.ColumnSpan="2" Click="StreamAction_Click"/>
+    </Grid>
+</Window>
