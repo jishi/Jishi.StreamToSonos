@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Jishi.SonosUPnP;
+using Jishi.StreamToSonos.Services;
 
 namespace Jishi.StreamToSonos
 {
@@ -28,6 +29,7 @@ namespace Jishi.StreamToSonos
 			InitializeComponent();
 			discovery = new SonosDiscovery();
 			discovery.TopologyChanged += TopologyChanged;
+			var server = new HttpServer();
 		}
 
 		private async void TopologyChanged(object sender, TopologyChangedEventHandlerArgs args)
@@ -53,7 +55,7 @@ namespace Jishi.StreamToSonos
 			var selectedItem = (ComboBoxItem)ZoneList.Items[ZoneList.SelectedIndex];
 			var player = (SonosPlayer)selectedItem.DataContext;
 			Console.WriteLine(player.RoomName);
-			player.SetAvTransportUri("http://192.168.10.101:3333/stream.wav");
+			player.SetAvTransportUri("http://192.168.1.101:9283/stream.wav");
 		}
 	}
 }
