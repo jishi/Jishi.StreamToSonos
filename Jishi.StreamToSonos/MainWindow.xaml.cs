@@ -23,14 +23,23 @@ namespace Jishi.StreamToSonos
 	public partial class MainWindow : Window
 	{
 		private SonosDiscovery discovery;
+        HttpServer server;
 
 		public MainWindow()
 		{
-			InitializeComponent();
 			discovery = new SonosDiscovery();
 			discovery.TopologyChanged += TopologyChanged;
-			var server = new HttpServer();
+		    server = new HttpServer();
+		    //server.BufferSize = 20000;
+            InitializeComponent();
 		}
+
+        protected override void OnClosing(System.ComponentModel.CancelEventArgs e)
+        {
+            server.Dispose();
+            discovery.Dispose();
+            base.OnClosing(e);
+        }
 
 		private async void TopologyChanged(object sender, TopologyChangedEventHandlerArgs args)
 		{
@@ -55,7 +64,21 @@ namespace Jishi.StreamToSonos
 			var selectedItem = (ComboBoxItem)ZoneList.Items[ZoneList.SelectedIndex];
 			var player = (SonosPlayer)selectedItem.DataContext;
 			Console.WriteLine(player.RoomName);
-			player.SetAvTransportUri("http://192.168.1.101:9283/stream.wav");
+            // Find local endpoint
+		    var localIp = SonosNotify.Instance.LocalEndpoint.Address.ToString();
+		    var streamUrl = string.Format("http://{0}:9283/stream.wav", localIp);
+			player.SetAvTransportUri(streamUrl);
+		    player.Play();
+
 		}
+
+        private void Buffer_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            var box = (TextBox)sender;
+            int bufferSize;
+            Int32.TryParse(box.Text, out bufferSize);
+
+            server.BufferSize = bufferSize;
+        }
 	}
 }

@@ -131,10 +131,10 @@ namespace Jishi.SonosUPnP
 			return response;
 		}
 
-		public void SetAVTransportURI(int instanceID, string currentURI, string currentURIMetaData)
+		public async void SetAVTransportURI(int instanceID, string currentURI, string currentURIMetaData)
 		{
 			IAVTransportService service = factory.CreateChannel();
-			service.SetAVTransportURI(new SetAvTransportUriRequest
+			await service.SetAVTransportURIAsync(new SetAvTransportUriRequest
 				                          {
 					                          InstanceID = instanceID,
 					                          CurrentURI = currentURI,
@@ -172,7 +172,8 @@ namespace Jishi.SonosUPnP
 			IAVTransportService service = factory.CreateChannel();
 			service.Play(new PlayRequest
 				             {
-					             InstanceID = instanceID
+					             InstanceID = instanceID,
+                                 Speed = 1
 				             });
 			((IClientChannel) service).Close();
 		}
@@ -202,7 +203,7 @@ namespace Jishi.SonosUPnP
 	internal interface IAVTransportService
 	{
 		[OperationContract(Action = "urn:schemas-upnp-org:service:AVTransport:1#SetAVTransportURI")]
-		void SetAVTransportURI(SetAvTransportUriRequest req);
+		Task SetAVTransportURIAsync(SetAvTransportUriRequest req);
 
 		[OperationContract(Action = "urn:schemas-upnp-org:service:AVTransport:1#GetPositionInfo")]
 		PositionInfoResponse GetPositionInfo(PositionInfoRequest req);
@@ -237,6 +238,8 @@ namespace Jishi.SonosUPnP
 	{
 		[MessageBodyMember(Namespace = "")]
 		public int InstanceID { get; set; }
+        [MessageBodyMember(Namespace = "")]
+        public int Speed { get; set; }
 	}
 
 	[MessageContract(WrapperName = "AddURIToQueue", WrapperNamespace = "urn:schemas-upnp-org:service:AVTransport:1",

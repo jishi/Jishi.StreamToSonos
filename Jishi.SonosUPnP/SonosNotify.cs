@@ -14,7 +14,12 @@ namespace Jishi.SonosUPnP
 		private HttpListener listener;
 		private string notifyUrl;
 
-		public SonosNotify()
+        // Singleton 
+	    private static SonosNotify instance;
+	    public static SonosNotify Instance {get { return instance ?? (instance = new SonosNotify()); }
+	    }
+
+		private SonosNotify()
 		{
 			listener = new HttpListener();
 			var port = FindAvailablePort();
@@ -22,7 +27,6 @@ namespace Jishi.SonosUPnP
 			notifyUrl = string.Format("http://*:{0}/notify/", port);
 
 			listener.Prefixes.Add(notifyUrl);
-
 			listener.Start();
 			listener.BeginGetContext(HandleRequest, listener);
 		}
@@ -33,7 +37,9 @@ namespace Jishi.SonosUPnP
 			set { notifyUrl = value; }
 		}
 
-		public event NotificationReceivedEventHandler NotificationReceived;
+        public IPEndPoint LocalEndpoint { get; set; }
+
+	    public event NotificationReceivedEventHandler NotificationReceived;
 
 
 		private void HandleRequest(IAsyncResult result)
@@ -54,6 +60,7 @@ namespace Jishi.SonosUPnP
 			// Obtain a response object.
 			HttpListenerResponse response = context.Response;
 			response.OutputStream.Close();
+            listener.BeginGetContext(HandleRequest, listener);
 		}
 
 		private SonosProperty GetProperty(XElement property)

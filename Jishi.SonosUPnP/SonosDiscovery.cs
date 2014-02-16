@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using System.Net;
+using System.Net.NetworkInformation;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading;
@@ -11,26 +11,31 @@ using System.Xml.Linq;
 
 namespace Jishi.SonosUPnP
 {
-	public class SonosDiscovery
+	public class SonosDiscovery : IDisposable
 	{
 		private UdpClient udpClient;
 		private IPEndPoint groupEndpoint = new IPEndPoint(IPAddress.Parse("239.255.255.250"), 1900);
 		private IList<SonosZone> zones = new List<SonosZone>();
 		private IList<SonosPlayer> players = new List<SonosPlayer>();
 		private HashSet<string> knownLocations = new HashSet<string>();
-		private SonosNotify notify = new SonosNotify();
 
 		public SonosDiscovery()
 		{
 			var foundAvailablePort = false;
 			// 1900 is the default ssdp port, we try to find the first available after that, since windows and sonos usually occupies it
-			var port = 1901;
-			do
+			var port = 1902;
+		    var addresses = GetLocalEndpoints();
+            
+
+			foreach (var ip in addresses)
 			{
 				try
 				{
-					udpClient = new UdpClient(port);
-					foundAvailablePort = true;
+				    var localEndpoint = new IPEndPoint(ip, port);
+					udpClient = new UdpClient(localEndpoint);
+                    // okay, join multicast
+                    udpClient.JoinMulticastGroup(IPAddress.Parse("239.255.255.250"));
+				    StartMSearchSequence(udpClient, localEndpoint);
 				}
 				catch (SocketException ex)
 				{
@@ -38,18 +43,17 @@ namespace Jishi.SonosUPnP
 					Console.WriteLine("Port {0} was taken, trying {1}", port, port + 1);
 					port++;
 				}
-			} while (!foundAvailablePort);
+			} 
 
-			// okay, join multicast
-			udpClient.JoinMulticastGroup(IPAddress.Parse("239.255.255.250"));
+			
 
-			int tries = 5;
-			while (tries-- > 0)
-			{
-				new Task(StartMSearchSequence).Start();
-			}
+            //int tries = 5;
+            //while (tries-- > 0)
+            //{
+            //    new Task(StartMSearchSequence).Start();
+            //}
 
-			notify.NotificationReceived += NotificationHandler;
+			SonosNotify.Instance.NotificationReceived += NotificationHandler;
 		}
 
 		private void NotificationHandler(object sender, NotificationReceivedEventHandlerArgs args)
@@ -63,7 +67,7 @@ namespace Jishi.SonosUPnP
 		}
 
 		private void UpdateTopology(string value)
-		{
+		{          
 			var xml = XElement.Parse(value);
 			Console.WriteLine(value);
 
@@ -74,7 +78,10 @@ namespace Jishi.SonosUPnP
 				var zone = new SonosZone();
 				foreach (var playerNode in zoneNode.Elements("ZoneGroupMember"))
 				{
-					var url = new Uri( (string)playerNode.Attribute( "Location" ) );
+                    // We ignore invisible units (bonded, bridges, stereopairs)
+                    if (String.Equals((string)playerNode.Attribute("Invisible"), "1")) continue;
+				    
+                    var url = new Uri( (string)playerNode.Attribute( "Location" ) );
 					var baseUrl = string.Format( "{0}://{1}", url.Scheme, url.Authority );
 					var player = new SonosPlayer( (string)playerNode.Attribute( "UUID" ), (string)playerNode.Attribute( "ZoneName" ), baseUrl );
 					if ((string)zoneNode.Attribute("Coordinator") == player.Uuid)
@@ -84,15 +91,16 @@ namespace Jishi.SonosUPnP
 
 					zone.Members.Add(player);
 				}
-				Zones.Add( zone );
+                if (zone.Members.Count > 0)
+				    Zones.Add( zone );
 			}
 
 			TopologyChanged.Invoke(null, new TopologyChangedEventHandlerArgs {});
 		}
 
-		private void StartMSearchSequence()
+		private void StartMSearchSequence(UdpClient client, IPEndPoint endpoint)
 		{
-			Console.WriteLine("Starting M-Search sequence");
+			Console.WriteLine("Starting M-Search sequence from {0}", endpoint);
 			const string mSearch =
 				@"M-SEARCH * HTTP/1.1
 HOST: 239.255.255.250:1900
@@ -102,28 +110,52 @@ ST: urn:schemas-upnp-org:device:ZonePlayer:1
 
 ";
 			var mSearchBytes = Encoding.ASCII.GetBytes(mSearch);
-			udpClient.BeginReceive(ReceivedPlayerNotification, null);
+            udpClient.BeginReceive(ReceivedPlayerNotification, new MSearchState { Client = client, Endpoint = endpoint });
 			udpClient.Send(mSearchBytes, mSearchBytes.Length, groupEndpoint);
 		}
 
 		private void ReceivedPlayerNotification(IAsyncResult ar)
 		{
-			if (udpClient == null) return;
 			var endpoint = new IPEndPoint(IPAddress.Any, 0);
+		    var state = (MSearchState)ar.AsyncState;
 			string response;
 			if (ar.IsCompleted)
 			{
 				var byteResult = udpClient.EndReceive(ar, ref endpoint);
 				response = Encoding.ASCII.GetString(byteResult);
-				
 				udpClient.Close();
-				udpClient = null;
 				var topologyUri = string.Format("http://{0}:1400/ZoneGroupTopology/Event", endpoint.Address);
-				notify.SubscribeToEvent( topologyUri );
+			    SonosNotify.Instance.LocalEndpoint = state.Endpoint;
+				SonosNotify.Instance.SubscribeToEvent( topologyUri );
 			}
 			
 			
 		}
+
+        private IList<IPAddress> GetLocalEndpoints()
+        {
+            //var interfaces = new Dictionary<int, IPInterfaceProperties>();
+            var addresses = new List<IPAddress>();
+
+            foreach (NetworkInterface nic in NetworkInterface.GetAllNetworkInterfaces())
+            {
+                if (nic.OperationalStatus != OperationalStatus.Up) continue;
+                if (nic.NetworkInterfaceType == NetworkInterfaceType.Loopback) continue;
+                IPInterfaceProperties ipProps = nic.GetIPProperties();
+                var ipv4Props = ipProps.GetIPv4Properties();
+                if (ipv4Props == null) continue;
+                //interfaces.Add(ipv4Props.Index, ipProps);
+                addresses.AddRange(ipProps.UnicastAddresses.Select(x => x.Address));
+            }
+
+            return addresses;
+
+            //var firstInterface = interfaces.OrderBy(i => i.Key).FirstOrDefault();
+
+            //var ipAddress = firstInterface.Value.UnicastAddresses.First(ip => !ip.Address.IsIPv6LinkLocal);
+
+            //return ipAddress.Address;
+        }
 
 		private void FetchPropertiesAndCreatePlayer(string response)
 		{
@@ -234,29 +266,20 @@ ST: urn:schemas-upnp-org:device:ZonePlayer:1
 		}
 
 		public event TopologyChangedEventHandler TopologyChanged;
+	    
+        public void Dispose()
+	    {
+	        
+	    }
 	}
 
-	internal class ExtendedWebClient : WebClient
-	{
-		[DebuggerNonUserCode]
-		protected override WebResponse GetWebResponse(WebRequest request)
-		{
-			// we need a lower timeout
-			request.Timeout = 500;
-			
-			
-			try
-			{
-				return base.GetWebResponse(request);
-			}
-			catch
-			{
-				throw;
-			}
-		}
-	}
+    internal class MSearchState
+    {
+        public UdpClient Client { get; set; }
+        public IPEndPoint Endpoint { get; set; }
+    }
 
-	public delegate void TopologyChangedEventHandler(object sender, TopologyChangedEventHandlerArgs args);
+    public delegate void TopologyChangedEventHandler(object sender, TopologyChangedEventHandlerArgs args);
 
 	public class TopologyChangedEventHandlerArgs
 	{
