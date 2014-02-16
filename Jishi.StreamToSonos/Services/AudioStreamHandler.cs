@@ -10,31 +10,42 @@ namespace Jishi.StreamToSonos.Services
 {
 	public class AudioStreamHandler
 	{
-		WasapiLoopbackCapture WaveIn { get; set; }
+	    private bool isStopping;
+	    private bool resumeRecording;
+	    WasapiLoopbackCapture WaveIn { get; set; }
 
 		public AudioStreamHandler()
 		{
 			WaveIn = new WasapiLoopbackCapture();
 			WaveIn.DataAvailable += DataAvailable;
-			//WaveIn.RecordingStopped += RecordingStopped;
+		    WaveIn.RecordingStopped += RecordingStopped;
+		    //WaveIn.RecordingStopped += RecordingStopped;
 		}
 
-		public event SampleAvailableEventHandler SampleAvailable;
+	    public event SampleAvailableEventHandler SampleAvailable;
 
 		public void StartRecording()
 		{
-			try
-			{
-				WaveIn.StartRecording();
-			} catch (Exception e)
-			{
-			}
+		    if (isStopping) resumeRecording = true;
+            else WaveIn.StartRecording();
+			
 		}
 
 		public void StopRecording()
 		{
 			WaveIn.StopRecording();
+		    isStopping = true;
 		}
+
+        private void RecordingStopped(object sender, StoppedEventArgs e)
+        {
+            isStopping = false;
+            if (resumeRecording)
+            {
+                WaveIn.StartRecording();
+                resumeRecording = false;
+            }
+        }
 
 		private void DataAvailable(object sender, WaveInEventArgs e)
 		{
@@ -71,9 +82,4 @@ namespace Jishi.StreamToSonos.Services
 	}
 
 	public delegate void SampleAvailableEventHandler(byte[] buffer);
-
-	public class SampleAvailableEventHandlerArgs
-	{
-		public byte[] Data { get; set; }
-	}
 }

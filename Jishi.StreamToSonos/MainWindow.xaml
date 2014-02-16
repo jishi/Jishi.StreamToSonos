@@ -9,6 +9,6 @@
         <ComboBox Name="ZoneList" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="170" Height="21"/>
         <Button Name="StreamAction" Content="Start Streaming" HorizontalAlignment="Left" Margin="207,9,0,0" VerticalAlignment="Top" Width="114" Grid.ColumnSpan="2" Click="StreamAction_Click"/>
         <Label Content="Buffer size" HorizontalAlignment="Left" Margin="10,36,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="79,39,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="48" TextChanged="Buffer_TextChanged" Text="20000" />
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="79,39,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="101" TextChanged="Buffer_TextChanged" Text="20000" />
     </Grid>
 </Window>
