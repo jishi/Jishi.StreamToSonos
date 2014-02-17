@@ -13,7 +13,6 @@ namespace Jishi.SonosUPnP
 {
 	public class SonosDiscovery : IDisposable
 	{
-		private UdpClient udpClient;
 		private IPEndPoint groupEndpoint = new IPEndPoint(IPAddress.Parse("239.255.255.250"), 1900);
 		private IList<SonosZone> zones = new List<SonosZone>();
 		private IList<SonosPlayer> players = new List<SonosPlayer>();
@@ -32,7 +31,7 @@ namespace Jishi.SonosUPnP
 				try
 				{
 				    var localEndpoint = new IPEndPoint(ip, port);
-					udpClient = new UdpClient(localEndpoint);
+					var udpClient = new UdpClient(localEndpoint);
                     // okay, join multicast
                     udpClient.JoinMulticastGroup(IPAddress.Parse("239.255.255.250"));
 				    StartMSearchSequence(udpClient, localEndpoint);
@@ -110,20 +109,21 @@ ST: urn:schemas-upnp-org:device:ZonePlayer:1
 
 ";
 			var mSearchBytes = Encoding.ASCII.GetBytes(mSearch);
-            udpClient.BeginReceive(ReceivedPlayerNotification, new MSearchState { Client = client, Endpoint = endpoint });
-			udpClient.Send(mSearchBytes, mSearchBytes.Length, groupEndpoint);
+			client.BeginReceive( ReceivedPlayerNotification, new MSearchState { Client = client, Endpoint = endpoint } );
+			client.Send( mSearchBytes, mSearchBytes.Length, groupEndpoint );
 		}
 
 		private void ReceivedPlayerNotification(IAsyncResult ar)
 		{
 			var endpoint = new IPEndPoint(IPAddress.Any, 0);
 		    var state = (MSearchState)ar.AsyncState;
+			var client = state.Client;
 			string response;
 			if (ar.IsCompleted)
 			{
-				var byteResult = udpClient.EndReceive(ar, ref endpoint);
+				var byteResult = client.EndReceive( ar, ref endpoint );
 				response = Encoding.ASCII.GetString(byteResult);
-				udpClient.Close();
+				client.Close();
 				var topologyUri = string.Format("http://{0}:1400/ZoneGroupTopology/Event", endpoint.Address);
 			    SonosNotify.Instance.LocalEndpoint = state.Endpoint;
 				SonosNotify.Instance.SubscribeToEvent( topologyUri );
@@ -145,7 +145,7 @@ ST: urn:schemas-upnp-org:device:ZonePlayer:1
                 var ipv4Props = ipProps.GetIPv4Properties();
                 if (ipv4Props == null) continue;
                 //interfaces.Add(ipv4Props.Index, ipProps);
-                addresses.AddRange(ipProps.UnicastAddresses.Select(x => x.Address));
+				addresses.AddRange( ipProps.UnicastAddresses.Where( u => u.Address.AddressFamily.Equals(AddressFamily.InterNetwork) ).Select( x => x.Address ) );
             }
 
             return addresses;
