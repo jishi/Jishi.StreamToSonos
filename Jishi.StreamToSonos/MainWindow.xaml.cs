@@ -26,6 +26,7 @@ namespace Jishi.StreamToSonos
 		{
 			//server.BufferSize = 20000;
 			InitializeComponent();
+		    KeyDown += OnKeyDown;
 		}
 
 		public void UpdateZoneList( IList<SonosZone> zones )
@@ -42,6 +43,14 @@ namespace Jishi.StreamToSonos
 				ZoneList.Items.Add( item );
 			}
 		}
+
+        void OnKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.F9)
+            {
+                throw new Exception("Exception triggered");
+            }
+        }
 
 		private void StreamAction_Click( object sender, RoutedEventArgs e )
 		{

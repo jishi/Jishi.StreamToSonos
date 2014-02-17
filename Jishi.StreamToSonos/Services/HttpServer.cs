@@ -39,8 +39,8 @@ namespace Jishi.StreamToSonos.Services
             if (isDisposed) return;
             Listener.BeginGetContext(HandleConnection, null);
             // Clear out buffer if possible
-            initialBuffer.SetLength(0);
             isBuffering = true;
+            resetEvent.Reset();
         }
 
         private void HandleConnection(IAsyncResult ar)
@@ -66,13 +66,16 @@ namespace Jishi.StreamToSonos.Services
                 SendWaveHeader(currentStream);
                 while (!isDisposed)
                 {
-                    resetEvent.WaitOne(1000);
+                    resetEvent.WaitOne();
                     byte[] chunk;
                     while (flowBuffer.TryDequeue(out chunk))
                     {
                         //Console.WriteLine("Writing {0} bytes to player", chunk.Length);
-                        currentStream.Write(chunk, 0, chunk.Length);
-                        currentStream.Flush();
+                        currentStream.BeginWrite(chunk, 0, chunk.Length, result =>
+                            {
+                                currentStream.Flush();
+                            }, currentStream);
+                        
                         //Console.WriteLine("Flushed");
                     }
                     resetEvent.Reset();
@@ -108,7 +111,10 @@ namespace Jishi.StreamToSonos.Services
         {
             flowBuffer.Enqueue(buffer);
             if (isBuffering && flowBuffer.Sum(x => x.Length) < BufferSize) return;
+            if (isBuffering) Console.WriteLine("Buffer was {0}", flowBuffer.Sum(x => x.Length));
+            
             isBuffering = false;
+            
             resetEvent.Set();
         }
 
