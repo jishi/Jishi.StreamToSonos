@@ -14,12 +14,19 @@ namespace Jishi.StreamToSonos.Services
 	    private bool resumeRecording;
 	    WasapiLoopbackCapture WaveIn { get; set; }
 
+		public int SampleRate
+		{
+			get
+			{
+				return WaveIn.WaveFormat.SampleRate;
+			}
+		}
+
 		public AudioStreamHandler()
 		{
 			WaveIn = new WasapiLoopbackCapture();
 			WaveIn.DataAvailable += DataAvailable;
 		    WaveIn.RecordingStopped += RecordingStopped;
-		    //WaveIn.RecordingStopped += RecordingStopped;
 		}
 
 	    public event SampleAvailableEventHandler SampleAvailable;

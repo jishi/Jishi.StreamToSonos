@@ -142,10 +142,20 @@ ST: urn:schemas-upnp-org:device:ZonePlayer:1
                 if (nic.OperationalStatus != OperationalStatus.Up) continue;
                 if (nic.NetworkInterfaceType == NetworkInterfaceType.Loopback) continue;
                 IPInterfaceProperties ipProps = nic.GetIPProperties();
-                var ipv4Props = ipProps.GetIPv4Properties();
-                if (ipv4Props == null) continue;
-                //interfaces.Add(ipv4Props.Index, ipProps);
-				addresses.AddRange( ipProps.UnicastAddresses.Where( u => u.Address.AddressFamily.Equals(AddressFamily.InterNetwork) ).Select( x => x.Address ) );
+	            try
+	            {
+		            var ipv4Props = ipProps.GetIPv4Properties();
+		            if ( ipv4Props == null )
+			            continue;
+		            //interfaces.Add(ipv4Props.Index, ipProps);
+		            addresses.AddRange(
+			            ipProps.UnicastAddresses.Where( u => u.Address.AddressFamily.Equals( AddressFamily.InterNetwork ) )
+				            .Select( x => x.Address ) );
+	            }
+	            catch ( NetworkInformationException ex )
+	            {
+		            Console.WriteLine( "Interface doesn't have any IPv4 properties {0}", nic.Name );
+	            }
             }
 
             return addresses;
