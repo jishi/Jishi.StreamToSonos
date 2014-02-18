@@ -24,7 +24,7 @@ namespace Jishi.SonosUPnP
 			listener = new HttpListener();
 			var port = FindAvailablePort();
 
-			notifyUrl = string.Format("http://*:{0}/notify/", port);
+			notifyUrl = string.Format("http://+:{0}/notify/", port);
 
 			listener.Prefixes.Add(notifyUrl);
 			listener.Start();
@@ -105,7 +105,7 @@ namespace Jishi.SonosUPnP
 			if (uri == null)
 				return;
 
-			var localUri = uri.Replace("*", ipAddress.ToString());
+			var localUri = uri.Replace("+", ipAddress.ToString());
 
 			client.Headers.Add( "USER-AGENT", "Linux UPnP/1.0 Sonos/19.3-53220 (WDCR:Jishi.SonosPartyMode)" );
 			client.Headers.Add( "CALLBACK", string.Format( "<{0}>", localUri ) );

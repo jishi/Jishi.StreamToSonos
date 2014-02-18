@@ -19,6 +19,7 @@ namespace Jishi.StreamToSonos.Services
         ConcurrentQueue<byte[]> flowBuffer = new ConcurrentQueue<byte[]>();
         readonly ManualResetEvent resetEvent = new ManualResetEvent(false);
         public int BufferSize { get; set; }
+		byte[] header;
 
 
         private bool isDisposed = false;
@@ -96,18 +97,32 @@ namespace Jishi.StreamToSonos.Services
 
         private void SendWaveHeader(Stream outputStream)
         {
-            using (
-                var headerStream =
-                    Assembly.GetExecutingAssembly()
-                            .GetManifestResourceStream("Jishi.StreamToSonos.Resources.wav_header.bin")
-                )
-            {
-                if (headerStream != null)
-                    headerStream.CopyTo(outputStream);
-            }
+	        
+	        if ( header == null )
+	        {
+		        using ( var headerStream = Assembly.GetExecutingAssembly()
+			        .GetManifestResourceStream( "Jishi.StreamToSonos.Resources.wav_header.bin" ) )
+		        {
+			        header = new byte[44];
+					if ( headerStream != null )
+					{
+						headerStream.Read( header, 0, 44 );
+					}
+		        }
+	        }
+			
+			// Fix sample rate
+	        if ( audioStreamHandler.SampleRate != 44100 )
+	        {
+		        var sampleRateInBytes = BitConverter.GetBytes((short)audioStreamHandler.SampleRate);
+		        header[24] = sampleRateInBytes[0];
+				header[25] = sampleRateInBytes[1];
+	        }
+			Console.WriteLine( BitConverter.ToString( header ) );
+	        currentStream.Write( header, 0, header.Length );
         }
 
-        private void SampleAvailable(byte[] buffer)
+	    private void SampleAvailable(byte[] buffer)
         {
             flowBuffer.Enqueue(buffer);
             if (isBuffering && flowBuffer.Sum(x => x.Length) < BufferSize) return;
