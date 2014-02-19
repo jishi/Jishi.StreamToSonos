@@ -54,6 +54,9 @@ namespace Jishi.StreamToSonos
             var time = DateTime.Now;
             var filename = string.Format("craschdump-{0}.txt", time.ToString("yyyyMMdd HHmmss"));
             var file = File.CreateText(filename);
+            file.Write(e.Message);
+            if (e.InnerException != null)
+                file.Write(e.InnerException.Message);
             file.Write(e.StackTrace);
             file.Close();
         }
