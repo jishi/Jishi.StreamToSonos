@@ -48,9 +48,6 @@
     <Reference Include="NAudio">
       <HintPath>..\..\..\..\Users\jimmy\Downloads\StreamToSonos-prealpha-2\NAudio.dll</HintPath>
     </Reference>
-    <Reference Include="Nowin">
-      <HintPath>..\packages\Nowin.0.11.0.0\lib\net45\Nowin.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -72,6 +69,7 @@
     </ApplicationDefinition>
     <Compile Include="Services\AudioStreamHandler.cs" />
     <Compile Include="Services\HttpServer.cs" />
+    <Compile Include="Services\Logger.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

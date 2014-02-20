@@ -10,6 +10,7 @@ using System.Windows.Controls;
 using System.Windows.Threading;
 using Jishi.SonosUPnP;
 using Jishi.StreamToSonos.Services;
+using log4net;
 
 namespace Jishi.StreamToSonos
 {
@@ -20,16 +21,17 @@ namespace Jishi.StreamToSonos
 	{
 		public static HttpServer server;
 		public static SonosDiscovery discovery;
+	    private ILog log;
 
-		protected override void OnStartup( StartupEventArgs e )
+	    protected override void OnStartup( StartupEventArgs e )
 		{
+            log = Logger.GetLogger(GetType());
             AppDomain.CurrentDomain.UnhandledException += HandleException;
             DispatcherUnhandledException += HandleDispatcherException;
             base.OnStartup( e );
 			discovery = new SonosDiscovery();
 			discovery.TopologyChanged += TopologyChanged;
 			server = new HttpServer();
-            
 		}
 
 		protected override void OnExit( ExitEventArgs e )
@@ -41,16 +43,17 @@ namespace Jishi.StreamToSonos
 
         private void HandleDispatcherException(object sender, DispatcherUnhandledExceptionEventArgs e)
         {
-            CreateCraschDump(e.Exception);
+            CreateCrashDump(e.Exception);
         }
 
         private void HandleException(object sender, UnhandledExceptionEventArgs e)
         {
-            CreateCraschDump(e.ExceptionObject as Exception);
+            CreateCrashDump(e.ExceptionObject as Exception);
         }
 
-        private void CreateCraschDump(Exception e)
+        private void CreateCrashDump(Exception e)
         {
+            log.Error(e);
             var time = DateTime.Now;
             var filename = string.Format("craschdump-{0}.txt", time.ToString("yyyyMMdd HHmmss"));
             var file = File.CreateText(filename);

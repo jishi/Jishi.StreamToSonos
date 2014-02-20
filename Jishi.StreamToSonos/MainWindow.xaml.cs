@@ -54,7 +54,8 @@ namespace Jishi.StreamToSonos
 
 		private void StreamAction_Click( object sender, RoutedEventArgs e )
 		{
-			var selectedItem = (ComboBoxItem) ZoneList.Items[ZoneList.SelectedIndex];
+		    if (ZoneList.SelectedIndex == -1) return;
+            var selectedItem = (ComboBoxItem) ZoneList.Items[ZoneList.SelectedIndex];
 			var player = (SonosPlayer) selectedItem.DataContext;
 			Console.WriteLine( player.RoomName );
 			// Find local endpoint

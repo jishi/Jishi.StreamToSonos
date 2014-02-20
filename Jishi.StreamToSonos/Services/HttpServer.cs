@@ -8,13 +8,13 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Mono.Net;
+using log4net;
 
 namespace Jishi.StreamToSonos.Services
 {
     public class HttpServer : IDisposable
     {
         AudioStreamHandler audioStreamHandler = new AudioStreamHandler();
-        Stream currentStream = null;
         readonly MemoryStream initialBuffer = new MemoryStream();
         ConcurrentQueue<byte[]> flowBuffer = new ConcurrentQueue<byte[]>();
         readonly ManualResetEvent resetEvent = new ManualResetEvent(false);
@@ -24,10 +24,13 @@ namespace Jishi.StreamToSonos.Services
 
         private bool isDisposed = false;
         private bool isBuffering = true;
+        private ILog log;
         private HttpListener Listener { get; set; }
 
         public HttpServer()
         {
+            log = Logger.GetLogger(GetType());
+            log.Debug("Starting Listener");
             Listener = new HttpListener();
             Listener.Prefixes.Add("http://+:9283/");
             Listener.Start();
@@ -38,6 +41,7 @@ namespace Jishi.StreamToSonos.Services
         public void StartListening()
         {
             if (isDisposed) return;
+            log.Debug("Started listening for requests");
             Listener.BeginGetContext(HandleConnection, null);
             // Clear out buffer if possible
             isBuffering = true;
@@ -48,50 +52,58 @@ namespace Jishi.StreamToSonos.Services
         {
 
             if (isDisposed) return;
-            var context = Listener.EndGetContext(ar);
+
+            StartListening();
             
-            Console.WriteLine("Client connected {0}, {1} {2},\n{3} {4}", context.Request.RemoteEndPoint,
+            var context = Listener.EndGetContext(ar);
+            log.DebugFormat("Received connection from {0}", context.Request.RemoteEndPoint);
+
+            log.DebugFormat("Client connected {0}, {1} {2},\n{3} {4}", context.Request.RemoteEndPoint,
                               context.Request.HttpMethod, context.Request.RawUrl,
                               context.Request.Headers, DateTime.Now);
 
             context.Response.SendChunked = true;
             context.Response.ContentType = "audio/x-wave";
-            Console.WriteLine("{0}, {1}", context.Response.StatusCode, context.Response.StatusDescription);
-            Console.WriteLine("{0}, {1}", context.Response.Headers, context.Response.ContentType);
-            currentStream = context.Response.OutputStream;
-            Console.WriteLine("StartRecording");
+            log.DebugFormat("{0}, {1}", context.Response.StatusCode, context.Response.StatusDescription);
+            log.DebugFormat("{0}, {1}", context.Response.Headers, context.Response.ContentType);
+            var currentStream = context.Response.OutputStream;
+            log.DebugFormat("StartRecording");
             audioStreamHandler.StartRecording();
            
             try
             {
                 SendWaveHeader(currentStream);
+                log.Debug("Entering send loop");
                 while (!isDisposed)
                 {
                     resetEvent.WaitOne();
+                    if (!Listener.IsListening) break;
                     byte[] chunk;
                     while (flowBuffer.TryDequeue(out chunk))
                     {
-                        //Console.WriteLine("Writing {0} bytes to player", chunk.Length);
-                        currentStream.BeginWrite(chunk, 0, chunk.Length, result =>
-                            {
-                                currentStream.Flush();
-                            }, currentStream);
-                        
-                        //Console.WriteLine("Flushed");
+                        currentStream.Write(chunk, 0, chunk.Length);
+                        currentStream.Flush();
                     }
                     resetEvent.Reset();
-                    
+
                 }
+
+                log.Debug("Disposed called, loop exited");
+                currentStream.Dispose();
+                Cleanup();
             }
             catch (IOException e)
             {
-                Console.Error.WriteLine(e.StackTrace);
-                Console.Error.WriteLine(e);
-                Console.WriteLine("Stopped recording");
+                log.Error("Error when writing response", e);
+                log.DebugFormat("Stopped recording");
                 audioStreamHandler.StopRecording();
                 // Clear buffer as well.
                 flowBuffer = new ConcurrentQueue<byte[]>();
-                StartListening();
+
+            }
+            finally
+            {
+                
             }
         }
 
@@ -118,15 +130,15 @@ namespace Jishi.StreamToSonos.Services
 		        header[24] = sampleRateInBytes[0];
 				header[25] = sampleRateInBytes[1];
 	        }
-			Console.WriteLine( BitConverter.ToString( header ) );
-	        currentStream.Write( header, 0, header.Length );
+			log.DebugFormat("Writing header {0}", BitConverter.ToString( header ) );
+            outputStream.Write(header, 0, header.Length);
         }
 
 	    private void SampleAvailable(byte[] buffer)
         {
             flowBuffer.Enqueue(buffer);
             if (isBuffering && flowBuffer.Sum(x => x.Length) < BufferSize) return;
-            if (isBuffering) Console.WriteLine("Buffer was {0}", flowBuffer.Sum(x => x.Length));
+            if (isBuffering) log.DebugFormat("Buffer was {0}", flowBuffer.Sum(x => x.Length));
             
             isBuffering = false;
             
@@ -135,8 +147,14 @@ namespace Jishi.StreamToSonos.Services
 
         public void Dispose()
         {
-            Listener.Close();
+            log.Info("Disposing HTTP Server");
             isDisposed = true;
+        }
+
+        private void Cleanup()
+        {
+            log.Info("Closing all sockets in HTTP Server");
+            Listener.Close();
         }
     }
 }
