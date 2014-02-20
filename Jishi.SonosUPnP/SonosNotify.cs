@@ -6,6 +6,10 @@ using System.Net;
 using System.Net.NetworkInformation;
 using System.Net.Sockets;
 using System.Xml.Linq;
+using HttpListener = Mono.Net.HttpListener;
+using HttpListenerContext = Mono.Net.HttpListenerContext;
+using HttpListenerRequest = Mono.Net.HttpListenerRequest;
+using HttpListenerResponse = Mono.Net.HttpListenerResponse;
 
 namespace Jishi.SonosUPnP
 {
@@ -99,13 +103,12 @@ namespace Jishi.SonosUPnP
 			//NT: upnp:event
 			//TIMEOUT: Second-3600
 			// find local IP
-			var ipAddress = FindIpAddress(subscribeUri);
 			var uri = listener.Prefixes.FirstOrDefault();
 
 			if (uri == null)
 				return;
 
-			var localUri = uri.Replace("+", ipAddress.ToString());
+			var localUri = uri.Replace("+", LocalEndpoint.Address.ToString());
 
 			client.Headers.Add( "USER-AGENT", "Linux UPnP/1.0 Sonos/19.3-53220 (WDCR:Jishi.SonosPartyMode)" );
 			client.Headers.Add( "CALLBACK", string.Format( "<{0}>", localUri ) );

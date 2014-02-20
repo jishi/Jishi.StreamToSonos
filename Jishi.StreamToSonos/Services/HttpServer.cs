@@ -3,11 +3,11 @@ using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Net;
 using System.Reflection;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using Mono.Net;
 
 namespace Jishi.StreamToSonos.Services
 {
@@ -83,12 +83,12 @@ namespace Jishi.StreamToSonos.Services
                     
                 }
             }
-            catch (HttpListenerException e)
+            catch (IOException e)
             {
-                Console.Error.WriteLine(e.StackTrace, e);
+                Console.Error.WriteLine(e.StackTrace);
+                Console.Error.WriteLine(e);
                 Console.WriteLine("Stopped recording");
                 audioStreamHandler.StopRecording();
-                currentStream.Close();
                 // Clear buffer as well.
                 flowBuffer = new ConcurrentQueue<byte[]>();
                 StartListening();
