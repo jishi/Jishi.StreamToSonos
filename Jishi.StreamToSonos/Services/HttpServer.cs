@@ -53,8 +53,6 @@ namespace Jishi.StreamToSonos.Services
 
             if (isDisposed) return;
 
-            StartListening();
-            
             var context = Listener.EndGetContext(ar);
             log.DebugFormat("Received connection from {0}", context.Request.RemoteEndPoint);
 
@@ -76,7 +74,7 @@ namespace Jishi.StreamToSonos.Services
                 log.Debug("Entering send loop");
                 while (!isDisposed)
                 {
-                    resetEvent.WaitOne();
+                    resetEvent.WaitOne(5000);
                     if (!Listener.IsListening) break;
                     byte[] chunk;
                     while (flowBuffer.TryDequeue(out chunk))
@@ -103,7 +101,7 @@ namespace Jishi.StreamToSonos.Services
             }
             finally
             {
-                
+				StartListening();
             }
         }
 

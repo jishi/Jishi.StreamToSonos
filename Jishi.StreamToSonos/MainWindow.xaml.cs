@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -62,6 +63,7 @@ namespace Jishi.StreamToSonos
 			var localIp = SonosNotify.Instance.LocalEndpoint.Address.ToString();
 			var streamUrl = string.Format( "http://{0}:9283/stream.wav", localIp );
 			player.SetAvTransportUri( streamUrl );
+			Thread.Sleep(500);
 			player.Play();
 		}
 

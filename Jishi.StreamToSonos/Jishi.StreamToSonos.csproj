@@ -45,9 +45,6 @@
     <Reference Include="Mono.Security">
       <HintPath>..\packages\Mono.Net.HttpListener.1.0.0.0\lib\net45\Mono.Security.dll</HintPath>
     </Reference>
-    <Reference Include="NAudio">
-      <HintPath>..\..\..\..\Users\jimmy\Downloads\StreamToSonos-prealpha-2\NAudio.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -116,6 +113,10 @@
     <ProjectReference Include="..\Jishi.SonosUPnP\Jishi.SonosUPnP.csproj">
       <Project>{96d35872-397f-440e-895f-33203aaab6e8}</Project>
       <Name>Jishi.SonosUPnP</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NAudio\NAudio.csproj">
+      <Project>{da4f02e3-0b5e-42cd-b8d9-5583fa51d66e}</Project>
+      <Name>NAudio</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

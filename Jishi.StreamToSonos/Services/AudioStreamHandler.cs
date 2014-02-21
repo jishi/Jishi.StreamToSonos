@@ -56,17 +56,20 @@ namespace Jishi.StreamToSonos.Services
 
 		private void DataAvailable(object sender, WaveInEventArgs e)
 		{
+			var bytesRecorded = e.BytesRecorded; //e.Buffer.Length/2;
 			// Convert to 16 bit
-			if (e.BytesRecorded%8 > 0)
+			if ( bytesRecorded % 8 > 0 )
 			{
 				Console.WriteLine("float sample not multiple of 8");
 			}
-			byte[] destBuffer = new byte[e.BytesRecorded/2];
+
+
+			byte[] destBuffer = new byte[bytesRecorded / 2];
 			var readBuffer = e.Buffer;
 			WaveBuffer sourceWaveBuffer = new WaveBuffer(readBuffer);
 			WaveBuffer destWaveBuffer = new WaveBuffer(destBuffer);
 
-			int sourceSamples = e.BytesRecorded/4;
+			int sourceSamples = bytesRecorded / 4;
 			int destOffset = 0;
 			for (int sample = 0; sample < sourceSamples; sample++)
 			{
