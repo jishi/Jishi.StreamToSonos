@@ -76,10 +76,14 @@ namespace Jishi.StreamToSonos.Services
 				// adjust volume
 				float sample32 = sourceWaveBuffer.FloatBuffer[sample]*1.0f;
 				// clip
-				if (sample32 > 1.0f)
+				if ( sample32 > 1.0f )
+				{
 					sample32 = 1.0f;
-				if (sample32 < -1.0f)
+				}
+				if ( sample32 < -1.0f )
+				{
 					sample32 = -1.0f;
+				}
 				destWaveBuffer.ShortBuffer[destOffset++] = (short) (sample32*32767);
 			}
 
