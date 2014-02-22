@@ -56,7 +56,7 @@ namespace Jishi.StreamToSonos.Services
 
 		private void DataAvailable(object sender, WaveInEventArgs e)
 		{
-			var bytesRecorded = e.BytesRecorded; //e.Buffer.Length/2;
+			var bytesRecorded = e.Buffer.Length/2;
 			// Convert to 16 bit
 			if ( bytesRecorded % 8 > 0 )
 			{
