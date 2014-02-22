@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using NAudio.Utils;
 using NAudio.Wave;
+using log4net;
 
 namespace Jishi.StreamToSonos.Services
 {
@@ -12,6 +13,7 @@ namespace Jishi.StreamToSonos.Services
 	{
 	    private bool isStopping;
 	    private bool resumeRecording;
+	    private ILog log;
 	    WasapiLoopbackCapture WaveIn { get; set; }
 
 		public int SampleRate
@@ -24,18 +26,26 @@ namespace Jishi.StreamToSonos.Services
 
 		public AudioStreamHandler()
 		{
-			WaveIn = new WasapiLoopbackCapture();
+		    log = Logger.GetLogger(GetType());
+            WaveIn = new WasapiLoopbackCapture();
 			WaveIn.DataAvailable += DataAvailable;
 		    WaveIn.RecordingStopped += RecordingStopped;
 		}
 
 	    public event SampleAvailableEventHandler SampleAvailable;
 
+        public bool IsRecording { get; private set; }
+
 		public void StartRecording()
 		{
-		    if (isStopping) resumeRecording = true;
-            else WaveIn.StartRecording();
-			
+		    if (isStopping)
+		    {
+		        resumeRecording = true;
+		        return;
+		    }
+            WaveIn.StartRecording();
+		    IsRecording = true;
+
 		}
 
 		public void StopRecording()
@@ -47,16 +57,24 @@ namespace Jishi.StreamToSonos.Services
         private void RecordingStopped(object sender, StoppedEventArgs e)
         {
             isStopping = false;
+            IsRecording = false;
             if (resumeRecording)
             {
                 WaveIn.StartRecording();
                 resumeRecording = false;
+                IsRecording = true;
             }
         }
 
 		private void DataAvailable(object sender, WaveInEventArgs e)
 		{
-			var bytesRecorded = e.BytesRecorded; //e.Buffer.Length/2;
+			if (e.BytesRecorded == 0)
+			{
+			    log.DebugFormat("Sample was zero length, but buffer was {0}", e.Buffer.Length);
+			}
+
+            log.DebugFormat("buffer size {0} recorded size {1}", e.Buffer.Length, e.BytesRecorded);
+            var bytesRecorded = e.BytesRecorded == 0 ? e.Buffer.Length / 2 + 1560: e.BytesRecorded;
 			// Convert to 16 bit
 			if ( bytesRecorded % 8 > 0 )
 			{
