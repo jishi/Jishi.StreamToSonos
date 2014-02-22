@@ -75,7 +75,7 @@ namespace Jishi.StreamToSonos.Services
                 while (!isDisposed)
                 {
                     resetEvent.WaitOne(5000);
-                    if (!Listener.IsListening) break;
+                    if (!audioStreamHandler.IsRecording) break;
                     byte[] chunk;
                     while (flowBuffer.TryDequeue(out chunk))
                     {
@@ -134,6 +134,10 @@ namespace Jishi.StreamToSonos.Services
 
 	    private void SampleAvailable(byte[] buffer)
         {
+            if (buffer.Length == 0)
+            {
+                log.DebugFormat("sample was zero length!");
+            }
             flowBuffer.Enqueue(buffer);
             if (isBuffering && flowBuffer.Sum(x => x.Length) < BufferSize) return;
             if (isBuffering) log.DebugFormat("Buffer was {0}", flowBuffer.Sum(x => x.Length));
