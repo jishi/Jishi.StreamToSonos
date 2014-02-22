@@ -29,7 +29,7 @@ namespace Jishi.SonosUPnP
 			var port = FindAvailablePort();
 
 			notifyUrl = string.Format("http://+:{0}/notify/", port);
-
+		    Debug.WriteLine(notifyUrl);
 			listener.Prefixes.Add(notifyUrl);
 			listener.Start();
 			listener.BeginGetContext(HandleRequest, listener);

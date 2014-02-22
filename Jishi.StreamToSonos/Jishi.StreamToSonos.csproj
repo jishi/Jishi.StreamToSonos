@@ -67,6 +67,7 @@
     <Compile Include="Services\AudioStreamHandler.cs" />
     <Compile Include="Services\HttpServer.cs" />
     <Compile Include="Services\Logger.cs" />
+    <Compile Include="SilentWaveProvider.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

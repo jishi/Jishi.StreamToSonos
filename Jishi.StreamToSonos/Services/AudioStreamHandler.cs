@@ -9,7 +9,7 @@ using log4net;
 
 namespace Jishi.StreamToSonos.Services
 {
-	public class AudioStreamHandler
+	public class AudioStreamHandler : IDisposable
 	{
 	    private bool isStopping;
 	    private bool resumeRecording;
@@ -30,6 +30,8 @@ namespace Jishi.StreamToSonos.Services
             WaveIn = new WasapiLoopbackCapture();
 			WaveIn.DataAvailable += DataAvailable;
 		    WaveIn.RecordingStopped += RecordingStopped;
+            WaveOut = new WaveOut();
+		    WaveOut.Init(new SilentWaveProvider());
 		}
 
 	    public event SampleAvailableEventHandler SampleAvailable;
@@ -43,15 +45,21 @@ namespace Jishi.StreamToSonos.Services
 		        resumeRecording = true;
 		        return;
 		    }
+            
+		    WaveOut.Play();
+
             WaveIn.StartRecording();
 		    IsRecording = true;
 
 		}
 
-		public void StopRecording()
+        private WaveOut WaveOut { get; set; }
+
+	    public void StopRecording()
 		{
 			WaveIn.StopRecording();
 		    isStopping = true;
+	        WaveOut.Stop();
 		}
 
         private void RecordingStopped(object sender, StoppedEventArgs e)
@@ -68,17 +76,11 @@ namespace Jishi.StreamToSonos.Services
 
 		private void DataAvailable(object sender, WaveInEventArgs e)
 		{
-			if (e.BytesRecorded == 0)
-			{
-			    log.DebugFormat("Sample was zero length, but buffer was {0}", e.Buffer.Length);
-			}
-
-            log.DebugFormat("buffer size {0} recorded size {1}", e.Buffer.Length, e.BytesRecorded);
-            var bytesRecorded = e.BytesRecorded == 0 ? e.Buffer.Length / 2 + 1560: e.BytesRecorded;
+			var bytesRecorded = e.BytesRecorded;
 			// Convert to 16 bit
 			if ( bytesRecorded % 8 > 0 )
 			{
-				Console.WriteLine("float sample not multiple of 8");
+				log.Error("float sample not multiple of 8");
 			}
 
 
@@ -111,6 +113,12 @@ namespace Jishi.StreamToSonos.Services
 						
 					}, null);
 		}
+
+	    public void Dispose()
+	    {
+	        WaveOut.Dispose();
+	        WaveIn.Dispose();
+	    }
 	}
 
 	public delegate void SampleAvailableEventHandler(byte[] buffer);
