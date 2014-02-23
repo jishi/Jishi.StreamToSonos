@@ -26,6 +26,7 @@ namespace Jishi.StreamToSonos.Services
         private bool isDisposed = false;
         private bool isBuffering = true;
         private ILog log;
+        private bool isConnected;
         private HttpListener Listener { get; set; }
 
         public HttpServer()
@@ -33,7 +34,7 @@ namespace Jishi.StreamToSonos.Services
             log = Logger.GetLogger(GetType());
             log.Debug("Starting Listener");
             Listener = new HttpListener();
-            Listener.Prefixes.Add("http://+:9283/");
+            Listener.Prefixes.Add("http://*:9283/");
             Listener.Start();
             StartListening();
             audioStreamHandler.SampleAvailable += SampleAvailable;
@@ -53,7 +54,7 @@ namespace Jishi.StreamToSonos.Services
         {
 
             if (isDisposed) return;
-
+            isConnected = true;
             var context = Listener.EndGetContext(ar);
             log.DebugFormat("Received connection from {0}", context.Request.RemoteEndPoint);
 
@@ -61,43 +62,45 @@ namespace Jishi.StreamToSonos.Services
                               context.Request.HttpMethod, context.Request.RawUrl,
                               context.Request.Headers, DateTime.Now);
 
-            context.Response.SendChunked = true;
+            context.Response.SendChunked = false;
             context.Response.ContentType = "audio/x-wave";
             log.DebugFormat("{0}, {1}", context.Response.StatusCode, context.Response.StatusDescription);
             log.DebugFormat("{0}, {1}", context.Response.Headers, context.Response.ContentType);
             var currentStream = context.Response.OutputStream;
             log.DebugFormat("StartRecording");
             audioStreamHandler.StartRecording();
-           
             try
             {
                 SendWaveHeader(currentStream);
+                SendSilent(currentStream, BufferSize);
                 log.Debug("Entering send loop");
-                while (!isDisposed)
+                while (!isDisposed && isConnected)
                 {
                     resetEvent.WaitOne(5000);
                     if (!audioStreamHandler.IsRecording) break;
                     byte[] chunk;
-                    while (flowBuffer.TryDequeue(out chunk))
+                    while (isConnected && flowBuffer.TryDequeue(out chunk))
                     {
-                        currentStream.Write(chunk, 0, chunk.Length);
-                        currentStream.Flush();
+                        WriteToStream(currentStream, chunk);
                     }
                     resetEvent.Reset();
-
                 }
 
-                log.Debug("Disposed called, loop exited");
-                currentStream.Dispose();
-                Cleanup();
-            }
-            catch (IOException e)
-            {
-                log.Error("Error when writing response", e);
+                log.Debug("Disconnected called, loop exited");
+                if (isDisposed)
+                {
+                    currentStream.Dispose();
+                    Cleanup();
+                }
+
                 log.DebugFormat("Stopped recording");
                 audioStreamHandler.StopRecording();
                 // Clear buffer as well.
                 flowBuffer = new ConcurrentQueue<byte[]>();
+            }
+            catch (IOException e)
+            {
+                
 
             }
             finally
@@ -106,7 +109,40 @@ namespace Jishi.StreamToSonos.Services
             }
         }
 
-        private void SendWaveHeader(Stream outputStream)
+        private async void SendSilent(Stream stream, int bufferSize)
+        {
+            var buffer = new byte[bufferSize];
+            Array.Clear(buffer, 0, bufferSize);
+            try
+            {
+                stream.Write(buffer, 0, buffer.Length);
+                stream.Flush();
+            }
+            catch (IOException ex)
+            {
+                log.Debug(ex);
+            }
+        }
+
+        private async void WriteToStream(Stream currentStream, byte[] chunk)
+        {
+            try
+            {
+                currentStream.Write(chunk, 0, chunk.Length);
+                currentStream.Flush();
+            }
+            catch (IOException ex)
+            {
+                log.Debug(ex.Message);
+                isConnected = false;
+            }
+            catch (ObjectDisposedException ex)
+            {
+                isConnected = false;
+            }
+        }
+
+        private async void SendWaveHeader(Stream outputStream)
         {
 	        
 	        if ( header == null )
@@ -117,7 +153,8 @@ namespace Jishi.StreamToSonos.Services
 			        header = new byte[44];
 					if ( headerStream != null )
 					{
-						headerStream.Read( header, 0, 44 );
+						await headerStream.ReadAsync( header, 0, 44 );
+					    await headerStream.FlushAsync();
 					}
 		        }
 	        }
@@ -130,7 +167,16 @@ namespace Jishi.StreamToSonos.Services
 				header[25] = sampleRateInBytes[1];
 	        }
 			log.DebugFormat("Writing header {0}", BitConverter.ToString( header ) );
-            outputStream.Write(header, 0, header.Length);
+            try
+            {
+                outputStream.Write(header, 0, header.Length);
+                outputStream.Flush();
+            }
+            catch (IOException ex)
+            {
+                log.Debug(ex);
+                isConnected = false;
+            }
         }
 
 	    private void SampleAvailable(byte[] buffer)
@@ -140,11 +186,6 @@ namespace Jishi.StreamToSonos.Services
                 log.DebugFormat("sample was zero length!");
             }
             flowBuffer.Enqueue(buffer);
-            if (isBuffering && flowBuffer.Sum(x => x.Length) < BufferSize) return;
-            if (isBuffering) log.DebugFormat("Buffer was {0}", flowBuffer.Sum(x => x.Length));
-            
-            isBuffering = false;
-            
             resetEvent.Set();
         }
 

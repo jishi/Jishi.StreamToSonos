@@ -19,7 +19,7 @@ namespace Jishi.StreamToSonos
 
         public int Read(byte[] buffer, int offset, int count)
         {
-            Array.Clear(buffer, 0, buffer.Length);
+            //Array.Clear(buffer, 0, buffer.Length);
             return buffer.Length;
         }
     }

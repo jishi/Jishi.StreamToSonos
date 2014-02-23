@@ -234,6 +234,11 @@ namespace NAudio.CoreAudioApi
                     recordBufferOffset = 0;
                 }
 
+                if ((flags & AudioClientBufferFlags.DataDiscontinuity) == AudioClientBufferFlags.DataDiscontinuity)
+                {
+                    Debug.WriteLine("DataDiscontinuity flagged!");
+                }
+
                 // if not silence...
                 if ((flags & AudioClientBufferFlags.Silent) != AudioClientBufferFlags.Silent)
                 {
