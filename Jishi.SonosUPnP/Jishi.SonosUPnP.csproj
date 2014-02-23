@@ -36,6 +36,9 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="log4net">
+      <HintPath>..\Jishi.StreamToSonos\bin\Debug\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="Mono.Net.HttpListener">
       <HintPath>..\packages\Mono.Net.HttpListener.1.0.0.0\lib\net45\Mono.Net.HttpListener.dll</HintPath>
     </Reference>
@@ -55,9 +58,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AVTransportService.cs" />
     <Compile Include="ExtendedWebClient.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="MessageContracts\EnqueueRequest.cs" />
+    <Compile Include="MessageContracts\EnqueueResponse.cs" />
+    <Compile Include="MessageContracts\PauseRequest.cs" />
+    <Compile Include="MessageContracts\PlayRequest.cs" />
+    <Compile Include="MessageContracts\PositionInfoRequest.cs" />
+    <Compile Include="MessageContracts\PositionInfoResponse.cs" />
+    <Compile Include="MessageContracts\SetAvTransportUriRequest.cs" />
+    <Compile Include="ServiceContracts\IAVTransportService.cs" />
+    <Compile Include="SimpleSoapClient.cs" />
     <Compile Include="SonosDiscovery.cs" />
     <Compile Include="SonosNotify.cs" />
     <Compile Include="ZoneType.cs" />

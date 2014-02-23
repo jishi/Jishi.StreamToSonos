@@ -62,7 +62,7 @@ namespace Jishi.StreamToSonos.Services
                               context.Request.HttpMethod, context.Request.RawUrl,
                               context.Request.Headers, DateTime.Now);
 
-            context.Response.SendChunked = false;
+            context.Response.SendChunked = true;
             context.Response.ContentType = "audio/x-wave";
             log.DebugFormat("{0}, {1}", context.Response.StatusCode, context.Response.StatusDescription);
             log.DebugFormat("{0}, {1}", context.Response.Headers, context.Response.ContentType);

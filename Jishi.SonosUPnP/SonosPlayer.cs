@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Net;
-using System.ServiceModel;
-using System.ServiceModel.Channels;
 using System.ServiceModel.Description;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
+using Jishi.SonosUPnP.MessageContracts;
 
 namespace Jishi.SonosUPnP
 {
@@ -17,7 +16,7 @@ namespace Jishi.SonosUPnP
 		//private string sonosBaseUrl;
 		private SonosProperties properties;
 		private SonosStatus status;
-		private SimpleSoapClient soapClient;
+		private AVTransportService avTransportService;
 
 		public SonosPlayer Coordinator { get; set; }
 		public string RoomName { get; set; }
@@ -27,22 +26,22 @@ namespace Jishi.SonosUPnP
 		{
 			Uuid = uuid;
 			RoomName = roomName;
-			soapClient = new SimpleSoapClient(sonosBaseUrl + "/MediaRenderer/AVTransport/Control");
+            avTransportService = new AVTransportService(sonosBaseUrl + "/MediaRenderer/AVTransport/Control");
 		}
 
 		public void SetAvTransportUri(string uri, string metaData = "")
 		{
-			soapClient.SetAVTransportURI(0, uri, metaData);
+            avTransportService.SetAVTransportURI(0, uri, metaData);
 		}
 
 		public void Pause()
 		{
-			soapClient.Pause(0);
+            avTransportService.Pause(0);
 		}
 
 		public PositionInfoResponse GetPositionInfo()
 		{
-			return soapClient.GetPositionInfo(0);
+            return avTransportService.GetPositionInfo(0);
 		}
 
 		public SonosStatus Status
@@ -78,12 +77,12 @@ namespace Jishi.SonosUPnP
 
 		public void EnqueueTrack(string uri, string metadata)
 		{
-			soapClient.AddURIToQueue(0, uri, metadata, 0, false);
+            avTransportService.AddURIToQueue(0, uri, metadata, 0, false);
 		}
 
 		public void Play()
 		{
-			soapClient.Play(0);
+            avTransportService.Play(0);
 		}
 	}
 
@@ -97,89 +96,7 @@ namespace Jishi.SonosUPnP
 		}
 	}
 
-	public class SimpleSoapClient
-	{
-		private ChannelFactory<IAVTransportService> factory;
-
-		public SimpleSoapClient(string baseAddress)
-		{
-			//ServiceHost host = new ServiceHost( typeof( SimpleSoapClient ), new Uri( baseAddress ) );
-			//host.AddServiceEndpoint( typeof( IAVTransportService ), GetBinding(), "" );
-			//host.Description.Behaviors.Add( new ServiceMetadataBehavior { HttpGetEnabled = true } );
-			//host.Open();
-			//Console.WriteLine( "Host opened" );
-
-			factory = new ChannelFactory<IAVTransportService>(GetBinding(), new EndpointAddress(baseAddress));
-		}
-
-		static Binding GetBinding()
-		{
-			return new BasicHttpBinding();
-		}
-
-
-		public void Invoke()
-		{
-		}
-
-		public PositionInfoResponse GetPositionInfo(int InstanceID)
-		{
-			IAVTransportService service = factory.CreateChannel();
-			var response = service.GetPositionInfo(new PositionInfoRequest {InstanceID = 0});
-			((IClientChannel) service).Close();
-
-			return response;
-		}
-
-		public async void SetAVTransportURI(int instanceID, string currentURI, string currentURIMetaData)
-		{
-			IAVTransportService service = factory.CreateChannel();
-			await service.SetAVTransportURIAsync(new SetAvTransportUriRequest
-				                          {
-					                          InstanceID = instanceID,
-					                          CurrentURI = currentURI,
-					                          CurrentURIMetaData = currentURIMetaData
-				                          });
-			((IClientChannel) service).Close();
-		}
-
-		public void Pause(int instanceID)
-		{
-			IAVTransportService service = factory.CreateChannel();
-			var response = service.Pause(new PauseRequest {InstanceID = instanceID});
-			((IClientChannel) service).Close();
-		}
-
-		public EnqueueResponse AddURIToQueue(int instanceID, string enqueuedURI, string enqueuedURIMetaData,
-		                                     int desiredFirstTrackNumberEnqueued, bool enqueueAsNext)
-		{
-			IAVTransportService service = factory.CreateChannel();
-			var response =
-				service.AddURIToQueue(new EnqueueRequest
-					                      {
-						                      InstanceID = instanceID,
-						                      EnqueuedURI = enqueuedURI,
-						                      DesiredFirstTrackNumberEnqueued = desiredFirstTrackNumberEnqueued,
-						                      EnqueueAsNext = enqueueAsNext,
-						                      EnqueuedURIMetaData = enqueuedURIMetaData
-					                      });
-			((IClientChannel) service).Close();
-			return response;
-		}
-
-		public void Play(int instanceID)
-		{
-			IAVTransportService service = factory.CreateChannel();
-			service.Play(new PlayRequest
-				             {
-					             InstanceID = instanceID,
-                                 Speed = 1
-				             });
-			((IClientChannel) service).Close();
-		}
-	}
-
-	public enum SonosStatus
+    public enum SonosStatus
 	{
 		Paused
 	}
@@ -197,141 +114,5 @@ namespace Jishi.SonosUPnP
 			get { throw new NotImplementedException(); }
 			set { throw new NotImplementedException(); }
 		}
-	}
-
-	[ServiceContract(Namespace = "urn:schemas-upnp-org:service:AVTransport:1")]
-	internal interface IAVTransportService
-	{
-		[OperationContract(Action = "urn:schemas-upnp-org:service:AVTransport:1#SetAVTransportURI")]
-		Task SetAVTransportURIAsync(SetAvTransportUriRequest req);
-
-		[OperationContract(Action = "urn:schemas-upnp-org:service:AVTransport:1#GetPositionInfo")]
-		PositionInfoResponse GetPositionInfo(PositionInfoRequest req);
-
-		[OperationContract(Action = "urn:schemas-upnp-org:service:AVTransport:1#Pause")]
-		PauseResponse Pause(PauseRequest args);
-
-		[OperationContract(Action = "urn:schemas-upnp-org:service:AVTransport:1#AddURIToQueue")]
-		EnqueueResponse AddURIToQueue(EnqueueRequest args);
-
-		[OperationContract(Action = "urn:schemas-upnp-org:service:AVTransport:1#Play")]
-		void Play(PlayRequest playRequest);
-	}
-
-	[MessageContract(WrapperName = "SetAVTransportURI", WrapperNamespace = "urn:schemas-upnp-org:service:AVTransport:1",
-		IsWrapped = true)]
-	internal class SetAvTransportUriRequest
-	{
-		[MessageBodyMember(Namespace = "")]
-		public int InstanceID { get; set; }
-
-		[MessageBodyMember(Namespace = "")]
-		public string CurrentURI { get; set; }
-
-		[MessageBodyMember(Namespace = "")]
-		public string CurrentURIMetaData { get; set; }
-	}
-
-	[MessageContract(WrapperName = "Play", WrapperNamespace = "urn:schemas-upnp-org:service:AVTransport:1",
-		IsWrapped = true)]
-	internal class PlayRequest
-	{
-		[MessageBodyMember(Namespace = "")]
-		public int InstanceID { get; set; }
-        [MessageBodyMember(Namespace = "")]
-        public int Speed { get; set; }
-	}
-
-	[MessageContract(WrapperName = "AddURIToQueue", WrapperNamespace = "urn:schemas-upnp-org:service:AVTransport:1",
-		IsWrapped = true)]
-	internal class EnqueueRequest
-	{
-		[MessageBodyMember(Namespace = "")]
-		public int InstanceID { get; set; }
-
-		[MessageBodyMember(Namespace = "")]
-		public string EnqueuedURI { get; set; }
-
-		[MessageBodyMember(Namespace = "")]
-		public string EnqueuedURIMetaData { get; set; }
-
-		[MessageBodyMember(Namespace = "")]
-		public int DesiredFirstTrackNumberEnqueued { get; set; }
-
-		[MessageBodyMember(Namespace = "")]
-		public bool EnqueueAsNext { get; set; }
-	}
-
-	[MessageContract(WrapperName = "AddURIToQueueResponse",
-		WrapperNamespace = "urn:schemas-upnp-org:service:AVTransport:1",
-		IsWrapped = true)]
-	public class EnqueueResponse
-	{
-		[MessageBodyMember(Namespace = "")]
-		public int FirstTrackNumberEnqueued { get; set; }
-
-		[MessageBodyMember(Namespace = "")]
-		public int NumTracksAdded { get; set; }
-
-		[MessageBodyMember(Namespace = "")]
-		public int NewQueueLength { get; set; }
-	}
-
-	[MessageContract(WrapperName = "GetPositionInfoResponse",
-		WrapperNamespace = "urn:schemas-upnp-org:service:AVTransport:1",
-		IsWrapped = true)]
-	public class PositionInfoResponse
-	{
-		[MessageBodyMember(Namespace = "")]
-		public string Track { get; set; }
-
-		[MessageBodyMember(Namespace = "")]
-		public string TrackDuration { get; set; }
-
-		[MessageBodyMember(Namespace = "")]
-		public string TrackMetaData { get; set; }
-
-		[MessageBodyMember(Namespace = "")]
-		public string TrackURI { get; set; }
-
-		[MessageBodyMember(Namespace = "")]
-		public string RelTime { get; set; }
-
-		[MessageBodyMember(Namespace = "")]
-		public string AbsTime { get; set; }
-
-		[MessageBodyMember(Namespace = "")]
-		public string RelCount { get; set; }
-
-		[MessageBodyMember(Namespace = "")]
-		public string AbsCount { get; set; }
-
-		public override string ToString()
-		{
-			return string.Format("Track: {0}\nDuration: {1}\nTrackURI: {2}\nAbsCount: {3}\n", Track, TrackDuration, TrackURI,
-			                     AbsCount);
-		}
-	}
-
-	[MessageContract(WrapperName = "GetPositionInfo", WrapperNamespace = "urn:schemas-upnp-org:service:AVTransport:1",
-		IsWrapped = true)]
-	internal class PositionInfoRequest
-	{
-		[MessageBodyMember(Namespace = "")]
-		public int InstanceID { get; set; }
-	}
-
-	[MessageContract(WrapperName = "PauseResponse", WrapperNamespace = "urn:schemas-upnp-org:service:AVTransport:1",
-		IsWrapped = true)]
-	internal class PauseResponse
-	{
-	}
-
-	[MessageContract(WrapperName = "Pause", WrapperNamespace = "urn:schemas-upnp-org:service:AVTransport:1",
-		IsWrapped = true)]
-	internal class PauseRequest
-	{
-		[MessageBodyMember(Namespace = "")]
-		public int InstanceID { get; set; }
 	}
 }

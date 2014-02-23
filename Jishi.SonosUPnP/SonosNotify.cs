@@ -6,25 +6,35 @@ using System.Linq;
 using System.Net;
 using System.Net.NetworkInformation;
 using System.Net.Sockets;
+using System.Threading;
 using System.Xml.Linq;
+using log4net;
 using HttpListener = Mono.Net.HttpListener;
-using HttpListenerContext = Mono.Net.HttpListenerContext;
-using HttpListenerRequest = Mono.Net.HttpListenerRequest;
-using HttpListenerResponse = Mono.Net.HttpListenerResponse;
 
 namespace Jishi.SonosUPnP
 {
     public class SonosNotify
     {
-        private HttpListener listener;
+        private readonly HttpListener listener;
         private string notifyUrl;
 
+        private ILog log = log4net.LogManager.GetLogger(typeof (SonosNotify));
+        private readonly IDictionary<string, string> subscriptions = new Dictionary<string, string>();
+        private readonly IDictionary<string, Timer> timers = new Dictionary<string, Timer>(); 
+        public IPEndPoint LocalEndpoint { get; set; }
+        public event NotificationReceivedEventHandler NotificationReceived;
         // Singleton 
-        private static SonosNotify instance = new SonosNotify();
+        private static readonly SonosNotify instance = new SonosNotify();
 
         public static SonosNotify Instance
         {
             get { return instance; }
+        }
+
+        public string NotifyUrl
+        {
+            get { return notifyUrl; }
+            set { notifyUrl = value; }
         }
 
         private SonosNotify()
@@ -39,34 +49,23 @@ namespace Jishi.SonosUPnP
             listener.BeginGetContext(HandleRequest, listener);
         }
 
-        public string NotifyUrl
-        {
-            get { return notifyUrl; }
-            set { notifyUrl = value; }
-        }
-
-        public IPEndPoint LocalEndpoint { get; set; }
-
-        public event NotificationReceivedEventHandler NotificationReceived;
-
 
         private void HandleRequest(IAsyncResult result)
         {
-            HttpListener listener = (HttpListener) result.AsyncState;
+            var listener = (HttpListener) result.AsyncState;
             // Call EndGetContext to complete the asynchronous operation.
-            HttpListenerContext context = listener.EndGetContext(result);
-            HttpListenerRequest request = context.Request;
-            Console.WriteLine(request.Headers);
+            var context = listener.EndGetContext(result);
+            var request = context.Request;
             var reader = XElement.Load(request.InputStream);
             XNamespace ns = "urn:schemas-upnp-org:event-1-0";
             var args = new NotificationReceivedEventHandlerArgs
                            {
-                               Properties = reader.Elements(ns + "property").Select(x => GetProperty(x)).ToList()
+                               Properties = reader.Elements(ns + "property").Select(GetProperty).ToList()
                            };
 
             NotificationReceived.Invoke(this, args);
             // Obtain a response object.
-            HttpListenerResponse response = context.Response;
+            var response = context.Response;
             response.OutputStream.Close();
             listener.BeginGetContext(HandleRequest, listener);
         }
@@ -81,10 +80,10 @@ namespace Jishi.SonosUPnP
                        };
         }
 
-        private int FindAvailablePort()
+        private static int FindAvailablePort()
         {
-            IPGlobalProperties ipGlobalProperties = IPGlobalProperties.GetIPGlobalProperties();
-            TcpConnectionInformation[] tcpConnInfoArray = ipGlobalProperties.GetActiveTcpConnections();
+            var ipGlobalProperties = IPGlobalProperties.GetIPGlobalProperties();
+            var tcpConnInfoArray = ipGlobalProperties.GetActiveTcpConnections();
 
             var startingPort = 3400;
             bool isTaken;
@@ -99,7 +98,7 @@ namespace Jishi.SonosUPnP
 
         public void SubscribeToEvent(string subscribeUri)
         {
-            var client = new WebClient();
+            var client = new ExtendedWebClient();
             //SUBSCRIBE /MediaServer/ContentDirectory/Event HTTP/1.1
             //HOST: 192.168.1.152:1400
             //USER-AGENT: Linux UPnP/1.0 Sonos/19.3-53220 (WDCR:Microsoft Windows NT 6.1.7601 Service Pack 1)
@@ -114,49 +113,43 @@ namespace Jishi.SonosUPnP
 
             var localUri = uri.Replace("*", LocalEndpoint.Address.ToString());
 
-            client.Headers.Add("USER-AGENT", "Linux UPnP/1.0 Sonos/19.3-53220 (WDCR:Jishi.SonosPartyMode)");
-            client.Headers.Add("CALLBACK", string.Format("<{0}>", localUri));
-            client.Headers.Add("NT", "upnp:event");
+            //client.Headers.Add("USER-AGENT", "Linux UPnP/1.0 Sonos/19.3-53220 (Custom:Jishi.SonosUPnP)");
+            if (subscriptions.ContainsKey(subscribeUri))
+            {
+                // Resubscription
+                client.Headers.Add("SID", subscriptions[subscribeUri]);
+                log.DebugFormat("Resubscribing to {0} with SID {1}", subscribeUri, subscriptions[subscribeUri]);
+            }
+            else
+            {
+                client.Headers.Add("CALLBACK", string.Format("<{0}>", localUri));
+                client.Headers.Add("NT", "upnp:event");
+                log.DebugFormat("New subscribe to {0}", subscribeUri);
+            }
             client.Headers.Add("TIMEOUT", "Second-600");
 
-            Console.WriteLine("Subscribing to {0} with url {1}", subscribeUri, localUri);
-
-            client.UploadString(subscribeUri, "SUBSCRIBE", string.Empty);
+            try
+            {
+                client.UploadString(subscribeUri, "SUBSCRIBE", string.Empty);
+                var sid = client.ResponseHeaders["SID"];
+                subscriptions[subscribeUri] = sid;
+                timers[subscribeUri] = new Timer(Resubscribe, subscribeUri, TimeSpan.FromSeconds(500), TimeSpan.FromMilliseconds(-1));
+            }
+            catch (WebException ex)
+            {
+                log.ErrorFormat("Error subscribing to {0}. {1}", subscribeUri, ex.Message);
+                if (subscriptions.ContainsKey(subscribeUri))
+                {
+                    subscriptions.Remove(subscribeUri);
+                    timers[subscribeUri] = new Timer(Resubscribe, subscribeUri, TimeSpan.FromSeconds(10), TimeSpan.FromMilliseconds(-1));
+                }
+            }
         }
 
-        private IPAddress FindIpAddress(string subscribeUri)
+        private void Resubscribe(object state)
         {
-            //var interfaces = new Dictionary<int, IPInterfaceProperties>();
-
-            //foreach (NetworkInterface nic in NetworkInterface.GetAllNetworkInterfaces())
-            //{
-            //    IPInterfaceProperties ipProps = nic.GetIPProperties();
-            //    var ipv4Props = ipProps.GetIPv4Properties();
-            //    if (ipv4Props == null) continue;
-            //    interfaces.Add(ipv4Props.Index, ipProps);
-            //}
-
-            //var firstInterface = interfaces.OrderBy(i => i.Key).FirstOrDefault();
-
-            //var ipAddress = firstInterface.Value.UnicastAddresses.First(ip => !ip.Address.IsIPv6LinkLocal);
-
-            //return ipAddress.Address;
-
-            // Find ip and port to use
-            var uri = new Uri(subscribeUri);
-            var host = uri.Host;
-            var port = uri.Port;
-            IPEndPoint endpoint;
-            using (var socket = new Socket(AddressFamily.InterNetwork, SocketType.Raw, ProtocolType.IPv4))
-            {
-                socket.Connect(host, port);
-                // We can now find local IP
-                endpoint = (IPEndPoint) socket.LocalEndPoint;
-                socket.Close();
-                socket.Dispose();
-            }
-
-            return endpoint.Address;
+            var subscribeUri = (string) state;
+            SubscribeToEvent(subscribeUri);
         }
     }
 
