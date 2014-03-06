@@ -111,7 +111,8 @@ namespace Jishi.StreamToSonos.Services
 
         private async void SendSilent(Stream stream, int bufferSize)
         {
-            var buffer = new byte[bufferSize];
+            if (bufferSize < 1) return;
+            var buffer = new byte[bufferSize*4];
             Array.Clear(buffer, 0, bufferSize);
             try
             {
@@ -126,6 +127,11 @@ namespace Jishi.StreamToSonos.Services
 
         private async void WriteToStream(Stream currentStream, byte[] chunk)
         {
+            if (chunk.Length == 0)
+            {
+                log.Error("Received empty chunk!");
+                return;
+            }
             try
             {
                 currentStream.Write(chunk, 0, chunk.Length);

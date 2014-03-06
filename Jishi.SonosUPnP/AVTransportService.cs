@@ -1,4 +1,5 @@
 ﻿using System.ServiceModel;
+using System.Threading.Tasks;
 using Jishi.SonosUPnP.MessageContracts;
 using Jishi.SonosUPnP.ServiceContracts;
 
@@ -19,16 +20,17 @@ namespace Jishi.SonosUPnP
             return response;
         }
 
-        public async void SetAVTransportURI(int instanceID, string currentURI, string currentURIMetaData)
+        public Task SetAVTransportURI(int instanceID, string currentURI, string currentURIMetaData)
         {
             IAVTransportService service = Factory.CreateChannel();
-            await service.SetAVTransportURIAsync(new SetAvTransportUriRequest
+            var task = service.SetAVTransportURIAsync(new SetAvTransportUriRequest
                                                      {
                                                          InstanceID = instanceID,
                                                          CurrentURI = currentURI,
                                                          CurrentURIMetaData = currentURIMetaData
                                                      });
             ((IClientChannel) service).Close();
+            return task;
         }
 
         public async void Pause(int instanceID)
@@ -55,15 +57,16 @@ namespace Jishi.SonosUPnP
             return response;
         }
 
-        public async void Play(int instanceID)
+        public Task Play(int instanceID)
         {
             IAVTransportService service = Factory.CreateChannel();
-            await service.PlayAsync(new PlayRequest
+            var task = service.PlayAsync(new PlayRequest
                                   {
                                       InstanceID = instanceID,
                                       Speed = 1
                                   });
             ((IClientChannel) service).Close();
+            return task;
         }
     }
 }

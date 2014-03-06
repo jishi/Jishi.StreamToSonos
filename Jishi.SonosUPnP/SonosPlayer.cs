@@ -29,9 +29,9 @@ namespace Jishi.SonosUPnP
             avTransportService = new AVTransportService(sonosBaseUrl + "/MediaRenderer/AVTransport/Control");
 		}
 
-		public void SetAvTransportUri(string uri, string metaData = "")
+		public Task SetAvTransportUri(string uri, string metaData = "")
 		{
-            avTransportService.SetAVTransportURI(0, uri, metaData);
+            return avTransportService.SetAVTransportURI(0, uri, metaData);
 		}
 
 		public void Pause()
@@ -80,9 +80,9 @@ namespace Jishi.SonosUPnP
             avTransportService.AddURIToQueue(0, uri, metadata, 0, false);
 		}
 
-		public void Play()
+		public Task Play()
 		{
-            avTransportService.Play(0);
+            return avTransportService.Play(0);
 		}
 	}
 

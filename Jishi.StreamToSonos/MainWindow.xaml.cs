@@ -62,12 +62,18 @@ namespace Jishi.StreamToSonos
 			// Find local endpoint
 			var localIp = SonosNotify.Instance.LocalEndpoint.Address.ToString();
 			var streamUrl = string.Format( "http://{0}:9283/stream.wav", localIp );
-			player.SetAvTransportUri( streamUrl );
-			Thread.Sleep(500);
-			player.Play();
+
+            Task.Factory.StartNew(() => { StartPlayer(player, streamUrl); });
+			
 		}
 
-		private void Buffer_TextChanged( object sender, TextChangedEventArgs e )
+	    private async void StartPlayer(SonosPlayer player, string streamUrl)
+	    {
+            await player.SetAvTransportUri(streamUrl);
+            await player.Play();
+	    }
+
+	    private void Buffer_TextChanged( object sender, TextChangedEventArgs e )
 		{
 			var box = (TextBox) sender;
 			int bufferSize;
