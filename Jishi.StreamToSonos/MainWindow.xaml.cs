@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -8,6 +9,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
+using System.Windows.Forms;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
@@ -15,6 +17,8 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Jishi.SonosUPnP;
 using Jishi.StreamToSonos.Services;
+using KeyEventArgs = System.Windows.Input.KeyEventArgs;
+using TextBox = System.Windows.Controls.TextBox;
 
 namespace Jishi.StreamToSonos
 {
@@ -28,7 +32,24 @@ namespace Jishi.StreamToSonos
 			//server.BufferSize = 20000;
 			InitializeComponent();
 		    KeyDown += OnKeyDown;
+		    NotifyIcon ni = new NotifyIcon();
+		    ni.Icon = Properties.Resources.assets_sonos;
+            ni.Visible = true;
+            ni.DoubleClick +=
+                delegate(object sender, EventArgs args)
+                {
+                    this.Show();
+                    this.WindowState = WindowState.Normal;
+                };
 		}
+
+        protected override void OnStateChanged(EventArgs e)
+        {
+            if (WindowState == WindowState.Minimized)
+                this.Hide();
+
+            base.OnStateChanged(e);
+        }
 
 		public void UpdateZoneList( IList<SonosZone> zones )
 		{
