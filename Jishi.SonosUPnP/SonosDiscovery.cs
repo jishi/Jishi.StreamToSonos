@@ -71,8 +71,8 @@ namespace Jishi.SonosUPnP
 			Console.WriteLine(value);
 
 			Zones.Clear();
-
-			foreach (var zoneNode in xml.Elements("ZoneGroup"))
+			foreach (var zonegroup in xml.Elements("ZoneGroups"))
+			foreach (var zoneNode in zonegroup.Elements("ZoneGroup"))
 			{
 				var zone = new SonosZone();
 				foreach (var playerNode in zoneNode.Elements("ZoneGroupMember"))
