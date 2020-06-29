@@ -2,3 +2,6 @@
 .nuget
 *.user
 packages
+/Jishi.SonosUPnP/obj/Debug
+/Jishi.StreamToSonos/obj/Debug
+/NAudio/obj/Debug
