@@ -15,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 using Jishi.SonosUPnP;
 using Jishi.StreamToSonos.Services;
 using KeyEventArgs = System.Windows.Input.KeyEventArgs;
@@ -27,6 +28,9 @@ namespace Jishi.StreamToSonos
 	/// </summary>
 	public partial class MainWindow : Window
 	{
+		Dictionary<string, SonosPlayer> dslist = new Dictionary<string, SonosPlayer>();
+		public List<Task> Tasks = new List<Task>();
+
 		public MainWindow()
 		{
 			//server.BufferSize = 20000;
@@ -41,7 +45,39 @@ namespace Jishi.StreamToSonos
                     this.Show();
                     this.WindowState = WindowState.Normal;
                 };
+            var menu = new System.Windows.Forms.ContextMenu();
+
+			var ExitItem = menu.MenuItems.Add("Exit");
+			ExitItem.Click += delegate (object sender, EventArgs args) {
+				this.Close();
+			};
+
+
+			ni.ContextMenu = menu;
+
+			//  DispatcherTimer setup
+			DispatcherTimer dispatcherTimer = new DispatcherTimer();
+			dispatcherTimer.Tick += new EventHandler(dispatcherTimer_Tick);
+			dispatcherTimer.Interval = new TimeSpan(0, 0, 2);
+			dispatcherTimer.Start();
 		}
+
+        private void dispatcherTimer_Tick(object sender, EventArgs e)
+        {
+			List<Task> toDel = new List<Task>();
+			foreach (Task task in Tasks)
+			{
+				task.Start();
+				task.Wait();
+				toDel.Add(task);
+			}
+
+			foreach(Task task in toDel)
+            {
+				Tasks.Remove(task);
+            }
+			ZoneList.ItemsSource = dslist;
+        }
 
         protected override void OnStateChanged(EventArgs e)
         {
@@ -51,22 +87,24 @@ namespace Jishi.StreamToSonos
             base.OnStateChanged(e);
         }
 
-		public void UpdateZoneList( IList<SonosZone> zones )
+		public void UpdateZoneList(IList<SonosZone> zones)
 		{
-			ZoneList.Items.Clear();
-
-			foreach ( var zone in zones )
-			{
-				var item = new ComboBoxItem
+			
+				foreach (var zone in zones)
 				{
-					Content = zone.Name,
-					DataContext = zone.Coordinator
-				};
-				ZoneList.Items.Add( item );
-			}
+					Task task = new Task(() =>
+					{
+						try
+						{
+							dslist.Add(zone.Name, zone.Coordinator);
+						}
+						catch { }
+					});
+					Tasks.Add(task);
+				}
 		}
 
-        void OnKeyDown(object sender, KeyEventArgs e)
+		void OnKeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.F9)
             {
@@ -76,9 +114,10 @@ namespace Jishi.StreamToSonos
 
 		private void StreamAction_Click( object sender, RoutedEventArgs e )
 		{
+			StreamAction.IsEnabled = false;
 		    if (ZoneList.SelectedIndex == -1) return;
-            var selectedItem = (ComboBoxItem) ZoneList.Items[ZoneList.SelectedIndex];
-			var player = (SonosPlayer) selectedItem.DataContext;
+            var selectedItem = (KeyValuePair<string,SonosPlayer>) ZoneList.Items[ZoneList.SelectedIndex];
+			var player = selectedItem.Value;
 			Console.WriteLine( player.RoomName );
 			// Find local endpoint
 			var localIp = SonosNotify.Instance.LocalEndpoint.Address.ToString();
@@ -90,17 +129,21 @@ namespace Jishi.StreamToSonos
 
 	    private async void StartPlayer(SonosPlayer player, string streamUrl)
 	    {
-            await player.SetAvTransportUri(streamUrl);
-            await player.Play();
+			try
+			{
+
+				await player.SetAvTransportUri(streamUrl);
+				await player.Play();
+			}
+            catch
+            {
+				StreamAction.IsEnabled = true;
+            }
 	    }
 
-	    private void Buffer_TextChanged( object sender, TextChangedEventArgs e )
-		{
-			var box = (TextBox) sender;
-			int bufferSize;
-			Int32.TryParse( box.Text, out bufferSize );
-
-			App.server.BufferSize = bufferSize;
+        private void ZoneList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+			StreamAction.IsEnabled = true;
 		}
-	}
+    }
 }
