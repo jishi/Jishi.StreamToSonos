@@ -1,0 +1,20 @@
+Ein Element mit dem gleichen Schlüssel wurde bereits hinzugefügt.   bei System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   bei System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   bei System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   bei Jishi.StreamToSonos.MainWindow.UpdateZoneList(IList`1 zones) in F:\VS-Projekts\Sonos\Jishi.StreamToSonos\MainWindow.xaml.cs:Zeile 60.
+   bei Jishi.StreamToSonos.App.<TopologyChanged>b__8_0() in F:\VS-Projekts\Sonos\Jishi.StreamToSonos\App.xaml.cs:Zeile 69.
+   bei System.Windows.Threading.DispatcherOperation.InvokeDelegateCore()
+   bei System.Windows.Threading.DispatcherOperation.InvokeImpl()
+--- Ende der Stapelüberwachung vom vorhergehenden Ort, an dem die Ausnahme ausgelöst wurde ---
+   bei System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   bei System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   bei System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   bei Jishi.StreamToSonos.App.<TopologyChanged>d__8.MoveNext() in F:\VS-Projekts\Sonos\Jishi.StreamToSonos\App.xaml.cs:Zeile 69.
+--- Ende der Stapelüberwachung vom vorhergehenden Ort, an dem die Ausnahme ausgelöst wurde ---
+   bei System.Runtime.CompilerServices.AsyncMethodBuilderCore.<>c.<ThrowAsync>b__6_1(Object state)
+   bei System.Threading.QueueUserWorkItemCallback.WaitCallback_Context(Object state)
+   bei System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   bei System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   bei System.Threading.QueueUserWorkItemCallback.System.Threading.IThreadPoolWorkItem.ExecuteWorkItem()
+   bei System.Threading.ThreadPoolWorkQueue.Dispatch()
+   bei System.Threading._ThreadPoolWaitCallback.PerformWaitCallback()

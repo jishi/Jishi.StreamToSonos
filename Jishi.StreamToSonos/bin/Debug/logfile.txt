@@ -1,0 +1,1100 @@
+2020-06-29 10:46:14,501 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 10:46:14,506 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 10:47:13,750 [1] INFO  Jishi.StreamToSonos.Services.HttpServer - Disposing HTTP Server
+2020-06-29 10:48:58,946 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 10:48:58,951 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 10:48:59,109 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.32:1400/ZoneGroupTopology/Event
+2020-06-29 10:48:59,127 [7] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 10:50:54,216 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.32:1400/ZoneGroupTopology/Event
+2020-06-29 10:50:54,221 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 10:50:54,223 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 10:50:54,234 [4] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 10:57:16,675 [1] INFO  Jishi.StreamToSonos.Services.HttpServer - Disposing HTTP Server
+2020-06-29 11:00:37,949 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 11:00:37,954 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 11:00:38,060 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 11:00:39,811 [7] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.42:1400/ZoneGroupTopology/Event
+2020-06-29 11:13:49,219 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.42:1400/ZoneGroupTopology/Event
+2020-06-29 11:13:49,277 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 11:13:49,278 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 11:13:50,927 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 11:13:58,785 [1] INFO  Jishi.StreamToSonos.Services.HttpServer - Disposing HTTP Server
+2020-06-29 11:24:27,885 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 11:24:27,890 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 11:24:28,141 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 11:24:28,187 [7] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.32:1400/ZoneGroupTopology/Event
+2020-06-29 11:24:49,562 [1] INFO  Jishi.StreamToSonos.Services.HttpServer - Disposing HTTP Server
+2020-06-29 11:24:52,293 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 11:24:52,298 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 11:24:52,454 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.32:1400/ZoneGroupTopology/Event
+2020-06-29 11:25:00,314 [7] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 11:26:10,008 [11] ERROR Jishi.StreamToSonos.App - System.InvalidOperationException: Die Sammlung wurde geändert. Der Enumerationsvorgang kann möglicherweise nicht ausgeführt werden.
+   bei System.ThrowHelper.ThrowInvalidOperationException(ExceptionResource resource)
+   bei System.Collections.Generic.List`1.Enumerator.MoveNextRare()
+   bei System.Collections.Generic.List`1.Enumerator.MoveNext()
+   bei Jishi.StreamToSonos.MainWindow.UpdateZoneList(IList`1 zones) in F:\VS-Projekts\Sonos\Jishi.StreamToSonos\MainWindow.xaml.cs:Zeile 60.
+   bei Jishi.StreamToSonos.App.<TopologyChanged>b__8_0() in F:\VS-Projekts\Sonos\Jishi.StreamToSonos\App.xaml.cs:Zeile 69.
+   bei System.Windows.Threading.DispatcherOperation.InvokeDelegateCore()
+   bei System.Windows.Threading.DispatcherOperation.InvokeImpl()
+--- Ende der Stapelüberwachung vom vorhergehenden Ort, an dem die Ausnahme ausgelöst wurde ---
+   bei System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   bei System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   bei System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   bei Jishi.StreamToSonos.App.<TopologyChanged>d__8.MoveNext() in F:\VS-Projekts\Sonos\Jishi.StreamToSonos\App.xaml.cs:Zeile 69.
+--- Ende der Stapelüberwachung vom vorhergehenden Ort, an dem die Ausnahme ausgelöst wurde ---
+   bei System.Runtime.CompilerServices.AsyncMethodBuilderCore.<>c.<ThrowAsync>b__6_1(Object state)
+   bei System.Threading.QueueUserWorkItemCallback.WaitCallback_Context(Object state)
+   bei System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   bei System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   bei System.Threading.QueueUserWorkItemCallback.System.Threading.IThreadPoolWorkItem.ExecuteWorkItem()
+   bei System.Threading.ThreadPoolWorkQueue.Dispatch()
+   bei System.Threading._ThreadPoolWaitCallback.PerformWaitCallback()
+2020-06-29 11:26:12,662 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.42:1400/ZoneGroupTopology/Event
+2020-06-29 11:26:12,672 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 11:26:12,672 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 11:28:25,111 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 11:28:25,116 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 11:28:25,165 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.42:1400/ZoneGroupTopology/Event
+2020-06-29 11:28:27,765 [6] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 11:28:49,157 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 11:28:49,162 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 11:28:49,548 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.42:1400/ZoneGroupTopology/Event
+2020-06-29 11:28:49,550 [11] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 11:30:53,643 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.32:1400/ZoneGroupTopology/Event
+2020-06-29 11:30:53,675 [4] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 11:30:53,710 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 11:30:53,711 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 11:31:01,968 [4] DEBUG Jishi.StreamToSonos.Services.HttpServer - Client connected 192.168.0.33:35464, System.Collections.Specialized.NameValueCollection 06/29/2020 11:31:01
+2020-06-29 11:31:01,969 [4] DEBUG Jishi.StreamToSonos.Services.HttpServer - StartRecording
+2020-06-29 11:31:01,985 [4] DEBUG Jishi.StreamToSonos.Services.HttpServer - Writing header 52-49-46-46-FF-FF-FF-FF-57-41-56-45-66-6D-74-20-10-00-00-00-01-00-02-00-80-BB-00-00-00-EE-02-00-04-00-10-00-64-61-74-61-FF-FF-FF-FF
+2020-06-29 11:31:01,986 [4] DEBUG Jishi.StreamToSonos.Services.HttpServer - Entering send loop
+2020-06-29 11:31:02,114 [4] DEBUG Jishi.StreamToSonos.Services.HttpServer - Disconnected called, loop exited
+2020-06-29 11:31:02,114 [4] DEBUG Jishi.StreamToSonos.Services.HttpServer - Stopped recording
+2020-06-29 11:31:02,122 [4] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 11:31:02,122 [18] DEBUG Jishi.StreamToSonos.Services.HttpServer - Client connected 192.168.0.33:35465, System.Collections.Specialized.NameValueCollection 06/29/2020 11:31:02
+2020-06-29 11:31:02,122 [18] DEBUG Jishi.StreamToSonos.Services.HttpServer - StartRecording
+2020-06-29 11:31:02,122 [18] DEBUG Jishi.StreamToSonos.Services.HttpServer - Writing header 52-49-46-46-FF-FF-FF-FF-57-41-56-45-66-6D-74-20-10-00-00-00-01-00-02-00-80-BB-00-00-00-EE-02-00-04-00-10-00-64-61-74-61-FF-FF-FF-FF
+2020-06-29 11:31:02,122 [18] DEBUG Jishi.StreamToSonos.Services.HttpServer - Entering send loop
+2020-06-29 11:31:02,150 [18] DEBUG Jishi.StreamToSonos.Services.HttpServer - Disconnected called, loop exited
+2020-06-29 11:31:02,150 [18] DEBUG Jishi.StreamToSonos.Services.HttpServer - Stopped recording
+2020-06-29 11:31:02,150 [18] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 11:31:02,150 [4] DEBUG Jishi.StreamToSonos.Services.HttpServer - Client connected 192.168.0.33:35466, System.Collections.Specialized.NameValueCollection 06/29/2020 11:31:02
+2020-06-29 11:31:02,150 [4] DEBUG Jishi.StreamToSonos.Services.HttpServer - StartRecording
+2020-06-29 11:31:02,150 [4] DEBUG Jishi.StreamToSonos.Services.HttpServer - Writing header 52-49-46-46-FF-FF-FF-FF-57-41-56-45-66-6D-74-20-10-00-00-00-01-00-02-00-80-BB-00-00-00-EE-02-00-04-00-10-00-64-61-74-61-FF-FF-FF-FF
+2020-06-29 11:31:02,150 [4] DEBUG Jishi.StreamToSonos.Services.HttpServer - Entering send loop
+2020-06-29 11:31:17,166 [4] DEBUG Jishi.StreamToSonos.Services.HttpServer - Disconnected called, loop exited
+2020-06-29 11:31:17,166 [4] DEBUG Jishi.StreamToSonos.Services.HttpServer - Stopped recording
+2020-06-29 11:31:17,166 [4] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 11:31:17,166 [6] DEBUG Jishi.StreamToSonos.Services.HttpServer - Client connected 192.168.0.33:35470, System.Collections.Specialized.NameValueCollection 06/29/2020 11:31:17
+2020-06-29 11:31:17,166 [6] DEBUG Jishi.StreamToSonos.Services.HttpServer - StartRecording
+2020-06-29 11:31:17,166 [6] DEBUG Jishi.StreamToSonos.Services.HttpServer - Writing header 52-49-46-46-FF-FF-FF-FF-57-41-56-45-66-6D-74-20-10-00-00-00-01-00-02-00-80-BB-00-00-00-EE-02-00-04-00-10-00-64-61-74-61-FF-FF-FF-FF
+2020-06-29 11:31:17,166 [6] DEBUG Jishi.StreamToSonos.Services.HttpServer - Entering send loop
+2020-06-29 11:31:21,125 [1] INFO  Jishi.StreamToSonos.Services.HttpServer - Disposing HTTP Server
+2020-06-29 11:31:21,164 [6] DEBUG Jishi.StreamToSonos.Services.HttpServer - Disconnected called, loop exited
+2020-06-29 11:31:21,164 [6] INFO  Jishi.StreamToSonos.Services.HttpServer - Closing all sockets in HTTP Server
+2020-06-29 11:31:21,164 [6] DEBUG Jishi.StreamToSonos.Services.HttpServer - Stopped recording
+2020-06-29 11:31:37,525 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 11:31:37,530 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 11:31:37,710 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.42:1400/ZoneGroupTopology/Event
+2020-06-29 11:31:37,853 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 11:31:40,552 [1] INFO  Jishi.StreamToSonos.Services.HttpServer - Disposing HTTP Server
+2020-06-29 11:31:44,776 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 11:31:44,781 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 11:31:45,056 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.32:1400/ZoneGroupTopology/Event
+2020-06-29 11:31:45,102 [11] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 11:31:49,193 [6] ERROR Jishi.StreamToSonos.App - System.InvalidOperationException: Die Sammlung wurde geändert. Der Enumerationsvorgang kann möglicherweise nicht ausgeführt werden.
+   bei System.ThrowHelper.ThrowInvalidOperationException(ExceptionResource resource)
+   bei System.Collections.Generic.List`1.Enumerator.MoveNextRare()
+   bei System.Collections.Generic.List`1.Enumerator.MoveNext()
+   bei Jishi.StreamToSonos.MainWindow.UpdateZoneList(IList`1 zones) in F:\VS-Projekts\Sonos\Jishi.StreamToSonos\MainWindow.xaml.cs:Zeile 59.
+   bei Jishi.StreamToSonos.App.<TopologyChanged>b__8_0() in F:\VS-Projekts\Sonos\Jishi.StreamToSonos\App.xaml.cs:Zeile 69.
+   bei System.Windows.Threading.DispatcherOperation.InvokeDelegateCore()
+   bei System.Windows.Threading.DispatcherOperation.InvokeImpl()
+--- Ende der Stapelüberwachung vom vorhergehenden Ort, an dem die Ausnahme ausgelöst wurde ---
+   bei System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   bei System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   bei System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   bei Jishi.StreamToSonos.App.<TopologyChanged>d__8.MoveNext() in F:\VS-Projekts\Sonos\Jishi.StreamToSonos\App.xaml.cs:Zeile 69.
+--- Ende der Stapelüberwachung vom vorhergehenden Ort, an dem die Ausnahme ausgelöst wurde ---
+   bei System.Runtime.CompilerServices.AsyncMethodBuilderCore.<>c.<ThrowAsync>b__6_1(Object state)
+   bei System.Threading.QueueUserWorkItemCallback.WaitCallback_Context(Object state)
+   bei System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   bei System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   bei System.Threading.QueueUserWorkItemCallback.System.Threading.IThreadPoolWorkItem.ExecuteWorkItem()
+   bei System.Threading.ThreadPoolWorkQueue.Dispatch()
+   bei System.Threading._ThreadPoolWaitCallback.PerformWaitCallback()
+2020-06-29 11:31:54,405 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 11:31:54,410 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 11:31:54,469 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 11:31:54,515 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.42:1400/ZoneGroupTopology/Event
+2020-06-29 11:34:08,726 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 11:34:08,730 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 11:34:08,876 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 11:34:08,906 [7] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.32:1400/ZoneGroupTopology/Event
+2020-06-29 11:34:18,679 [5] ERROR Jishi.StreamToSonos.App - System.ArgumentException: Ein Element mit dem gleichen Schlüssel wurde bereits hinzugefügt.
+   bei System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   bei System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   bei System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   bei Jishi.StreamToSonos.MainWindow.UpdateZoneList(IList`1 zones) in F:\VS-Projekts\Sonos\Jishi.StreamToSonos\MainWindow.xaml.cs:Zeile 60.
+   bei Jishi.StreamToSonos.App.<TopologyChanged>b__8_0() in F:\VS-Projekts\Sonos\Jishi.StreamToSonos\App.xaml.cs:Zeile 69.
+   bei System.Windows.Threading.DispatcherOperation.InvokeDelegateCore()
+   bei System.Windows.Threading.DispatcherOperation.InvokeImpl()
+--- Ende der Stapelüberwachung vom vorhergehenden Ort, an dem die Ausnahme ausgelöst wurde ---
+   bei System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   bei System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   bei System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   bei Jishi.StreamToSonos.App.<TopologyChanged>d__8.MoveNext() in F:\VS-Projekts\Sonos\Jishi.StreamToSonos\App.xaml.cs:Zeile 69.
+--- Ende der Stapelüberwachung vom vorhergehenden Ort, an dem die Ausnahme ausgelöst wurde ---
+   bei System.Runtime.CompilerServices.AsyncMethodBuilderCore.<>c.<ThrowAsync>b__6_1(Object state)
+   bei System.Threading.QueueUserWorkItemCallback.WaitCallback_Context(Object state)
+   bei System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   bei System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   bei System.Threading.QueueUserWorkItemCallback.System.Threading.IThreadPoolWorkItem.ExecuteWorkItem()
+   bei System.Threading.ThreadPoolWorkQueue.Dispatch()
+   bei System.Threading._ThreadPoolWaitCallback.PerformWaitCallback()
+2020-06-29 11:35:04,630 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 11:35:04,688 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.42:1400/ZoneGroupTopology/Event
+2020-06-29 11:35:04,703 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 11:35:04,703 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 11:35:17,959 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 11:35:17,964 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 11:35:18,074 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.42:1400/ZoneGroupTopology/Event
+2020-06-29 11:35:18,249 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 11:35:43,791 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 11:35:43,796 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 11:35:43,825 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.32:1400/ZoneGroupTopology/Event
+2020-06-29 11:35:45,632 [6] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 11:35:55,088 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.42:1400/ZoneGroupTopology/Event
+2020-06-29 11:35:55,106 [4] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 11:35:55,116 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 11:35:55,116 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 11:36:01,746 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 11:36:01,751 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 11:36:02,027 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.42:1400/ZoneGroupTopology/Event
+2020-06-29 11:36:02,047 [11] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 11:38:30,828 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 11:38:30,833 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 11:38:30,933 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 11:38:44,630 [10] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.42:1400/ZoneGroupTopology/Event
+2020-06-29 11:38:49,023 [1] INFO  Jishi.StreamToSonos.Services.HttpServer - Disposing HTTP Server
+2020-06-29 11:40:42,044 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 11:40:42,049 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 11:40:42,146 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 11:40:42,188 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.32:1400/ZoneGroupTopology/Event
+2020-06-29 11:41:06,005 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 11:41:06,010 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 11:41:06,060 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 11:41:06,292 [6] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.32:1400/ZoneGroupTopology/Event
+2020-06-29 11:41:23,469 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 11:41:23,472 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 11:41:23,475 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 11:41:23,485 [4] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.32:1400/ZoneGroupTopology/Event
+2020-06-29 11:42:17,827 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 11:42:17,832 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 11:42:20,638 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.32:1400/ZoneGroupTopology/Event
+2020-06-29 11:42:20,638 [5] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 11:42:31,992 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.32:1400/ZoneGroupTopology/Event
+2020-06-29 11:42:32,045 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 11:42:32,046 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 11:42:36,042 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 11:55:51,231 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 11:55:51,235 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 11:55:51,330 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.42:1400/ZoneGroupTopology/Event
+2020-06-29 11:55:51,649 [7] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 11:56:01,498 [1] ERROR Jishi.StreamToSonos.App - System.InvalidOperationException: Die Sammlung wurde geändert. Der Enumerationsvorgang kann möglicherweise nicht ausgeführt werden.
+   bei System.ThrowHelper.ThrowInvalidOperationException(ExceptionResource resource)
+   bei System.Collections.Generic.List`1.Enumerator.MoveNextRare()
+   bei System.Collections.Generic.List`1.Enumerator.MoveNext()
+   bei Jishi.StreamToSonos.MainWindow.dispatcherTimer_Tick(Object sender, EventArgs e) in F:\VS-Projekts\Sonos\Jishi.StreamToSonos\MainWindow.xaml.cs:Zeile 58.
+   bei System.Windows.Threading.DispatcherTimer.FireTick(Object unused)
+   bei System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   bei System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)
+2020-06-29 11:56:01,510 [1] ERROR Jishi.StreamToSonos.App - System.InvalidOperationException: Die Sammlung wurde geändert. Der Enumerationsvorgang kann möglicherweise nicht ausgeführt werden.
+   bei System.ThrowHelper.ThrowInvalidOperationException(ExceptionResource resource)
+   bei System.Collections.Generic.List`1.Enumerator.MoveNextRare()
+   bei System.Collections.Generic.List`1.Enumerator.MoveNext()
+   bei Jishi.StreamToSonos.MainWindow.dispatcherTimer_Tick(Object sender, EventArgs e) in F:\VS-Projekts\Sonos\Jishi.StreamToSonos\MainWindow.xaml.cs:Zeile 58.
+   bei System.Windows.Threading.DispatcherTimer.FireTick(Object unused)
+   bei System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   bei System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)
+   bei System.Windows.Threading.DispatcherOperation.InvokeImpl()
+   bei System.Windows.Threading.DispatcherOperation.InvokeInSecurityContext(Object state)
+   bei System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   bei System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   bei System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   bei MS.Internal.CulturePreservingExecutionContext.Run(CulturePreservingExecutionContext executionContext, ContextCallback callback, Object state)
+   bei System.Windows.Threading.DispatcherOperation.Invoke()
+   bei System.Windows.Threading.Dispatcher.ProcessQueue()
+   bei System.Windows.Threading.Dispatcher.WndProcHook(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   bei MS.Win32.HwndWrapper.WndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   bei MS.Win32.HwndSubclass.DispatcherCallbackOperation(Object o)
+   bei System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   bei System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)
+   bei System.Windows.Threading.Dispatcher.LegacyInvokeImpl(DispatcherPriority priority, TimeSpan timeout, Delegate method, Object args, Int32 numArgs)
+   bei MS.Win32.HwndSubclass.SubclassWndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam)
+   bei MS.Win32.UnsafeNativeMethods.DispatchMessage(MSG& msg)
+   bei System.Windows.Threading.Dispatcher.PushFrameImpl(DispatcherFrame frame)
+   bei System.Windows.Threading.Dispatcher.PushFrame(DispatcherFrame frame)
+   bei System.Windows.Application.RunDispatcher(Object ignore)
+   bei System.Windows.Application.RunInternal(Window window)
+   bei System.Windows.Application.Run(Window window)
+   bei System.Windows.Application.Run()
+   bei Jishi.StreamToSonos.App.Main()
+2020-06-29 11:56:18,516 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.42:1400/ZoneGroupTopology/Event
+2020-06-29 11:56:18,521 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 11:56:18,522 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 11:56:18,825 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 11:57:36,054 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 11:57:36,069 [4] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.42:1400/ZoneGroupTopology/Event
+2020-06-29 11:57:36,151 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 11:57:36,151 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 11:57:41,181 [1] INFO  Jishi.StreamToSonos.Services.HttpServer - Disposing HTTP Server
+2020-06-29 11:57:43,524 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 11:57:43,529 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 11:57:43,571 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.32:1400/ZoneGroupTopology/Event
+2020-06-29 11:57:43,703 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 11:58:00,513 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.32:1400/ZoneGroupTopology/Event
+2020-06-29 11:58:00,520 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 11:58:00,521 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 11:58:00,693 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 12:04:14,124 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 12:04:14,129 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 12:04:14,165 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 12:04:14,295 [6] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.42:1400/ZoneGroupTopology/Event
+2020-06-29 12:04:36,793 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 12:04:36,798 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 12:04:36,881 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 12:04:36,892 [7] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.42:1400/ZoneGroupTopology/Event
+2020-06-29 12:05:00,810 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 12:05:00,816 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 12:05:00,860 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.32:1400/ZoneGroupTopology/Event
+2020-06-29 12:05:00,893 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 12:05:52,579 [1] INFO  Jishi.StreamToSonos.Services.HttpServer - Disposing HTTP Server
+2020-06-29 12:05:54,902 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 12:05:54,907 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 12:05:54,916 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.32:1400/ZoneGroupTopology/Event
+2020-06-29 12:05:55,120 [5] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 12:06:02,659 [10] DEBUG Jishi.StreamToSonos.Services.HttpServer - Client connected 192.168.0.33:35511, System.Collections.Specialized.NameValueCollection 06/29/2020 12:06:02
+2020-06-29 12:06:02,659 [10] DEBUG Jishi.StreamToSonos.Services.HttpServer - StartRecording
+2020-06-29 12:06:02,675 [10] DEBUG Jishi.StreamToSonos.Services.HttpServer - Writing header 52-49-46-46-FF-FF-FF-FF-57-41-56-45-66-6D-74-20-10-00-00-00-01-00-02-00-80-BB-00-00-00-EE-02-00-04-00-10-00-64-61-74-61-FF-FF-FF-FF
+2020-06-29 12:06:02,676 [10] DEBUG Jishi.StreamToSonos.Services.HttpServer - Entering send loop
+2020-06-29 12:06:03,150 [10] DEBUG Jishi.StreamToSonos.Services.HttpServer - Disconnected called, loop exited
+2020-06-29 12:06:03,150 [10] DEBUG Jishi.StreamToSonos.Services.HttpServer - Stopped recording
+2020-06-29 12:06:03,154 [10] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 12:06:03,155 [5] DEBUG Jishi.StreamToSonos.Services.HttpServer - Client connected 192.168.0.33:35512, System.Collections.Specialized.NameValueCollection 06/29/2020 12:06:03
+2020-06-29 12:06:03,155 [5] DEBUG Jishi.StreamToSonos.Services.HttpServer - StartRecording
+2020-06-29 12:06:03,155 [5] DEBUG Jishi.StreamToSonos.Services.HttpServer - Writing header 52-49-46-46-FF-FF-FF-FF-57-41-56-45-66-6D-74-20-10-00-00-00-01-00-02-00-80-BB-00-00-00-EE-02-00-04-00-10-00-64-61-74-61-FF-FF-FF-FF
+2020-06-29 12:06:03,155 [5] DEBUG Jishi.StreamToSonos.Services.HttpServer - Entering send loop
+2020-06-29 12:06:23,588 [5] DEBUG Jishi.StreamToSonos.Services.HttpServer - Disconnected called, loop exited
+2020-06-29 12:06:23,588 [5] DEBUG Jishi.StreamToSonos.Services.HttpServer - Stopped recording
+2020-06-29 12:06:23,588 [5] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 12:06:33,751 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 12:06:33,756 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 12:06:33,781 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.42:1400/ZoneGroupTopology/Event
+2020-06-29 12:06:33,956 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 12:07:06,815 [15] DEBUG Jishi.StreamToSonos.Services.HttpServer - Client connected 192.168.0.33:35529, System.Collections.Specialized.NameValueCollection 06/29/2020 12:07:06
+2020-06-29 12:07:06,816 [15] DEBUG Jishi.StreamToSonos.Services.HttpServer - StartRecording
+2020-06-29 12:07:06,828 [15] DEBUG Jishi.StreamToSonos.Services.HttpServer - Writing header 52-49-46-46-FF-FF-FF-FF-57-41-56-45-66-6D-74-20-10-00-00-00-01-00-02-00-80-BB-00-00-00-EE-02-00-04-00-10-00-64-61-74-61-FF-FF-FF-FF
+2020-06-29 12:07:06,829 [15] DEBUG Jishi.StreamToSonos.Services.HttpServer - Entering send loop
+2020-06-29 12:07:27,641 [15] DEBUG Jishi.StreamToSonos.Services.HttpServer - Disconnected called, loop exited
+2020-06-29 12:07:27,641 [15] DEBUG Jishi.StreamToSonos.Services.HttpServer - Stopped recording
+2020-06-29 12:07:27,645 [15] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 12:07:42,627 [19] DEBUG Jishi.StreamToSonos.Services.HttpServer - Client connected 192.168.0.33:35535, System.Collections.Specialized.NameValueCollection 06/29/2020 12:07:42
+2020-06-29 12:07:42,627 [19] DEBUG Jishi.StreamToSonos.Services.HttpServer - StartRecording
+2020-06-29 12:07:42,628 [19] DEBUG Jishi.StreamToSonos.Services.HttpServer - Writing header 52-49-46-46-FF-FF-FF-FF-57-41-56-45-66-6D-74-20-10-00-00-00-01-00-02-00-80-BB-00-00-00-EE-02-00-04-00-10-00-64-61-74-61-FF-FF-FF-FF
+2020-06-29 12:07:42,629 [19] DEBUG Jishi.StreamToSonos.Services.HttpServer - Entering send loop
+2020-06-29 12:07:48,689 [1] INFO  Jishi.StreamToSonos.Services.HttpServer - Disposing HTTP Server
+2020-06-29 12:07:48,699 [19] DEBUG Jishi.StreamToSonos.Services.HttpServer - Disconnected called, loop exited
+2020-06-29 12:07:48,699 [19] INFO  Jishi.StreamToSonos.Services.HttpServer - Closing all sockets in HTTP Server
+2020-06-29 12:07:48,699 [19] DEBUG Jishi.StreamToSonos.Services.HttpServer - Stopped recording
+2020-06-29 12:09:12,254 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 12:09:12,259 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 12:09:12,566 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 12:09:12,570 [7] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.32:1400/ZoneGroupTopology/Event
+2020-06-29 12:11:22,095 [1] INFO  Jishi.StreamToSonos.Services.HttpServer - Disposing HTTP Server
+2020-06-29 12:12:26,392 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 12:12:26,397 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 12:12:26,479 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.32:1400/ZoneGroupTopology/Event
+2020-06-29 12:12:30,540 [7] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 12:13:37,942 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 12:13:37,947 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 12:13:38,096 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 12:13:38,103 [7] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.42:1400/ZoneGroupTopology/Event
+2020-06-29 12:14:45,071 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 12:14:45,076 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 12:14:45,093 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 12:15:51,375 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.32:1400/ZoneGroupTopology/Event
+2020-06-29 12:15:51,435 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 12:15:51,435 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 12:15:51,738 [4] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 12:16:10,095 [16] DEBUG Jishi.StreamToSonos.Services.HttpServer - Client connected 192.168.0.33:35560, System.Collections.Specialized.NameValueCollection 06/29/2020 12:16:10
+2020-06-29 12:16:10,095 [16] DEBUG Jishi.StreamToSonos.Services.HttpServer - StartRecording
+2020-06-29 12:16:10,109 [16] DEBUG Jishi.StreamToSonos.Services.HttpServer - Writing header 52-49-46-46-FF-FF-FF-FF-57-41-56-45-66-6D-74-20-10-00-00-00-01-00-02-00-80-BB-00-00-00-EE-02-00-04-00-10-00-64-61-74-61-FF-FF-FF-FF
+2020-06-29 12:16:10,110 [16] DEBUG Jishi.StreamToSonos.Services.HttpServer - Entering send loop
+2020-06-29 12:18:39,823 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 12:18:39,868 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.32:1400/ZoneGroupTopology/Event
+2020-06-29 12:18:39,873 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 12:18:39,874 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 12:20:21,083 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 12:20:21,088 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.32:1400/ZoneGroupTopology/Event
+2020-06-29 12:20:21,089 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 12:20:21,434 [4] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 12:21:05,527 [1] INFO  Jishi.StreamToSonos.Services.HttpServer - Disposing HTTP Server
+2020-06-29 12:21:09,739 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 12:21:09,743 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 12:21:09,881 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.32:1400/ZoneGroupTopology/Event
+2020-06-29 12:21:10,072 [7] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 12:21:25,334 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 12:21:25,339 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 12:21:25,375 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.32:1400/ZoneGroupTopology/Event
+2020-06-29 12:21:25,599 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 12:21:49,566 [11] DEBUG Jishi.StreamToSonos.Services.HttpServer - Client connected 192.168.0.33:35571, System.Collections.Specialized.NameValueCollection 06/29/2020 12:21:49
+2020-06-29 12:21:49,566 [11] DEBUG Jishi.StreamToSonos.Services.HttpServer - StartRecording
+2020-06-29 12:21:49,579 [11] DEBUG Jishi.StreamToSonos.Services.HttpServer - Writing header 52-49-46-46-FF-FF-FF-FF-57-41-56-45-66-6D-74-20-10-00-00-00-01-00-02-00-80-BB-00-00-00-EE-02-00-04-00-10-00-64-61-74-61-FF-FF-FF-FF
+2020-06-29 12:21:49,580 [11] DEBUG Jishi.StreamToSonos.Services.HttpServer - Entering send loop
+2020-06-29 12:21:58,112 [11] DEBUG Jishi.StreamToSonos.Services.HttpServer - Disconnected called, loop exited
+2020-06-29 12:21:58,112 [11] DEBUG Jishi.StreamToSonos.Services.HttpServer - Stopped recording
+2020-06-29 12:21:58,120 [11] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 12:21:58,120 [16] DEBUG Jishi.StreamToSonos.Services.HttpServer - Client connected 192.168.0.33:35575, System.Collections.Specialized.NameValueCollection 06/29/2020 12:21:58
+2020-06-29 12:21:58,120 [16] DEBUG Jishi.StreamToSonos.Services.HttpServer - StartRecording
+2020-06-29 12:21:58,120 [16] DEBUG Jishi.StreamToSonos.Services.HttpServer - Writing header 52-49-46-46-FF-FF-FF-FF-57-41-56-45-66-6D-74-20-10-00-00-00-01-00-02-00-80-BB-00-00-00-EE-02-00-04-00-10-00-64-61-74-61-FF-FF-FF-FF
+2020-06-29 12:21:58,120 [16] DEBUG Jishi.StreamToSonos.Services.HttpServer - Entering send loop
+2020-06-29 12:23:23,116 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.42:1400/ZoneGroupTopology/Event
+2020-06-29 12:23:23,120 [4] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 12:23:23,126 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 12:23:23,127 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 12:26:45,899 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 12:26:45,904 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 12:26:46,182 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.42:1400/ZoneGroupTopology/Event
+2020-06-29 12:26:46,319 [10] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 12:26:58,977 [7] DEBUG Jishi.StreamToSonos.Services.HttpServer - Client connected 192.168.0.33:35591, System.Collections.Specialized.NameValueCollection 06/29/2020 12:26:58
+2020-06-29 12:26:58,978 [7] DEBUG Jishi.StreamToSonos.Services.HttpServer - StartRecording
+2020-06-29 12:26:58,995 [7] DEBUG Jishi.StreamToSonos.Services.HttpServer - Writing header 52-49-46-46-FF-FF-FF-FF-57-41-56-45-66-6D-74-20-10-00-00-00-01-00-02-00-80-BB-00-00-00-EE-02-00-04-00-10-00-64-61-74-61-FF-FF-FF-FF
+2020-06-29 12:26:58,996 [7] DEBUG Jishi.StreamToSonos.Services.HttpServer - Entering send loop
+2020-06-29 12:27:12,891 [7] DEBUG Jishi.StreamToSonos.Services.HttpServer - Disconnected called, loop exited
+2020-06-29 12:27:12,891 [7] DEBUG Jishi.StreamToSonos.Services.HttpServer - Stopped recording
+2020-06-29 12:27:12,898 [7] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 12:27:12,898 [10] DEBUG Jishi.StreamToSonos.Services.HttpServer - Client connected 192.168.0.33:35593, System.Collections.Specialized.NameValueCollection 06/29/2020 12:27:12
+2020-06-29 12:27:12,898 [10] DEBUG Jishi.StreamToSonos.Services.HttpServer - StartRecording
+2020-06-29 12:27:12,898 [10] DEBUG Jishi.StreamToSonos.Services.HttpServer - Writing header 52-49-46-46-FF-FF-FF-FF-57-41-56-45-66-6D-74-20-10-00-00-00-01-00-02-00-80-BB-00-00-00-EE-02-00-04-00-10-00-64-61-74-61-FF-FF-FF-FF
+2020-06-29 12:27:12,898 [10] DEBUG Jishi.StreamToSonos.Services.HttpServer - Entering send loop
+2020-06-29 12:27:20,334 [10] DEBUG Jishi.StreamToSonos.Services.HttpServer - Disconnected called, loop exited
+2020-06-29 12:27:20,334 [10] DEBUG Jishi.StreamToSonos.Services.HttpServer - Stopped recording
+2020-06-29 12:27:20,334 [10] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 12:27:20,334 [7] DEBUG Jishi.StreamToSonos.Services.HttpServer - Client connected 192.168.0.33:35594, System.Collections.Specialized.NameValueCollection 06/29/2020 12:27:20
+2020-06-29 12:27:20,334 [7] DEBUG Jishi.StreamToSonos.Services.HttpServer - StartRecording
+2020-06-29 12:27:20,334 [7] DEBUG Jishi.StreamToSonos.Services.HttpServer - Writing header 52-49-46-46-FF-FF-FF-FF-57-41-56-45-66-6D-74-20-10-00-00-00-01-00-02-00-80-BB-00-00-00-EE-02-00-04-00-10-00-64-61-74-61-FF-FF-FF-FF
+2020-06-29 12:27:21,301 [7] DEBUG Jishi.StreamToSonos.Services.HttpServer - Entering send loop
+2020-06-29 12:27:26,921 [7] DEBUG Jishi.StreamToSonos.Services.HttpServer - Disconnected called, loop exited
+2020-06-29 12:27:26,921 [7] DEBUG Jishi.StreamToSonos.Services.HttpServer - Stopped recording
+2020-06-29 12:27:26,921 [7] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 12:27:26,921 [3] DEBUG Jishi.StreamToSonos.Services.HttpServer - Client connected 192.168.0.33:35595, System.Collections.Specialized.NameValueCollection 06/29/2020 12:27:26
+2020-06-29 12:27:26,921 [3] DEBUG Jishi.StreamToSonos.Services.HttpServer - StartRecording
+2020-06-29 12:27:26,921 [3] DEBUG Jishi.StreamToSonos.Services.HttpServer - Writing header 52-49-46-46-FF-FF-FF-FF-57-41-56-45-66-6D-74-20-10-00-00-00-01-00-02-00-80-BB-00-00-00-EE-02-00-04-00-10-00-64-61-74-61-FF-FF-FF-FF
+2020-06-29 12:28:14,081 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 12:28:14,087 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 12:28:14,087 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 12:28:14,132 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.32:1400/ZoneGroupTopology/Event
+2020-06-29 12:28:47,368 [4] DEBUG Jishi.StreamToSonos.Services.HttpServer - Client connected 192.168.1.42:60966, System.Collections.Specialized.NameValueCollection 06/29/2020 12:28:47
+2020-06-29 12:28:47,369 [4] DEBUG Jishi.StreamToSonos.Services.HttpServer - StartRecording
+2020-06-29 12:28:47,385 [4] DEBUG Jishi.StreamToSonos.Services.HttpServer - Writing header 52-49-46-46-FF-FF-FF-FF-57-41-56-45-66-6D-74-20-10-00-00-00-01-00-02-00-80-BB-00-00-00-EE-02-00-04-00-10-00-64-61-74-61-FF-FF-FF-FF
+2020-06-29 12:28:52,211 [4] DEBUG Jishi.StreamToSonos.Services.HttpServer - Entering send loop
+2020-06-29 12:28:52,272 [4] DEBUG Jishi.StreamToSonos.Services.HttpServer - Disconnected called, loop exited
+2020-06-29 12:28:52,272 [4] DEBUG Jishi.StreamToSonos.Services.HttpServer - Stopped recording
+2020-06-29 12:28:52,280 [4] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 12:28:52,280 [9] DEBUG Jishi.StreamToSonos.Services.HttpServer - Client connected 192.168.1.42:60967, System.Collections.Specialized.NameValueCollection 06/29/2020 12:28:52
+2020-06-29 12:28:52,280 [9] DEBUG Jishi.StreamToSonos.Services.HttpServer - StartRecording
+2020-06-29 12:28:52,280 [9] DEBUG Jishi.StreamToSonos.Services.HttpServer - Writing header 52-49-46-46-FF-FF-FF-FF-57-41-56-45-66-6D-74-20-10-00-00-00-01-00-02-00-80-BB-00-00-00-EE-02-00-04-00-10-00-64-61-74-61-FF-FF-FF-FF
+2020-06-29 12:28:53,365 [9] DEBUG Jishi.StreamToSonos.Services.HttpServer - Entering send loop
+2020-06-29 12:28:53,428 [9] DEBUG Jishi.StreamToSonos.Services.HttpServer - Disconnected called, loop exited
+2020-06-29 12:28:53,428 [9] DEBUG Jishi.StreamToSonos.Services.HttpServer - Stopped recording
+2020-06-29 12:28:53,428 [9] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 12:28:53,428 [4] DEBUG Jishi.StreamToSonos.Services.HttpServer - Client connected 192.168.1.42:60968, System.Collections.Specialized.NameValueCollection 06/29/2020 12:28:53
+2020-06-29 12:28:53,428 [4] DEBUG Jishi.StreamToSonos.Services.HttpServer - StartRecording
+2020-06-29 12:28:53,429 [4] DEBUG Jishi.StreamToSonos.Services.HttpServer - Writing header 52-49-46-46-FF-FF-FF-FF-57-41-56-45-66-6D-74-20-10-00-00-00-01-00-02-00-80-BB-00-00-00-EE-02-00-04-00-10-00-64-61-74-61-FF-FF-FF-FF
+2020-06-29 12:28:57,112 [4] DEBUG Jishi.StreamToSonos.Services.HttpServer - Entering send loop
+2020-06-29 12:29:25,947 [1] INFO  Jishi.StreamToSonos.Services.HttpServer - Disposing HTTP Server
+2020-06-29 12:29:25,995 [4] DEBUG Jishi.StreamToSonos.Services.HttpServer - Disconnected called, loop exited
+2020-06-29 12:29:25,995 [4] INFO  Jishi.StreamToSonos.Services.HttpServer - Closing all sockets in HTTP Server
+2020-06-29 12:29:25,995 [4] DEBUG Jishi.StreamToSonos.Services.HttpServer - Stopped recording
+2020-06-29 12:29:29,182 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 12:29:29,187 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 12:29:29,220 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.42:1400/ZoneGroupTopology/Event
+2020-06-29 12:29:29,260 [6] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 12:29:50,285 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.42:1400/ZoneGroupTopology/Event
+2020-06-29 12:29:50,348 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 12:29:50,348 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 12:29:50,533 [4] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 12:30:06,467 [16] DEBUG Jishi.StreamToSonos.Services.HttpServer - Client connected 192.168.0.33:35615, System.Collections.Specialized.NameValueCollection 06/29/2020 12:30:06
+2020-06-29 12:30:06,467 [16] DEBUG Jishi.StreamToSonos.Services.HttpServer - StartRecording
+2020-06-29 12:30:06,480 [16] DEBUG Jishi.StreamToSonos.Services.HttpServer - Writing header 52-49-46-46-FF-FF-FF-FF-57-41-56-45-66-6D-74-20-10-00-00-00-01-00-02-00-80-BB-00-00-00-EE-02-00-04-00-10-00-64-61-74-61-FF-FF-FF-FF
+2020-06-29 12:30:06,480 [16] DEBUG Jishi.StreamToSonos.Services.HttpServer - Entering send loop
+2020-06-29 12:30:18,945 [16] DEBUG Jishi.StreamToSonos.Services.HttpServer - Disconnected called, loop exited
+2020-06-29 12:30:18,945 [16] DEBUG Jishi.StreamToSonos.Services.HttpServer - Stopped recording
+2020-06-29 12:30:18,950 [16] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 12:30:18,950 [4] DEBUG Jishi.StreamToSonos.Services.HttpServer - Client connected 192.168.0.33:35621, System.Collections.Specialized.NameValueCollection 06/29/2020 12:30:18
+2020-06-29 12:30:18,950 [4] DEBUG Jishi.StreamToSonos.Services.HttpServer - StartRecording
+2020-06-29 12:30:18,950 [4] DEBUG Jishi.StreamToSonos.Services.HttpServer - Writing header 52-49-46-46-FF-FF-FF-FF-57-41-56-45-66-6D-74-20-10-00-00-00-01-00-02-00-80-BB-00-00-00-EE-02-00-04-00-10-00-64-61-74-61-FF-FF-FF-FF
+2020-06-29 12:30:18,951 [4] DEBUG Jishi.StreamToSonos.Services.HttpServer - Entering send loop
+2020-06-29 12:30:30,164 [4] DEBUG Jishi.StreamToSonos.Services.HttpServer - Disconnected called, loop exited
+2020-06-29 12:30:30,164 [4] DEBUG Jishi.StreamToSonos.Services.HttpServer - Stopped recording
+2020-06-29 12:30:30,164 [4] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 12:30:30,164 [8] DEBUG Jishi.StreamToSonos.Services.HttpServer - Client connected 192.168.0.33:35624, System.Collections.Specialized.NameValueCollection 06/29/2020 12:30:30
+2020-06-29 12:30:30,164 [8] DEBUG Jishi.StreamToSonos.Services.HttpServer - StartRecording
+2020-06-29 12:30:30,164 [8] DEBUG Jishi.StreamToSonos.Services.HttpServer - Writing header 52-49-46-46-FF-FF-FF-FF-57-41-56-45-66-6D-74-20-10-00-00-00-01-00-02-00-80-BB-00-00-00-EE-02-00-04-00-10-00-64-61-74-61-FF-FF-FF-FF
+2020-06-29 12:30:30,164 [8] DEBUG Jishi.StreamToSonos.Services.HttpServer - Entering send loop
+2020-06-29 12:31:17,363 [8] DEBUG Jishi.StreamToSonos.Services.HttpServer - Disconnected called, loop exited
+2020-06-29 12:31:17,363 [8] DEBUG Jishi.StreamToSonos.Services.HttpServer - Stopped recording
+2020-06-29 12:31:17,363 [8] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 12:31:17,364 [20] DEBUG Jishi.StreamToSonos.Services.HttpServer - Client connected 192.168.0.33:35627, System.Collections.Specialized.NameValueCollection 06/29/2020 12:31:17
+2020-06-29 12:31:17,364 [20] DEBUG Jishi.StreamToSonos.Services.HttpServer - StartRecording
+2020-06-29 12:31:17,364 [20] DEBUG Jishi.StreamToSonos.Services.HttpServer - Writing header 52-49-46-46-FF-FF-FF-FF-57-41-56-45-66-6D-74-20-10-00-00-00-01-00-02-00-80-BB-00-00-00-EE-02-00-04-00-10-00-64-61-74-61-FF-FF-FF-FF
+2020-06-29 12:31:17,364 [20] DEBUG Jishi.StreamToSonos.Services.HttpServer - Entering send loop
+2020-06-29 12:32:59,791 [20] DEBUG Jishi.StreamToSonos.Services.HttpServer - Disconnected called, loop exited
+2020-06-29 12:32:59,791 [20] DEBUG Jishi.StreamToSonos.Services.HttpServer - Stopped recording
+2020-06-29 12:32:59,791 [20] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 12:33:04,529 [1] INFO  Jishi.StreamToSonos.Services.HttpServer - Disposing HTTP Server
+2020-06-29 12:33:28,623 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 12:33:28,628 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 12:33:28,680 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 12:33:28,694 [6] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.42:1400/ZoneGroupTopology/Event
+2020-06-29 12:33:49,588 [6] DEBUG Jishi.StreamToSonos.Services.HttpServer - Client connected 192.168.1.42:60985, System.Collections.Specialized.NameValueCollection 06/29/2020 12:33:49
+2020-06-29 12:33:49,589 [6] DEBUG Jishi.StreamToSonos.Services.HttpServer - StartRecording
+2020-06-29 12:33:49,601 [6] DEBUG Jishi.StreamToSonos.Services.HttpServer - Writing header 52-49-46-46-FF-FF-FF-FF-57-41-56-45-66-6D-74-20-10-00-00-00-01-00-02-00-80-BB-00-00-00-EE-02-00-04-00-10-00-64-61-74-61-FF-FF-FF-FF
+2020-06-29 12:33:49,601 [6] DEBUG Jishi.StreamToSonos.Services.HttpServer - Entering send loop
+2020-06-29 12:34:28,745 [6] DEBUG Jishi.StreamToSonos.Services.HttpServer - Disconnected called, loop exited
+2020-06-29 12:34:28,745 [6] DEBUG Jishi.StreamToSonos.Services.HttpServer - Stopped recording
+2020-06-29 12:34:28,749 [6] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 12:36:46,301 [1] INFO  Jishi.StreamToSonos.Services.HttpServer - Disposing HTTP Server
+2020-06-29 12:37:02,755 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 12:37:02,760 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 12:37:02,957 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.42:1400/ZoneGroupTopology/Event
+2020-06-29 12:37:03,141 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 12:37:14,688 [1] INFO  Jishi.StreamToSonos.Services.HttpServer - Disposing HTTP Server
+2020-06-29 12:37:17,316 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.32:1400/ZoneGroupTopology/Event
+2020-06-29 12:37:17,363 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 12:37:17,364 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 12:37:17,419 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 12:37:24,616 [1] INFO  Jishi.StreamToSonos.Services.HttpServer - Disposing HTTP Server
+2020-06-29 12:37:31,600 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 12:37:31,604 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 12:37:31,607 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 12:37:31,754 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.32:1400/ZoneGroupTopology/Event
+2020-06-29 12:38:58,447 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 12:38:58,452 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 12:39:07,334 [5] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.32:1400/ZoneGroupTopology/Event
+2020-06-29 12:39:07,334 [6] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 12:39:27,188 [3] DEBUG Jishi.StreamToSonos.Services.HttpServer - Client connected 192.168.1.34:49724, System.Collections.Specialized.NameValueCollection 06/29/2020 12:39:27
+2020-06-29 12:39:27,197 [3] DEBUG Jishi.StreamToSonos.Services.HttpServer - Error when writing response headers
+System.IO.IOException: In die Übertragungsverbindung können keine Daten geschrieben werden: Eine bestehende Verbindung wurde softwaregesteuert
+durch den Hostcomputer abgebrochen. ---> System.Net.Sockets.SocketException: Eine bestehende Verbindung wurde softwaregesteuert
+durch den Hostcomputer abgebrochen
+   bei System.Net.Sockets.Socket.Send(Byte[] buffer, Int32 offset, Int32 size, SocketFlags socketFlags)
+   bei System.Net.Sockets.NetworkStream.Write(Byte[] buffer, Int32 offset, Int32 size)
+   --- Ende der internen Ausnahmestapelüberwachung ---
+   bei System.Net.Sockets.NetworkStream.Write(Byte[] buffer, Int32 offset, Int32 size)
+   bei Jishi.StreamToSonos.Services.HttpServer.SendHeaders(NameValueCollection responseHeaders, NetworkStream stream) in F:\VS-Projekts\Sonos\Jishi.StreamToSonos\Services\HttpServer.cs:Zeile 130.
+2020-06-29 12:39:27,204 [3] DEBUG Jishi.StreamToSonos.Services.HttpServer - StartRecording
+2020-06-29 12:39:27,215 [3] DEBUG Jishi.StreamToSonos.Services.HttpServer - Writing header 52-49-46-46-FF-FF-FF-FF-57-41-56-45-66-6D-74-20-10-00-00-00-01-00-02-00-80-BB-00-00-00-EE-02-00-04-00-10-00-64-61-74-61-FF-FF-FF-FF
+2020-06-29 12:39:27,225 [3] DEBUG Jishi.StreamToSonos.Services.HttpServer - Entering send loop
+2020-06-29 12:39:27,225 [3] DEBUG Jishi.StreamToSonos.Services.HttpServer - Disconnected called, loop exited
+2020-06-29 12:39:27,225 [3] DEBUG Jishi.StreamToSonos.Services.HttpServer - Stopped recording
+2020-06-29 12:39:27,227 [3] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 12:39:27,228 [6] DEBUG Jishi.StreamToSonos.Services.HttpServer - Client connected 192.168.1.34:49725, System.Collections.Specialized.NameValueCollection 06/29/2020 12:39:27
+2020-06-29 12:39:27,231 [6] DEBUG Jishi.StreamToSonos.Services.HttpServer - Error when writing response headers
+System.IO.IOException: In die Übertragungsverbindung können keine Daten geschrieben werden: Eine bestehende Verbindung wurde softwaregesteuert
+durch den Hostcomputer abgebrochen. ---> System.Net.Sockets.SocketException: Eine bestehende Verbindung wurde softwaregesteuert
+durch den Hostcomputer abgebrochen
+   bei System.Net.Sockets.Socket.Send(Byte[] buffer, Int32 offset, Int32 size, SocketFlags socketFlags)
+   bei System.Net.Sockets.NetworkStream.Write(Byte[] buffer, Int32 offset, Int32 size)
+   --- Ende der internen Ausnahmestapelüberwachung ---
+   bei System.Net.Sockets.NetworkStream.Write(Byte[] buffer, Int32 offset, Int32 size)
+   bei Jishi.StreamToSonos.Services.HttpServer.SendHeaders(NameValueCollection responseHeaders, NetworkStream stream) in F:\VS-Projekts\Sonos\Jishi.StreamToSonos\Services\HttpServer.cs:Zeile 130.
+2020-06-29 12:39:27,232 [6] DEBUG Jishi.StreamToSonos.Services.HttpServer - StartRecording
+2020-06-29 12:39:27,232 [6] DEBUG Jishi.StreamToSonos.Services.HttpServer - Writing header 52-49-46-46-FF-FF-FF-FF-57-41-56-45-66-6D-74-20-10-00-00-00-01-00-02-00-80-BB-00-00-00-EE-02-00-04-00-10-00-64-61-74-61-FF-FF-FF-FF
+2020-06-29 12:39:27,262 [6] DEBUG Jishi.StreamToSonos.Services.HttpServer - Entering send loop
+2020-06-29 12:39:27,262 [6] DEBUG Jishi.StreamToSonos.Services.HttpServer - Disconnected called, loop exited
+2020-06-29 12:39:27,262 [6] DEBUG Jishi.StreamToSonos.Services.HttpServer - Stopped recording
+2020-06-29 12:39:27,262 [6] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 12:39:27,262 [3] DEBUG Jishi.StreamToSonos.Services.HttpServer - Client connected 192.168.1.34:49726, System.Collections.Specialized.NameValueCollection 06/29/2020 12:39:27
+2020-06-29 12:39:27,266 [3] DEBUG Jishi.StreamToSonos.Services.HttpServer - Error when writing response headers
+System.IO.IOException: In die Übertragungsverbindung können keine Daten geschrieben werden: Eine bestehende Verbindung wurde softwaregesteuert
+durch den Hostcomputer abgebrochen. ---> System.Net.Sockets.SocketException: Eine bestehende Verbindung wurde softwaregesteuert
+durch den Hostcomputer abgebrochen
+   bei System.Net.Sockets.Socket.Send(Byte[] buffer, Int32 offset, Int32 size, SocketFlags socketFlags)
+   bei System.Net.Sockets.NetworkStream.Write(Byte[] buffer, Int32 offset, Int32 size)
+   --- Ende der internen Ausnahmestapelüberwachung ---
+   bei System.Net.Sockets.NetworkStream.Write(Byte[] buffer, Int32 offset, Int32 size)
+   bei Jishi.StreamToSonos.Services.HttpServer.SendHeaders(NameValueCollection responseHeaders, NetworkStream stream) in F:\VS-Projekts\Sonos\Jishi.StreamToSonos\Services\HttpServer.cs:Zeile 130.
+2020-06-29 12:39:27,266 [3] DEBUG Jishi.StreamToSonos.Services.HttpServer - StartRecording
+2020-06-29 12:39:27,266 [3] DEBUG Jishi.StreamToSonos.Services.HttpServer - Writing header 52-49-46-46-FF-FF-FF-FF-57-41-56-45-66-6D-74-20-10-00-00-00-01-00-02-00-80-BB-00-00-00-EE-02-00-04-00-10-00-64-61-74-61-FF-FF-FF-FF
+2020-06-29 12:39:27,272 [3] DEBUG Jishi.StreamToSonos.Services.HttpServer - Entering send loop
+2020-06-29 12:39:27,272 [3] DEBUG Jishi.StreamToSonos.Services.HttpServer - Disconnected called, loop exited
+2020-06-29 12:39:27,272 [3] DEBUG Jishi.StreamToSonos.Services.HttpServer - Stopped recording
+2020-06-29 12:39:27,272 [3] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 12:39:27,273 [6] DEBUG Jishi.StreamToSonos.Services.HttpServer - Client connected 192.168.1.34:49732, System.Collections.Specialized.NameValueCollection 06/29/2020 12:39:27
+2020-06-29 12:39:27,275 [6] DEBUG Jishi.StreamToSonos.Services.HttpServer - Error when writing response headers
+System.IO.IOException: In die Übertragungsverbindung können keine Daten geschrieben werden: Eine bestehende Verbindung wurde softwaregesteuert
+durch den Hostcomputer abgebrochen. ---> System.Net.Sockets.SocketException: Eine bestehende Verbindung wurde softwaregesteuert
+durch den Hostcomputer abgebrochen
+   bei System.Net.Sockets.Socket.Send(Byte[] buffer, Int32 offset, Int32 size, SocketFlags socketFlags)
+   bei System.Net.Sockets.NetworkStream.Write(Byte[] buffer, Int32 offset, Int32 size)
+   --- Ende der internen Ausnahmestapelüberwachung ---
+   bei System.Net.Sockets.NetworkStream.Write(Byte[] buffer, Int32 offset, Int32 size)
+   bei Jishi.StreamToSonos.Services.HttpServer.SendHeaders(NameValueCollection responseHeaders, NetworkStream stream) in F:\VS-Projekts\Sonos\Jishi.StreamToSonos\Services\HttpServer.cs:Zeile 130.
+2020-06-29 12:39:27,275 [6] DEBUG Jishi.StreamToSonos.Services.HttpServer - StartRecording
+2020-06-29 12:39:27,275 [6] DEBUG Jishi.StreamToSonos.Services.HttpServer - Writing header 52-49-46-46-FF-FF-FF-FF-57-41-56-45-66-6D-74-20-10-00-00-00-01-00-02-00-80-BB-00-00-00-EE-02-00-04-00-10-00-64-61-74-61-FF-FF-FF-FF
+2020-06-29 12:39:27,285 [6] DEBUG Jishi.StreamToSonos.Services.HttpServer - Entering send loop
+2020-06-29 12:39:27,285 [6] DEBUG Jishi.StreamToSonos.Services.HttpServer - Disconnected called, loop exited
+2020-06-29 12:39:27,285 [6] DEBUG Jishi.StreamToSonos.Services.HttpServer - Stopped recording
+2020-06-29 12:39:27,285 [6] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 12:39:35,175 [3] DEBUG Jishi.StreamToSonos.Services.HttpServer - Client connected 192.168.1.34:49733, System.Collections.Specialized.NameValueCollection 06/29/2020 12:39:35
+2020-06-29 12:39:35,180 [3] DEBUG Jishi.StreamToSonos.Services.HttpServer - Error when writing response headers
+System.IO.IOException: In die Übertragungsverbindung können keine Daten geschrieben werden: Eine bestehende Verbindung wurde softwaregesteuert
+durch den Hostcomputer abgebrochen. ---> System.Net.Sockets.SocketException: Eine bestehende Verbindung wurde softwaregesteuert
+durch den Hostcomputer abgebrochen
+   bei System.Net.Sockets.Socket.Send(Byte[] buffer, Int32 offset, Int32 size, SocketFlags socketFlags)
+   bei System.Net.Sockets.NetworkStream.Write(Byte[] buffer, Int32 offset, Int32 size)
+   --- Ende der internen Ausnahmestapelüberwachung ---
+   bei System.Net.Sockets.NetworkStream.Write(Byte[] buffer, Int32 offset, Int32 size)
+   bei Jishi.StreamToSonos.Services.HttpServer.SendHeaders(NameValueCollection responseHeaders, NetworkStream stream) in F:\VS-Projekts\Sonos\Jishi.StreamToSonos\Services\HttpServer.cs:Zeile 130.
+2020-06-29 12:39:35,180 [3] DEBUG Jishi.StreamToSonos.Services.HttpServer - StartRecording
+2020-06-29 12:39:35,183 [3] ERROR Jishi.StreamToSonos.App - System.InvalidOperationException: Previous recording still in progress
+   bei NAudio.CoreAudioApi.WasapiCapture.StartRecording() in F:\VS-Projekts\Sonos\NAudio\Wave\WaveInputs\WasapiCapture.cs:Zeile 140.
+   bei Jishi.StreamToSonos.Services.AudioStreamHandler.StartRecording() in F:\VS-Projekts\Sonos\Jishi.StreamToSonos\Services\AudioStreamHandler.cs:Zeile 51.
+   bei Jishi.StreamToSonos.Services.HttpServer.HandleConnection(IAsyncResult ar) in F:\VS-Projekts\Sonos\Jishi.StreamToSonos\Services\HttpServer.cs:Zeile 80.
+   bei System.Net.LazyAsyncResult.Complete(IntPtr userToken)
+   bei System.Net.ContextAwareResult.CompleteCallback(Object state)
+   bei System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   bei System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   bei System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   bei System.Net.ContextAwareResult.Complete(IntPtr userToken)
+   bei System.Net.LazyAsyncResult.ProtectedInvokeCallback(Object result, IntPtr userToken)
+   bei System.Net.Sockets.BaseOverlappedAsyncResult.CompletionPortCallback(UInt32 errorCode, UInt32 numBytes, NativeOverlapped* nativeOverlapped)
+   bei System.Threading._IOCompletionCallback.PerformIOCompletionCallback(UInt32 errorCode, UInt32 numBytes, NativeOverlapped* pOVERLAP)
+2020-06-29 12:40:16,073 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 12:40:16,078 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 12:40:18,367 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 12:40:18,367 [5] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.42:1400/ZoneGroupTopology/Event
+2020-06-29 12:41:14,057 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 12:41:14,062 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 12:41:14,082 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.42:1400/ZoneGroupTopology/Event
+2020-06-29 12:41:14,225 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 12:41:36,810 [3] DEBUG Jishi.StreamToSonos.Services.HttpServer - Client connected 192.168.0.33:35680, System.Collections.Specialized.NameValueCollection 06/29/2020 12:41:36
+2020-06-29 12:41:36,810 [3] DEBUG Jishi.StreamToSonos.Services.HttpServer - StartRecording
+2020-06-29 12:43:11,783 [3] DEBUG Jishi.StreamToSonos.Services.HttpServer - Writing header 52-49-46-46-FF-FF-FF-FF-57-41-56-45-66-6D-74-20-10-00-00-00-01-00-02-00-80-BB-00-00-00-EE-02-00-04-00-10-00-64-61-74-61-FF-FF-FF-FF
+2020-06-29 12:43:11,795 [3] DEBUG Jishi.StreamToSonos.Services.HttpServer - Entering send loop
+2020-06-29 12:43:11,795 [3] DEBUG Jishi.StreamToSonos.Services.HttpServer - Disconnected called, loop exited
+2020-06-29 12:43:11,795 [3] DEBUG Jishi.StreamToSonos.Services.HttpServer - Stopped recording
+2020-06-29 12:43:11,797 [3] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 12:43:20,251 [9] DEBUG Jishi.StreamToSonos.Services.HttpServer - Client connected 192.168.0.33:35681, System.Collections.Specialized.NameValueCollection 06/29/2020 12:43:20
+2020-06-29 12:43:20,251 [9] DEBUG Jishi.StreamToSonos.Services.HttpServer - StartRecording
+2020-06-29 12:43:20,252 [9] DEBUG Jishi.StreamToSonos.Services.HttpServer - Writing header 52-49-46-46-FF-FF-FF-FF-57-41-56-45-66-6D-74-20-10-00-00-00-01-00-02-00-80-BB-00-00-00-EE-02-00-04-00-10-00-64-61-74-61-FF-FF-FF-FF
+2020-06-29 12:43:20,252 [9] DEBUG Jishi.StreamToSonos.Services.HttpServer - Entering send loop
+2020-06-29 12:43:32,829 [1] INFO  Jishi.StreamToSonos.Services.HttpServer - Disposing HTTP Server
+2020-06-29 12:43:32,852 [9] DEBUG Jishi.StreamToSonos.Services.HttpServer - Disconnected called, loop exited
+2020-06-29 12:43:32,852 [9] INFO  Jishi.StreamToSonos.Services.HttpServer - Closing all sockets in HTTP Server
+2020-06-29 12:43:32,852 [9] DEBUG Jishi.StreamToSonos.Services.HttpServer - Stopped recording
+2020-06-29 12:45:00,788 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 12:45:00,793 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 12:45:00,932 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 12:45:00,938 [7] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.32:1400/ZoneGroupTopology/Event
+2020-06-29 12:46:13,797 [3] DEBUG Jishi.StreamToSonos.Services.HttpServer - Client connected 192.168.1.34:49785, System.Collections.Specialized.NameValueCollection 06/29/2020 12:46:13
+2020-06-29 12:46:13,811 [3] DEBUG Jishi.StreamToSonos.Services.HttpServer - Error when writing response headers
+System.IO.IOException: In die Übertragungsverbindung können keine Daten geschrieben werden: Eine bestehende Verbindung wurde softwaregesteuert
+durch den Hostcomputer abgebrochen. ---> System.Net.Sockets.SocketException: Eine bestehende Verbindung wurde softwaregesteuert
+durch den Hostcomputer abgebrochen
+   bei System.Net.Sockets.Socket.Send(Byte[] buffer, Int32 offset, Int32 size, SocketFlags socketFlags)
+   bei System.Net.Sockets.NetworkStream.Write(Byte[] buffer, Int32 offset, Int32 size)
+   --- Ende der internen Ausnahmestapelüberwachung ---
+   bei System.Net.Sockets.NetworkStream.Write(Byte[] buffer, Int32 offset, Int32 size)
+   bei Jishi.StreamToSonos.Services.HttpServer.SendHeaders(NameValueCollection responseHeaders, NetworkStream stream) in F:\VS-Projekts\Sonos\Jishi.StreamToSonos\Services\HttpServer.cs:Zeile 130.
+2020-06-29 12:46:13,816 [3] DEBUG Jishi.StreamToSonos.Services.HttpServer - StartRecording
+2020-06-29 12:46:13,827 [3] DEBUG Jishi.StreamToSonos.Services.HttpServer - Writing header 52-49-46-46-FF-FF-FF-FF-57-41-56-45-66-6D-74-20-10-00-00-00-01-00-02-00-80-BB-00-00-00-EE-02-00-04-00-10-00-64-61-74-61-FF-FF-FF-FF
+2020-06-29 12:46:13,839 [3] DEBUG Jishi.StreamToSonos.Services.HttpServer - Entering send loop
+2020-06-29 12:46:13,839 [3] DEBUG Jishi.StreamToSonos.Services.HttpServer - Disconnected called, loop exited
+2020-06-29 12:46:13,839 [3] DEBUG Jishi.StreamToSonos.Services.HttpServer - Stopped recording
+2020-06-29 12:46:13,840 [3] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 12:46:13,840 [19] DEBUG Jishi.StreamToSonos.Services.HttpServer - Client connected 192.168.1.34:49786, System.Collections.Specialized.NameValueCollection 06/29/2020 12:46:13
+2020-06-29 12:46:13,840 [19] DEBUG Jishi.StreamToSonos.Services.HttpServer - StartRecording
+2020-06-29 12:46:13,840 [19] DEBUG Jishi.StreamToSonos.Services.HttpServer - Writing header 52-49-46-46-FF-FF-FF-FF-57-41-56-45-66-6D-74-20-10-00-00-00-01-00-02-00-80-BB-00-00-00-EE-02-00-04-00-10-00-64-61-74-61-FF-FF-FF-FF
+2020-06-29 12:46:13,840 [19] DEBUG Jishi.StreamToSonos.Services.HttpServer - Entering send loop
+2020-06-29 12:46:39,258 [17] DEBUG Jishi.StreamToSonos.Services.HttpServer - sample was zero length!
+2020-06-29 12:46:39,309 [23] DEBUG Jishi.StreamToSonos.Services.HttpServer - sample was zero length!
+2020-06-29 12:46:39,360 [17] DEBUG Jishi.StreamToSonos.Services.HttpServer - sample was zero length!
+2020-06-29 12:46:39,411 [23] DEBUG Jishi.StreamToSonos.Services.HttpServer - sample was zero length!
+2020-06-29 12:46:39,462 [17] DEBUG Jishi.StreamToSonos.Services.HttpServer - sample was zero length!
+2020-06-29 12:46:39,513 [23] DEBUG Jishi.StreamToSonos.Services.HttpServer - sample was zero length!
+2020-06-29 12:46:39,564 [17] DEBUG Jishi.StreamToSonos.Services.HttpServer - sample was zero length!
+2020-06-29 12:46:39,615 [18] DEBUG Jishi.StreamToSonos.Services.HttpServer - sample was zero length!
+2020-06-29 12:46:39,666 [17] DEBUG Jishi.StreamToSonos.Services.HttpServer - sample was zero length!
+2020-06-29 12:46:39,717 [18] DEBUG Jishi.StreamToSonos.Services.HttpServer - sample was zero length!
+2020-06-29 12:46:39,768 [23] DEBUG Jishi.StreamToSonos.Services.HttpServer - sample was zero length!
+2020-06-29 12:46:39,819 [18] DEBUG Jishi.StreamToSonos.Services.HttpServer - sample was zero length!
+2020-06-29 12:46:39,870 [23] DEBUG Jishi.StreamToSonos.Services.HttpServer - sample was zero length!
+2020-06-29 12:46:39,921 [18] DEBUG Jishi.StreamToSonos.Services.HttpServer - sample was zero length!
+2020-06-29 12:46:39,972 [17] DEBUG Jishi.StreamToSonos.Services.HttpServer - sample was zero length!
+2020-06-29 12:46:40,023 [18] DEBUG Jishi.StreamToSonos.Services.HttpServer - sample was zero length!
+2020-06-29 12:46:40,074 [17] DEBUG Jishi.StreamToSonos.Services.HttpServer - sample was zero length!
+2020-06-29 12:46:40,125 [18] DEBUG Jishi.StreamToSonos.Services.HttpServer - sample was zero length!
+2020-06-29 12:46:40,176 [17] DEBUG Jishi.StreamToSonos.Services.HttpServer - sample was zero length!
+2020-06-29 12:46:40,227 [18] DEBUG Jishi.StreamToSonos.Services.HttpServer - sample was zero length!
+2020-06-29 12:46:42,734 [1] INFO  Jishi.StreamToSonos.Services.HttpServer - Disposing HTTP Server
+2020-06-29 12:46:42,777 [19] DEBUG Jishi.StreamToSonos.Services.HttpServer - Disconnected called, loop exited
+2020-06-29 12:46:42,777 [19] INFO  Jishi.StreamToSonos.Services.HttpServer - Closing all sockets in HTTP Server
+2020-06-29 12:46:42,777 [19] DEBUG Jishi.StreamToSonos.Services.HttpServer - Stopped recording
+2020-06-29 12:46:45,144 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.32:1400/ZoneGroupTopology/Event
+2020-06-29 12:46:45,168 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 12:46:45,169 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 12:46:45,579 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 12:46:58,596 [3] DEBUG Jishi.StreamToSonos.Services.HttpServer - Client connected 192.168.0.33:35714, System.Collections.Specialized.NameValueCollection 06/29/2020 12:46:58
+2020-06-29 12:46:58,596 [3] DEBUG Jishi.StreamToSonos.Services.HttpServer - StartRecording
+2020-06-29 12:46:58,608 [3] DEBUG Jishi.StreamToSonos.Services.HttpServer - Writing header 52-49-46-46-FF-FF-FF-FF-57-41-56-45-66-6D-74-20-10-00-00-00-01-00-02-00-80-BB-00-00-00-EE-02-00-04-00-10-00-64-61-74-61-FF-FF-FF-FF
+2020-06-29 12:47:03,177 [3] DEBUG Jishi.StreamToSonos.Services.HttpServer - Entering send loop
+2020-06-29 12:47:20,754 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 12:47:20,760 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 12:47:20,827 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 12:47:21,005 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.32:1400/ZoneGroupTopology/Event
+2020-06-29 12:47:38,029 [1] INFO  Jishi.StreamToSonos.Services.HttpServer - Disposing HTTP Server
+2020-06-29 12:47:40,670 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 12:47:40,675 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 12:47:40,942 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 12:47:41,055 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.32:1400/ZoneGroupTopology/Event
+2020-06-29 12:47:55,912 [1] INFO  Jishi.StreamToSonos.Services.HttpServer - Disposing HTTP Server
+2020-06-29 12:48:33,974 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 12:48:33,979 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 12:48:34,027 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 12:48:34,080 [6] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.32:1400/ZoneGroupTopology/Event
+2020-06-29 12:48:39,962 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 12:48:39,967 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 12:48:40,080 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 12:48:40,224 [7] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.32:1400/ZoneGroupTopology/Event
+2020-06-29 12:48:59,225 [1] INFO  Jishi.StreamToSonos.Services.HttpServer - Disposing HTTP Server
+2020-06-29 12:49:04,042 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 12:49:04,042 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 12:49:04,048 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 12:49:04,372 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.32:1400/ZoneGroupTopology/Event
+2020-06-29 12:49:50,069 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.42:1400/ZoneGroupTopology/Event
+2020-06-29 12:49:50,096 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 12:49:50,097 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 12:49:50,275 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 12:50:02,987 [17] DEBUG Jishi.StreamToSonos.Services.HttpServer - Client connected 192.168.0.33:35749, System.Collections.Specialized.NameValueCollection 06/29/2020 12:50:02
+2020-06-29 12:50:02,987 [17] DEBUG Jishi.StreamToSonos.Services.HttpServer - StartRecording
+2020-06-29 12:50:02,999 [17] DEBUG Jishi.StreamToSonos.Services.HttpServer - Writing header 52-49-46-46-FF-FF-FF-FF-57-41-56-45-66-6D-74-20-10-00-00-00-01-00-02-00-80-BB-00-00-00-EE-02-00-04-00-10-00-64-61-74-61-FF-FF-FF-FF
+2020-06-29 12:50:06,838 [17] DEBUG Jishi.StreamToSonos.Services.HttpServer - Entering send loop
+2020-06-29 12:52:13,116 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.42:1400/ZoneGroupTopology/Event
+2020-06-29 12:52:13,146 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 12:52:13,146 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 12:52:13,225 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 12:52:42,326 [3] DEBUG Jishi.StreamToSonos.Services.HttpServer - Client connected 192.168.0.30:49839, System.Collections.Specialized.NameValueCollection 06/29/2020 12:52:42
+2020-06-29 12:52:42,327 [3] DEBUG Jishi.StreamToSonos.Services.HttpServer - StartRecording
+2020-06-29 12:52:42,347 [3] DEBUG Jishi.StreamToSonos.Services.HttpServer - Writing header 52-49-46-46-FF-FF-FF-FF-57-41-56-45-66-6D-74-20-10-00-00-00-01-00-02-00-80-BB-00-00-00-EE-02-00-04-00-10-00-64-61-74-61-FF-FF-FF-FF
+2020-06-29 12:52:42,348 [3] DEBUG Jishi.StreamToSonos.Services.HttpServer - Entering send loop
+2020-06-29 12:52:51,289 [3] DEBUG Jishi.StreamToSonos.Services.HttpServer - Disconnected called, loop exited
+2020-06-29 12:52:51,289 [3] DEBUG Jishi.StreamToSonos.Services.HttpServer - Stopped recording
+2020-06-29 12:52:51,297 [3] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 12:52:53,518 [12] DEBUG Jishi.StreamToSonos.Services.HttpServer - Client connected 192.168.0.30:49840, System.Collections.Specialized.NameValueCollection 06/29/2020 12:52:53
+2020-06-29 12:52:53,523 [12] DEBUG Jishi.StreamToSonos.Services.HttpServer - Error when writing response headers
+System.IO.IOException: In die Übertragungsverbindung können keine Daten geschrieben werden: Eine bestehende Verbindung wurde softwaregesteuert
+durch den Hostcomputer abgebrochen. ---> System.Net.Sockets.SocketException: Eine bestehende Verbindung wurde softwaregesteuert
+durch den Hostcomputer abgebrochen
+   bei System.Net.Sockets.Socket.Send(Byte[] buffer, Int32 offset, Int32 size, SocketFlags socketFlags)
+   bei System.Net.Sockets.NetworkStream.Write(Byte[] buffer, Int32 offset, Int32 size)
+   --- Ende der internen Ausnahmestapelüberwachung ---
+   bei System.Net.Sockets.NetworkStream.Write(Byte[] buffer, Int32 offset, Int32 size)
+   bei Jishi.StreamToSonos.Services.HttpServer.SendHeaders(NameValueCollection responseHeaders, NetworkStream stream) in F:\VS-Projekts\Sonos\Jishi.StreamToSonos\Services\HttpServer.cs:Zeile 131.
+2020-06-29 12:52:53,529 [12] DEBUG Jishi.StreamToSonos.Services.HttpServer - StartRecording
+2020-06-29 12:52:53,530 [12] DEBUG Jishi.StreamToSonos.Services.HttpServer - Writing header 52-49-46-46-FF-FF-FF-FF-57-41-56-45-66-6D-74-20-10-00-00-00-01-00-02-00-80-BB-00-00-00-EE-02-00-04-00-10-00-64-61-74-61-FF-FF-FF-FF
+2020-06-29 12:52:53,542 [12] DEBUG Jishi.StreamToSonos.Services.HttpServer - Entering send loop
+2020-06-29 12:52:53,542 [12] DEBUG Jishi.StreamToSonos.Services.HttpServer - Disconnected called, loop exited
+2020-06-29 12:52:53,542 [12] DEBUG Jishi.StreamToSonos.Services.HttpServer - Stopped recording
+2020-06-29 12:52:53,548 [12] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 12:52:53,548 [3] DEBUG Jishi.StreamToSonos.Services.HttpServer - Client connected 192.168.0.33:35773, System.Collections.Specialized.NameValueCollection 06/29/2020 12:52:53
+2020-06-29 12:52:53,548 [3] DEBUG Jishi.StreamToSonos.Services.HttpServer - StartRecording
+2020-06-29 12:52:53,548 [3] DEBUG Jishi.StreamToSonos.Services.HttpServer - Writing header 52-49-46-46-FF-FF-FF-FF-57-41-56-45-66-6D-74-20-10-00-00-00-01-00-02-00-80-BB-00-00-00-EE-02-00-04-00-10-00-64-61-74-61-FF-FF-FF-FF
+2020-06-29 12:52:53,548 [3] DEBUG Jishi.StreamToSonos.Services.HttpServer - Entering send loop
+2020-06-29 12:52:53,587 [3] DEBUG Jishi.StreamToSonos.Services.HttpServer - Disconnected called, loop exited
+2020-06-29 12:52:53,587 [3] DEBUG Jishi.StreamToSonos.Services.HttpServer - Stopped recording
+2020-06-29 12:52:53,587 [3] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 12:52:53,588 [12] DEBUG Jishi.StreamToSonos.Services.HttpServer - Client connected 192.168.0.33:35774, System.Collections.Specialized.NameValueCollection 06/29/2020 12:52:53
+2020-06-29 12:52:53,588 [12] DEBUG Jishi.StreamToSonos.Services.HttpServer - StartRecording
+2020-06-29 12:52:53,588 [12] DEBUG Jishi.StreamToSonos.Services.HttpServer - Writing header 52-49-46-46-FF-FF-FF-FF-57-41-56-45-66-6D-74-20-10-00-00-00-01-00-02-00-80-BB-00-00-00-EE-02-00-04-00-10-00-64-61-74-61-FF-FF-FF-FF
+2020-06-29 12:52:53,588 [12] DEBUG Jishi.StreamToSonos.Services.HttpServer - Entering send loop
+2020-06-29 12:53:35,380 [1] INFO  Jishi.StreamToSonos.Services.HttpServer - Disposing HTTP Server
+2020-06-29 12:53:35,386 [12] DEBUG Jishi.StreamToSonos.Services.HttpServer - Disconnected called, loop exited
+2020-06-29 12:53:35,386 [12] INFO  Jishi.StreamToSonos.Services.HttpServer - Closing all sockets in HTTP Server
+2020-06-29 12:53:35,386 [12] DEBUG Jishi.StreamToSonos.Services.HttpServer - Stopped recording
+2020-06-29 12:54:05,392 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 12:54:05,397 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 12:54:05,530 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.32:1400/ZoneGroupTopology/Event
+2020-06-29 12:54:05,659 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 12:55:29,500 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 12:55:29,567 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 12:55:29,567 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 12:55:29,777 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.32:1400/ZoneGroupTopology/Event
+2020-06-29 12:56:00,082 [1] INFO  Jishi.StreamToSonos.Services.HttpServer - Disposing HTTP Server
+2020-06-29 12:56:05,696 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 12:56:05,708 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 12:56:05,708 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 12:56:05,746 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.42:1400/ZoneGroupTopology/Event
+2020-06-29 12:57:58,756 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 12:57:58,760 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 12:57:58,774 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.32:1400/ZoneGroupTopology/Event
+2020-06-29 12:57:58,818 [5] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 12:58:07,404 [10] DEBUG Jishi.StreamToSonos.Services.HttpServer - Client connected 192.168.0.33:35795, System.Collections.Specialized.NameValueCollection 06/29/2020 12:58:07
+2020-06-29 12:58:07,405 [10] DEBUG Jishi.StreamToSonos.Services.HttpServer - StartRecording
+2020-06-29 12:58:07,415 [10] DEBUG Jishi.StreamToSonos.Services.HttpServer - Writing header 52-49-46-46-FF-FF-FF-FF-57-41-56-45-66-6D-74-20-10-00-00-00-01-00-02-00-80-BB-00-00-00-EE-02-00-04-00-10-00-64-61-74-61-FF-FF-FF-FF
+2020-06-29 12:58:07,416 [10] DEBUG Jishi.StreamToSonos.Services.HttpServer - Entering send loop
+2020-06-29 12:58:52,129 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 12:58:52,135 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 12:58:52,225 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 12:58:52,283 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.42:1400/ZoneGroupTopology/Event
+2020-06-29 12:59:22,212 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 12:59:22,217 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 12:59:22,342 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 12:59:22,460 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.32:1400/ZoneGroupTopology/Event
+2020-06-29 12:59:38,230 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 12:59:38,235 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 12:59:38,249 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.32:1400/ZoneGroupTopology/Event
+2020-06-29 12:59:38,449 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 13:00:01,575 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 13:00:01,580 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 13:00:16,119 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.32:1400/ZoneGroupTopology/Event
+2020-06-29 13:00:16,119 [5] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 13:00:22,428 [1] INFO  Jishi.StreamToSonos.Services.HttpServer - Disposing HTTP Server
+2020-06-29 13:00:26,032 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.42:1400/ZoneGroupTopology/Event
+2020-06-29 13:00:26,106 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 13:00:26,106 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 13:00:26,498 [4] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 13:00:34,902 [1] INFO  Jishi.StreamToSonos.Services.HttpServer - Disposing HTTP Server
+2020-06-29 13:00:38,703 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.42:1400/ZoneGroupTopology/Event
+2020-06-29 13:00:38,752 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 13:00:38,753 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 13:00:38,881 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 13:00:46,338 [4] DEBUG Jishi.StreamToSonos.Services.HttpServer - Client connected 192.168.0.33:35824, System.Collections.Specialized.NameValueCollection 06/29/2020 13:00:46
+2020-06-29 13:00:46,338 [4] DEBUG Jishi.StreamToSonos.Services.HttpServer - StartRecording
+2020-06-29 13:00:46,351 [4] DEBUG Jishi.StreamToSonos.Services.HttpServer - Writing header 52-49-46-46-FF-FF-FF-FF-57-41-56-45-66-6D-74-20-10-00-00-00-01-00-02-00-80-BB-00-00-00-EE-02-00-04-00-10-00-64-61-74-61-FF-FF-FF-FF
+2020-06-29 13:00:46,351 [4] DEBUG Jishi.StreamToSonos.Services.HttpServer - Entering send loop
+2020-06-29 13:01:32,300 [1] INFO  Jishi.StreamToSonos.Services.HttpServer - Disposing HTTP Server
+2020-06-29 13:01:32,311 [4] DEBUG Jishi.StreamToSonos.Services.HttpServer - Disconnected called, loop exited
+2020-06-29 13:01:32,311 [4] INFO  Jishi.StreamToSonos.Services.HttpServer - Closing all sockets in HTTP Server
+2020-06-29 13:01:32,311 [4] DEBUG Jishi.StreamToSonos.Services.HttpServer - Stopped recording
+2020-06-29 13:01:39,292 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 13:01:39,297 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 13:01:39,425 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.32:1400/ZoneGroupTopology/Event
+2020-06-29 13:01:39,633 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 13:01:43,176 [7] DEBUG Jishi.StreamToSonos.Services.HttpServer - Client connected 192.168.0.33:35843, System.Collections.Specialized.NameValueCollection 06/29/2020 13:01:43
+2020-06-29 13:01:43,176 [7] DEBUG Jishi.StreamToSonos.Services.HttpServer - StartRecording
+2020-06-29 13:01:43,189 [7] DEBUG Jishi.StreamToSonos.Services.HttpServer - Writing header 52-49-46-46-FF-FF-FF-FF-57-41-56-45-66-6D-74-20-10-00-00-00-01-00-02-00-80-BB-00-00-00-EE-02-00-04-00-10-00-64-61-74-61-FF-FF-FF-FF
+2020-06-29 13:01:43,189 [7] DEBUG Jishi.StreamToSonos.Services.HttpServer - Entering send loop
+2020-06-29 13:02:45,771 [1] INFO  Jishi.StreamToSonos.Services.HttpServer - Disposing HTTP Server
+2020-06-29 13:02:45,821 [7] DEBUG Jishi.StreamToSonos.Services.HttpServer - Disconnected called, loop exited
+2020-06-29 13:02:45,821 [7] INFO  Jishi.StreamToSonos.Services.HttpServer - Closing all sockets in HTTP Server
+2020-06-29 13:02:45,821 [7] DEBUG Jishi.StreamToSonos.Services.HttpServer - Stopped recording
+2020-06-29 13:04:17,317 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 13:04:17,322 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 13:04:17,343 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.32:1400/ZoneGroupTopology/Event
+2020-06-29 13:04:17,402 [5] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 13:04:22,849 [9] DEBUG Jishi.StreamToSonos.Services.HttpServer - Client connected 192.168.0.33:35856, System.Collections.Specialized.NameValueCollection 06/29/2020 13:04:22
+2020-06-29 13:04:22,850 [9] DEBUG Jishi.StreamToSonos.Services.HttpServer - StartRecording
+2020-06-29 13:04:22,863 [9] DEBUG Jishi.StreamToSonos.Services.HttpServer - Writing header 52-49-46-46-FF-FF-FF-FF-57-41-56-45-66-6D-74-20-10-00-00-00-01-00-02-00-80-BB-00-00-00-EE-02-00-04-00-10-00-64-61-74-61-FF-FF-FF-FF
+2020-06-29 13:04:22,863 [9] DEBUG Jishi.StreamToSonos.Services.HttpServer - Entering send loop
+2020-06-29 13:04:26,398 [1] INFO  Jishi.StreamToSonos.Services.HttpServer - Disposing HTTP Server
+2020-06-29 13:04:26,437 [9] DEBUG Jishi.StreamToSonos.Services.HttpServer - Disconnected called, loop exited
+2020-06-29 13:04:26,437 [9] INFO  Jishi.StreamToSonos.Services.HttpServer - Closing all sockets in HTTP Server
+2020-06-29 13:04:26,437 [9] DEBUG Jishi.StreamToSonos.Services.HttpServer - Stopped recording
+2020-06-29 13:04:36,341 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 13:04:36,346 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 13:04:36,462 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 13:04:36,607 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.32:1400/ZoneGroupTopology/Event
+2020-06-29 13:04:49,875 [1] INFO  Jishi.StreamToSonos.Services.HttpServer - Disposing HTTP Server
+2020-06-29 13:04:52,594 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 13:04:52,599 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 13:04:52,707 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.42:1400/ZoneGroupTopology/Event
+2020-06-29 13:04:52,769 [7] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 13:05:18,138 [9] DEBUG Jishi.StreamToSonos.Services.HttpServer - Client connected 192.168.0.33:35868, System.Collections.Specialized.NameValueCollection 06/29/2020 13:05:18
+2020-06-29 13:05:18,138 [9] DEBUG Jishi.StreamToSonos.Services.HttpServer - StartRecording
+2020-06-29 13:05:18,150 [9] DEBUG Jishi.StreamToSonos.Services.HttpServer - Writing header 52-49-46-46-FF-FF-FF-FF-57-41-56-45-66-6D-74-20-10-00-00-00-01-00-02-00-80-BB-00-00-00-EE-02-00-04-00-10-00-64-61-74-61-FF-FF-FF-FF
+2020-06-29 13:05:18,152 [9] DEBUG Jishi.StreamToSonos.Services.HttpServer - Entering send loop
+2020-06-29 13:05:36,717 [1] INFO  Jishi.StreamToSonos.Services.HttpServer - Disposing HTTP Server
+2020-06-29 13:05:36,719 [9] DEBUG Jishi.StreamToSonos.Services.HttpServer - Disconnected called, loop exited
+2020-06-29 13:05:36,719 [9] INFO  Jishi.StreamToSonos.Services.HttpServer - Closing all sockets in HTTP Server
+2020-06-29 13:05:36,719 [9] DEBUG Jishi.StreamToSonos.Services.HttpServer - Stopped recording
+2020-06-29 13:06:27,933 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.32:1400/ZoneGroupTopology/Event
+2020-06-29 13:06:28,009 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 13:06:28,010 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 13:06:28,277 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 13:06:32,786 [4] DEBUG Jishi.StreamToSonos.Services.HttpServer - Client connected 192.168.0.33:35880, System.Collections.Specialized.NameValueCollection 06/29/2020 13:06:32
+2020-06-29 13:06:32,786 [4] DEBUG Jishi.StreamToSonos.Services.HttpServer - StartRecording
+2020-06-29 13:06:32,798 [4] DEBUG Jishi.StreamToSonos.Services.HttpServer - Writing header 52-49-46-46-FF-FF-FF-FF-57-41-56-45-66-6D-74-20-10-00-00-00-01-00-02-00-80-BB-00-00-00-EE-02-00-04-00-10-00-64-61-74-61-FF-FF-FF-FF
+2020-06-29 13:06:32,799 [4] DEBUG Jishi.StreamToSonos.Services.HttpServer - Entering send loop
+2020-06-29 13:07:02,854 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 13:07:02,859 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 13:07:02,945 [7] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.32:1400/ZoneGroupTopology/Event
+2020-06-29 13:07:02,945 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 13:07:19,645 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.32:1400/ZoneGroupTopology/Event
+2020-06-29 13:07:19,684 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 13:07:19,684 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 13:07:19,765 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 13:08:05,866 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.42:1400/ZoneGroupTopology/Event
+2020-06-29 13:08:05,895 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 13:08:05,896 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 13:08:06,265 [4] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 13:08:16,605 [1] INFO  Jishi.StreamToSonos.Services.HttpServer - Disposing HTTP Server
+2020-06-29 13:08:18,699 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 13:08:18,704 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 13:08:18,715 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.42:1400/ZoneGroupTopology/Event
+2020-06-29 13:08:19,070 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 13:08:23,784 [5] DEBUG Jishi.StreamToSonos.Services.HttpServer - Client connected 192.168.0.33:35896, System.Collections.Specialized.NameValueCollection 06/29/2020 13:08:23
+2020-06-29 13:08:23,784 [5] DEBUG Jishi.StreamToSonos.Services.HttpServer - StartRecording
+2020-06-29 13:08:23,795 [5] DEBUG Jishi.StreamToSonos.Services.HttpServer - Writing header 52-49-46-46-FF-FF-FF-FF-57-41-56-45-66-6D-74-20-10-00-00-00-01-00-02-00-80-BB-00-00-00-EE-02-00-04-00-10-00-64-61-74-61-FF-FF-FF-FF
+2020-06-29 13:08:23,796 [5] DEBUG Jishi.StreamToSonos.Services.HttpServer - Entering send loop
+2020-06-29 13:09:26,284 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 13:09:26,290 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 13:09:26,490 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.42:1400/ZoneGroupTopology/Event
+2020-06-29 13:09:26,671 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 13:09:37,410 [1] INFO  Jishi.StreamToSonos.Services.HttpServer - Disposing HTTP Server
+2020-06-29 13:10:12,936 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 13:10:12,941 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 13:10:13,024 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.32:1400/ZoneGroupTopology/Event
+2020-06-29 13:10:13,291 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 13:10:46,468 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 13:10:46,479 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 13:10:46,479 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.32:1400/ZoneGroupTopology/Event
+2020-06-29 13:10:46,505 [4] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 13:10:58,139 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.32:1400/ZoneGroupTopology/Event
+2020-06-29 13:10:58,201 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 13:10:58,214 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 13:10:58,214 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 13:12:02,106 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.32:1400/ZoneGroupTopology/Event
+2020-06-29 13:12:02,140 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 13:12:02,140 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 13:12:02,523 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 13:12:31,070 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 13:12:31,075 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 13:12:31,145 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 13:12:31,162 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.32:1400/ZoneGroupTopology/Event
+2020-06-29 13:12:51,183 [1] INFO  Jishi.StreamToSonos.Services.HttpServer - Disposing HTTP Server
+2020-06-29 13:12:53,495 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 13:12:53,500 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 13:12:53,621 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 13:12:53,865 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.32:1400/ZoneGroupTopology/Event
+2020-06-29 13:13:27,381 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.42:1400/ZoneGroupTopology/Event
+2020-06-29 13:13:27,442 [4] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 13:13:27,457 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 13:13:27,458 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 13:13:57,203 [1] INFO  Jishi.StreamToSonos.Services.HttpServer - Disposing HTTP Server
+2020-06-29 13:14:00,533 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 13:14:00,538 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 13:14:00,707 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.32:1400/ZoneGroupTopology/Event
+2020-06-29 13:14:00,783 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 13:14:33,070 [7] DEBUG Jishi.StreamToSonos.Services.HttpServer - Client connected 192.168.0.33:35935, System.Collections.Specialized.NameValueCollection 06/29/2020 13:14:33
+2020-06-29 13:14:33,071 [7] DEBUG Jishi.StreamToSonos.Services.HttpServer - StartRecording
+2020-06-29 13:14:33,084 [7] DEBUG Jishi.StreamToSonos.Services.HttpServer - Writing header 52-49-46-46-FF-FF-FF-FF-57-41-56-45-66-6D-74-20-10-00-00-00-01-00-02-00-80-BB-00-00-00-EE-02-00-04-00-10-00-64-61-74-61-FF-FF-FF-FF
+2020-06-29 13:14:33,085 [7] DEBUG Jishi.StreamToSonos.Services.HttpServer - Entering send loop
+2020-06-29 13:15:35,547 [7] DEBUG Jishi.StreamToSonos.Services.HttpServer - Disconnected called, loop exited
+2020-06-29 13:15:35,547 [7] DEBUG Jishi.StreamToSonos.Services.HttpServer - Stopped recording
+2020-06-29 13:15:35,555 [7] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 13:15:57,319 [21] DEBUG Jishi.StreamToSonos.Services.HttpServer - Client connected 192.168.0.33:35957, System.Collections.Specialized.NameValueCollection 06/29/2020 13:15:57
+2020-06-29 13:15:57,319 [21] DEBUG Jishi.StreamToSonos.Services.HttpServer - StartRecording
+2020-06-29 13:15:57,320 [21] DEBUG Jishi.StreamToSonos.Services.HttpServer - Writing header 52-49-46-46-FF-FF-FF-FF-57-41-56-45-66-6D-74-20-10-00-00-00-01-00-02-00-80-BB-00-00-00-EE-02-00-04-00-10-00-64-61-74-61-FF-FF-FF-FF
+2020-06-29 13:15:57,320 [21] DEBUG Jishi.StreamToSonos.Services.HttpServer - Entering send loop
+2020-06-29 13:22:20,734 [19] DEBUG Jishi.SonosUPnP.SonosNotify - Resubscribing to http://192.168.1.32:1400/ZoneGroupTopology/Event with SID uuid:RINCON_B8E93741811B01400_sub0000000188
+2020-06-29 13:22:20,793 [14] DEBUG Jishi.SonosUPnP.SonosNotify - Resubscribing to http://192.168.0.33:1400/ZoneGroupTopology/Event with SID uuid:RINCON_5CAAFDFFD39401400_sub0000000108
+2020-06-29 13:30:40,748 [16] DEBUG Jishi.SonosUPnP.SonosNotify - Resubscribing to http://192.168.1.32:1400/ZoneGroupTopology/Event with SID uuid:RINCON_B8E93741811B01400_sub0000000188
+2020-06-29 13:30:40,795 [14] DEBUG Jishi.SonosUPnP.SonosNotify - Resubscribing to http://192.168.0.33:1400/ZoneGroupTopology/Event with SID uuid:RINCON_5CAAFDFFD39401400_sub0000000108
+2020-06-29 13:38:05,463 [1] INFO  Jishi.StreamToSonos.Services.HttpServer - Disposing HTTP Server
+2020-06-29 13:38:05,504 [21] DEBUG Jishi.StreamToSonos.Services.HttpServer - Disconnected called, loop exited
+2020-06-29 13:38:05,504 [21] INFO  Jishi.StreamToSonos.Services.HttpServer - Closing all sockets in HTTP Server
+2020-06-29 13:38:05,504 [21] DEBUG Jishi.StreamToSonos.Services.HttpServer - Stopped recording
+2020-06-29 13:38:24,365 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.42:1400/ZoneGroupTopology/Event
+2020-06-29 13:38:24,390 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 13:38:24,390 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 13:38:24,728 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 13:38:29,491 [4] DEBUG Jishi.StreamToSonos.Services.HttpServer - Client connected 192.168.0.33:35961, System.Collections.Specialized.NameValueCollection 06/29/2020 13:38:29
+2020-06-29 13:38:29,492 [4] DEBUG Jishi.StreamToSonos.Services.HttpServer - StartRecording
+2020-06-29 13:38:29,503 [4] DEBUG Jishi.StreamToSonos.Services.HttpServer - Writing header 52-49-46-46-FF-FF-FF-FF-57-41-56-45-66-6D-74-20-10-00-00-00-01-00-02-00-80-BB-00-00-00-EE-02-00-04-00-10-00-64-61-74-61-FF-FF-FF-FF
+2020-06-29 13:38:29,504 [4] DEBUG Jishi.StreamToSonos.Services.HttpServer - Entering send loop
+2020-06-29 13:40:39,102 [4] DEBUG Jishi.StreamToSonos.Services.HttpServer - Disconnected called, loop exited
+2020-06-29 13:40:39,102 [4] DEBUG Jishi.StreamToSonos.Services.HttpServer - Stopped recording
+2020-06-29 13:40:39,106 [4] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 13:40:47,578 [4] DEBUG Jishi.StreamToSonos.Services.HttpServer - Client connected 192.168.0.33:35966, System.Collections.Specialized.NameValueCollection 06/29/2020 13:40:47
+2020-06-29 13:40:47,578 [4] DEBUG Jishi.StreamToSonos.Services.HttpServer - StartRecording
+2020-06-29 13:40:47,580 [4] DEBUG Jishi.StreamToSonos.Services.HttpServer - Writing header 52-49-46-46-FF-FF-FF-FF-57-41-56-45-66-6D-74-20-10-00-00-00-01-00-02-00-80-BB-00-00-00-EE-02-00-04-00-10-00-64-61-74-61-FF-FF-FF-FF
+2020-06-29 13:40:47,581 [4] DEBUG Jishi.StreamToSonos.Services.HttpServer - Entering send loop
+2020-06-29 13:46:44,404 [28] DEBUG Jishi.SonosUPnP.SonosNotify - Resubscribing to http://192.168.1.42:1400/ZoneGroupTopology/Event with SID uuid:RINCON_7828CAA8AD7C01400_sub0000000140
+2020-06-29 13:46:44,730 [22] DEBUG Jishi.SonosUPnP.SonosNotify - Resubscribing to http://192.168.0.33:1400/ZoneGroupTopology/Event with SID uuid:RINCON_5CAAFDFFD39401400_sub0000000109
+2020-06-29 13:49:51,484 [1] INFO  Jishi.StreamToSonos.Services.HttpServer - Disposing HTTP Server
+2020-06-29 13:49:51,524 [4] DEBUG Jishi.StreamToSonos.Services.HttpServer - Disconnected called, loop exited
+2020-06-29 13:49:51,524 [4] INFO  Jishi.StreamToSonos.Services.HttpServer - Closing all sockets in HTTP Server
+2020-06-29 13:49:51,524 [4] DEBUG Jishi.StreamToSonos.Services.HttpServer - Stopped recording
+2020-06-29 14:06:37,716 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 14:06:37,721 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 14:06:37,904 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.42:1400/ZoneGroupTopology/Event
+2020-06-29 14:06:44,559 [1] INFO  Jishi.StreamToSonos.Services.HttpServer - Disposing HTTP Server
+2020-06-29 14:06:46,794 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.32:1400/ZoneGroupTopology/Event
+2020-06-29 14:06:46,862 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 14:06:46,863 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 14:06:58,036 [1] INFO  Jishi.StreamToSonos.Services.HttpServer - Disposing HTTP Server
+2020-06-29 14:07:01,310 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 14:07:01,315 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 14:07:01,478 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.42:1400/ZoneGroupTopology/Event
+2020-06-29 14:07:07,490 [1] INFO  Jishi.StreamToSonos.Services.HttpServer - Disposing HTTP Server
+2020-06-29 14:07:18,448 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 14:07:18,453 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 14:07:18,485 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.32:1400/ZoneGroupTopology/Event
+2020-06-29 14:07:28,915 [1] INFO  Jishi.StreamToSonos.Services.HttpServer - Disposing HTTP Server
+2020-06-29 14:07:36,740 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 14:07:36,744 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 14:07:36,784 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 14:07:36,858 [6] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.42:1400/ZoneGroupTopology/Event
+2020-06-29 14:08:08,555 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 14:08:08,560 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 14:08:08,582 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.32:1400/ZoneGroupTopology/Event
+2020-06-29 14:08:08,797 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 14:08:44,424 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 14:08:44,429 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 14:08:44,610 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.32:1400/ZoneGroupTopology/Event
+2020-06-29 14:08:44,809 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 14:08:50,580 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 14:08:50,585 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 14:08:50,702 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.42:1400/ZoneGroupTopology/Event
+2020-06-29 14:08:50,944 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 14:08:57,669 [6] DEBUG Jishi.StreamToSonos.Services.HttpServer - Client connected 192.168.0.33:35985, System.Collections.Specialized.NameValueCollection 06/29/2020 14:08:57
+2020-06-29 14:08:57,669 [6] DEBUG Jishi.StreamToSonos.Services.HttpServer - StartRecording
+2020-06-29 14:08:57,681 [6] DEBUG Jishi.StreamToSonos.Services.HttpServer - Writing header 52-49-46-46-FF-FF-FF-FF-57-41-56-45-66-6D-74-20-10-00-00-00-01-00-02-00-80-BB-00-00-00-EE-02-00-04-00-10-00-64-61-74-61-FF-FF-FF-FF
+2020-06-29 14:08:57,682 [6] DEBUG Jishi.StreamToSonos.Services.HttpServer - Entering send loop
+2020-06-29 14:09:46,015 [1] INFO  Jishi.StreamToSonos.Services.HttpServer - Disposing HTTP Server
+2020-06-29 14:09:46,029 [6] DEBUG Jishi.StreamToSonos.Services.HttpServer - Disconnected called, loop exited
+2020-06-29 14:09:46,029 [6] INFO  Jishi.StreamToSonos.Services.HttpServer - Closing all sockets in HTTP Server
+2020-06-29 14:09:46,029 [6] DEBUG Jishi.StreamToSonos.Services.HttpServer - Stopped recording
+2020-06-29 14:09:48,974 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 14:09:48,980 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 14:09:49,091 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.42:1400/ZoneGroupTopology/Event
+2020-06-29 14:09:49,099 [6] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 14:09:58,536 [1] INFO  Jishi.StreamToSonos.Services.HttpServer - Disposing HTTP Server
+2020-06-29 14:11:39,670 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.42:1400/ZoneGroupTopology/Event
+2020-06-29 14:11:39,768 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 14:11:39,768 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 14:11:39,942 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 14:11:53,095 [1] INFO  Jishi.StreamToSonos.Services.HttpServer - Disposing HTTP Server
+2020-06-29 14:11:57,928 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 14:11:57,933 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 14:11:58,012 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 14:11:58,204 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.42:1400/ZoneGroupTopology/Event
+2020-06-29 14:12:18,673 [1] INFO  Jishi.StreamToSonos.Services.HttpServer - Disposing HTTP Server
+2020-06-29 14:12:21,574 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 14:12:21,579 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 14:12:21,876 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 14:12:21,943 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.42:1400/ZoneGroupTopology/Event
+2020-06-29 14:12:56,304 [1] INFO  Jishi.StreamToSonos.Services.HttpServer - Disposing HTTP Server
+2020-06-29 14:12:59,166 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.42:1400/ZoneGroupTopology/Event
+2020-06-29 14:12:59,191 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 14:12:59,191 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 14:13:11,643 [4] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 14:14:31,840 [1] INFO  Jishi.StreamToSonos.Services.HttpServer - Disposing HTTP Server
+2020-06-29 14:14:34,938 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 14:14:34,943 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 14:14:34,947 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.32:1400/ZoneGroupTopology/Event
+2020-06-29 14:14:35,335 [5] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 14:14:43,330 [5] DEBUG Jishi.StreamToSonos.Services.HttpServer - Client connected 192.168.0.33:36023, System.Collections.Specialized.NameValueCollection 06/29/2020 14:14:43
+2020-06-29 14:14:43,330 [5] DEBUG Jishi.StreamToSonos.Services.HttpServer - StartRecording
+2020-06-29 14:14:43,344 [5] DEBUG Jishi.StreamToSonos.Services.HttpServer - Writing header 52-49-46-46-FF-FF-FF-FF-57-41-56-45-66-6D-74-20-10-00-00-00-01-00-02-00-80-BB-00-00-00-EE-02-00-04-00-10-00-64-61-74-61-FF-FF-FF-FF
+2020-06-29 14:14:43,345 [5] DEBUG Jishi.StreamToSonos.Services.HttpServer - Entering send loop
+2020-06-29 14:17:59,761 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 14:17:59,766 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 14:17:59,894 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 14:17:59,903 [7] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.32:1400/ZoneGroupTopology/Event
+2020-06-29 14:24:33,529 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 14:24:33,534 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 14:24:33,607 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.42:1400/ZoneGroupTopology/Event
+2020-06-29 14:24:33,925 [6] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 14:24:57,670 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 14:24:57,675 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 14:24:57,854 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 14:24:58,048 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.32:1400/ZoneGroupTopology/Event
+2020-06-29 14:25:02,660 [1] INFO  Jishi.StreamToSonos.Services.HttpServer - Disposing HTTP Server
+2020-06-29 14:25:35,216 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.32:1400/ZoneGroupTopology/Event
+2020-06-29 14:25:35,240 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 14:25:35,241 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 14:25:35,472 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 14:25:40,210 [9] DEBUG Jishi.StreamToSonos.Services.HttpServer - Client connected 192.168.0.33:36050, System.Collections.Specialized.NameValueCollection 06/29/2020 14:25:40
+2020-06-29 14:25:40,211 [9] DEBUG Jishi.StreamToSonos.Services.HttpServer - StartRecording
+2020-06-29 14:25:40,225 [9] DEBUG Jishi.StreamToSonos.Services.HttpServer - Writing header 52-49-46-46-FF-FF-FF-FF-57-41-56-45-66-6D-74-20-10-00-00-00-01-00-02-00-80-BB-00-00-00-EE-02-00-04-00-10-00-64-61-74-61-FF-FF-FF-FF
+2020-06-29 14:25:40,226 [9] DEBUG Jishi.StreamToSonos.Services.HttpServer - Entering send loop
+2020-06-29 14:31:50,993 [1] INFO  Jishi.StreamToSonos.Services.HttpServer - Disposing HTTP Server
+2020-06-29 14:31:51,033 [9] DEBUG Jishi.StreamToSonos.Services.HttpServer - Disconnected called, loop exited
+2020-06-29 14:31:51,033 [9] INFO  Jishi.StreamToSonos.Services.HttpServer - Closing all sockets in HTTP Server
+2020-06-29 14:31:51,033 [9] DEBUG Jishi.StreamToSonos.Services.HttpServer - Stopped recording
+2020-06-29 14:31:59,975 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.32:1400/ZoneGroupTopology/Event
+2020-06-29 14:31:59,983 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 14:31:59,983 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 14:32:00,246 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 14:32:14,669 [9] DEBUG Jishi.StreamToSonos.Services.HttpServer - Client connected 192.168.0.33:36063, System.Collections.Specialized.NameValueCollection 06/29/2020 14:32:14
+2020-06-29 14:32:14,669 [9] DEBUG Jishi.StreamToSonos.Services.HttpServer - StartRecording
+2020-06-29 14:32:14,681 [9] DEBUG Jishi.StreamToSonos.Services.HttpServer - Writing header 52-49-46-46-FF-FF-FF-FF-57-41-56-45-66-6D-74-20-10-00-00-00-01-00-02-00-80-BB-00-00-00-EE-02-00-04-00-10-00-64-61-74-61-FF-FF-FF-FF
+2020-06-29 14:32:14,681 [9] DEBUG Jishi.StreamToSonos.Services.HttpServer - Entering send loop
+2020-06-29 14:40:37,082 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 14:40:37,087 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 14:40:37,253 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.42:1400/ZoneGroupTopology/Event
+2020-06-29 14:40:37,260 [7] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 14:40:47,222 [1] INFO  Jishi.StreamToSonos.Services.HttpServer - Disposing HTTP Server
+2020-06-29 14:41:20,183 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 14:41:20,194 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 14:41:20,195 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 14:41:20,341 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.32:1400/ZoneGroupTopology/Event
+2020-06-29 14:42:49,927 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 14:42:49,932 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 14:42:50,162 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 14:42:50,302 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.32:1400/ZoneGroupTopology/Event
+2020-06-29 14:42:56,844 [1] INFO  Jishi.StreamToSonos.Services.HttpServer - Disposing HTTP Server
+2020-06-29 14:44:43,896 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 14:44:43,901 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.42:1400/ZoneGroupTopology/Event
+2020-06-29 14:44:45,411 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 14:44:45,411 [4] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 14:45:03,404 [1] INFO  Jishi.StreamToSonos.Services.HttpServer - Disposing HTTP Server
+2020-06-29 14:45:06,309 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.32:1400/ZoneGroupTopology/Event
+2020-06-29 14:45:06,334 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 14:45:08,237 [6] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 14:45:08,237 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 14:45:47,509 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 14:45:50,514 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 14:45:50,518 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 14:45:50,518 [4] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.32:1400/ZoneGroupTopology/Event
+2020-06-29 14:47:23,071 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.42:1400/ZoneGroupTopology/Event
+2020-06-29 14:47:23,151 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 14:47:23,151 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 14:47:23,283 [12] ERROR Jishi.StreamToSonos.App - System.InvalidOperationException: Der aufrufende Thread kann nicht auf dieses Objekt zugreifen, da sich das Objekt im Besitz eines anderen Threads befindet.
+   bei System.Windows.Threading.Dispatcher.VerifyAccess()
+   bei System.Windows.Application.get_MainWindow()
+   bei Jishi.StreamToSonos.App.<TopologyChanged>b__8_1() in F:\VS-Projekts\Sonos\Jishi.StreamToSonos\Jishi.StreamToSonos\App.xaml.cs:Zeile 74.
+   bei System.Threading.ThreadHelper.ThreadStart_Context(Object state)
+   bei System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   bei System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   bei System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   bei System.Threading.ThreadHelper.ThreadStart()
+2020-06-29 14:47:35,230 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 14:47:37,690 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 14:47:37,708 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 14:47:37,709 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.32:1400/ZoneGroupTopology/Event
+2020-06-29 14:47:37,839 [12] ERROR Jishi.StreamToSonos.App - System.InvalidOperationException: Der aufrufende Thread kann nicht auf dieses Objekt zugreifen, da sich das Objekt im Besitz eines anderen Threads befindet.
+   bei System.Windows.Threading.Dispatcher.VerifyAccess()
+   bei System.Windows.Application.get_MainWindow()
+   bei Jishi.StreamToSonos.App.<TopologyChanged>b__8_1() in F:\VS-Projekts\Sonos\Jishi.StreamToSonos\Jishi.StreamToSonos\App.xaml.cs:Zeile 74.
+   bei System.Threading.ThreadHelper.ThreadStart_Context(Object state)
+   bei System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   bei System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   bei System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   bei System.Threading.ThreadHelper.ThreadStart()
+2020-06-29 14:48:07,249 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Starting Listener
+2020-06-29 14:48:07,255 [1] DEBUG Jishi.StreamToSonos.Services.HttpServer - Started listening for requests
+2020-06-29 14:48:07,448 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.1.42:1400/ZoneGroupTopology/Event
+2020-06-29 14:48:07,538 [3] DEBUG Jishi.SonosUPnP.SonosNotify - New subscribe to http://192.168.0.33:1400/ZoneGroupTopology/Event
+2020-06-29 14:48:15,442 [16] DEBUG Jishi.StreamToSonos.Services.HttpServer - Client connected 192.168.0.33:36104, System.Collections.Specialized.NameValueCollection 06/29/2020 14:48:15
+2020-06-29 14:48:15,443 [16] DEBUG Jishi.StreamToSonos.Services.HttpServer - StartRecording
+2020-06-29 14:48:15,477 [16] DEBUG Jishi.StreamToSonos.Services.HttpServer - Writing header 52-49-46-46-FF-FF-FF-FF-57-41-56-45-66-6D-74-20-10-00-00-00-01-00-02-00-80-BB-00-00-00-EE-02-00-04-00-10-00-64-61-74-61-FF-FF-FF-FF
+2020-06-29 14:48:15,478 [16] DEBUG Jishi.StreamToSonos.Services.HttpServer - Entering send loop
+2020-06-29 14:48:28,800 [1] INFO  Jishi.StreamToSonos.Services.HttpServer - Disposing HTTP Server
+2020-06-29 14:48:28,839 [16] DEBUG Jishi.StreamToSonos.Services.HttpServer - Disconnected called, loop exited
+2020-06-29 14:48:28,839 [16] INFO  Jishi.StreamToSonos.Services.HttpServer - Closing all sockets in HTTP Server
+2020-06-29 14:48:28,839 [16] DEBUG Jishi.StreamToSonos.Services.HttpServer - Stopped recording

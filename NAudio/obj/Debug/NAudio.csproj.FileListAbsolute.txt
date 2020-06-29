@@ -1,0 +1,14 @@
+F:\VS-Projekts\Sonos\NAudio\bin\Debug\NAudio.XML
+F:\VS-Projekts\Sonos\NAudio\bin\Debug\NAudio.dll
+F:\VS-Projekts\Sonos\NAudio\bin\Debug\NAudio.pdb
+F:\VS-Projekts\Sonos\NAudio\obj\Debug\NAudio.Gui.Fader.resources
+F:\VS-Projekts\Sonos\NAudio\obj\Debug\NAudio.Gui.PanSlider.resources
+F:\VS-Projekts\Sonos\NAudio\obj\Debug\NAudio.Gui.Pot.resources
+F:\VS-Projekts\Sonos\NAudio\obj\Debug\NAudio.Gui.VolumeSlider.resources
+F:\VS-Projekts\Sonos\NAudio\obj\Debug\NAudio.Gui.WaveViewer.resources
+F:\VS-Projekts\Sonos\NAudio\obj\Debug\NAudio.Utils.ProgressLog.resources
+F:\VS-Projekts\Sonos\NAudio\obj\Debug\NAudio.csproj.GenerateResource.cache
+F:\VS-Projekts\Sonos\NAudio\obj\Debug\NAudio.csproj.CoreCompileInputs.cache
+F:\VS-Projekts\Sonos\NAudio\obj\Debug\NAudio.dll
+F:\VS-Projekts\Sonos\NAudio\obj\Debug\NAudio.pdb
+F:\VS-Projekts\Sonos\NAudio\obj\Debug\NAudio.csprojAssemblyReference.cache

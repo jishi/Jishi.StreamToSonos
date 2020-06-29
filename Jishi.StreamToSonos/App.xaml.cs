@@ -4,6 +4,7 @@ using System.Configuration;
 using System.Data;
 using System.IO;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -32,6 +33,7 @@ namespace Jishi.StreamToSonos
 			discovery = new SonosDiscovery();
 			discovery.TopologyChanged += TopologyChanged;
 			server = new HttpServer();
+			server.BufferSize = 1024 * 16;
 		}
 
 		protected override void OnExit( ExitEventArgs e )
@@ -64,9 +66,11 @@ namespace Jishi.StreamToSonos
             file.Close();
         }
 
-		private async void TopologyChanged( object sender, TopologyChangedEventHandlerArgs args )
+		private void TopologyChanged( object sender, TopologyChangedEventHandlerArgs args )
 		{
-			await Dispatcher.InvokeAsync( delegate { ((MainWindow) MainWindow).UpdateZoneList( discovery.Zones ); } );
+			Dispatcher.InvokeAsync( delegate {
+				((MainWindow)MainWindow).UpdateZoneList(discovery.Zones);		
+			} );
 		}
 	}
 }

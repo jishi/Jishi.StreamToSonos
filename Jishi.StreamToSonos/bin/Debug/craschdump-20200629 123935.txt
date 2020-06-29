@@ -1,0 +1,12 @@
+Previous recording still in progress   bei NAudio.CoreAudioApi.WasapiCapture.StartRecording() in F:\VS-Projekts\Sonos\NAudio\Wave\WaveInputs\WasapiCapture.cs:Zeile 140.
+   bei Jishi.StreamToSonos.Services.AudioStreamHandler.StartRecording() in F:\VS-Projekts\Sonos\Jishi.StreamToSonos\Services\AudioStreamHandler.cs:Zeile 51.
+   bei Jishi.StreamToSonos.Services.HttpServer.HandleConnection(IAsyncResult ar) in F:\VS-Projekts\Sonos\Jishi.StreamToSonos\Services\HttpServer.cs:Zeile 80.
+   bei System.Net.LazyAsyncResult.Complete(IntPtr userToken)
+   bei System.Net.ContextAwareResult.CompleteCallback(Object state)
+   bei System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   bei System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   bei System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   bei System.Net.ContextAwareResult.Complete(IntPtr userToken)
+   bei System.Net.LazyAsyncResult.ProtectedInvokeCallback(Object result, IntPtr userToken)
+   bei System.Net.Sockets.BaseOverlappedAsyncResult.CompletionPortCallback(UInt32 errorCode, UInt32 numBytes, NativeOverlapped* nativeOverlapped)
+   bei System.Threading._IOCompletionCallback.PerformIOCompletionCallback(UInt32 errorCode, UInt32 numBytes, NativeOverlapped* pOVERLAP)

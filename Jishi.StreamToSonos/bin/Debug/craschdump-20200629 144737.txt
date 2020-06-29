@@ -1,0 +1,8 @@
+Der aufrufende Thread kann nicht auf dieses Objekt zugreifen, da sich das Objekt im Besitz eines anderen Threads befindet.   bei System.Windows.Threading.Dispatcher.VerifyAccess()
+   bei System.Windows.Application.get_MainWindow()
+   bei Jishi.StreamToSonos.App.<TopologyChanged>b__8_1() in F:\VS-Projekts\Sonos\Jishi.StreamToSonos\Jishi.StreamToSonos\App.xaml.cs:Zeile 74.
+   bei System.Threading.ThreadHelper.ThreadStart_Context(Object state)
+   bei System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   bei System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   bei System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   bei System.Threading.ThreadHelper.ThreadStart()

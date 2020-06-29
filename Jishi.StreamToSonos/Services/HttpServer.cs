@@ -12,6 +12,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Mono.Net;
 using log4net;
+using System.Net;
 
 namespace Jishi.StreamToSonos.Services
 {
@@ -36,7 +37,7 @@ namespace Jishi.StreamToSonos.Services
             log = Logger.GetLogger(GetType());
             log.Debug("Starting Listener");
 
-            Listener = new TcpListener(9283);
+            Listener = new TcpListener(IPAddress.Any,9283);
 
             //Listener = new HttpListener();
             //Listener.Prefixes.Add("http://*:9283/");
@@ -158,7 +159,7 @@ namespace Jishi.StreamToSonos.Services
             return headers;
         }
 
-        private async void SendSilent(Stream stream, int bufferSize)
+        private void SendSilent(Stream stream, int bufferSize)
         {
             if (bufferSize < 1) return;
             var buffer = new byte[bufferSize*4];
@@ -225,7 +226,7 @@ namespace Jishi.StreamToSonos.Services
             WriteChunkedToStream(outputStream, header);
         }
 
-        private async void WriteChunkedToStream(Stream outputStream, byte[] chunk)
+        private void WriteChunkedToStream(Stream outputStream, byte[] chunk)
         {
             var lineEnd = new byte[] {0x0d, 0x0a};
             var length = Encoding.ASCII.GetBytes(chunk.Length.ToString("X") + "\r\n");
@@ -236,7 +237,7 @@ namespace Jishi.StreamToSonos.Services
                 outputStream.Write(lineEnd, 0, lineEnd.Length);
                 outputStream.Flush();
             }
-            catch (IOException ex)
+            catch
             {
                 isConnected = false;
             }
